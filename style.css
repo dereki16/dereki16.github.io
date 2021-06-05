@@ -47,7 +47,15 @@ body {
   h1, h2, p, a {
     color: white;
   }
+
+  h1 {
+      font-size: 50px;
+  }
   
+  h3 {
+      color: gray;
+  }
+
   iframe {
     padding: 10px;
     width: 875px;
@@ -60,10 +68,6 @@ body {
     font-size: 0.75em;
   }
   
-  .par {
-    padding: 16px;
-  }
-  
   .sticky {
     position: fixed;
     top: 0;
@@ -72,4 +76,28 @@ body {
   
   .sticky + .par {
     padding-top: 60px;
+  }
+
+  #lc {
+      text-align: left;
+      margin-left: 200px;
+      line-height: 10px;
+  }
+
+  #lci {
+      text-align: left;
+      margin-left: 200px;
+      line-height: 60px;
+
+  }
+
+  .same-line {
+    white-space: nowrap;
+
+  }
+
+  p1 {
+      color:white;
+      font-size: 50px;
+      padding-left: 5px;
   }
