@@ -130,4 +130,10 @@
   
   @-ms-viewport {
     width: extend-to-zoom;
-    zoom: 1.0;  }
+    zoom: 1.0;  
+  }
+
+  @media screen and (max-width:640px) {
+    .leftSideBar, .rightSideBar {display:none}
+  }
+    
