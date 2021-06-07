@@ -1,26 +1,10 @@
-  #head, #body, #footer {
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-
-  #head {
-    min-height: 100px;
-  }
-
   #body {
     background-color: black;
     text-align: center;
     font-size: 1.25em;
     font-family: 'Roboto Slab', serif;
-    min-height: 400px;
-    margin-top: 3%;
   }
   
-  #footer {
-    min-height: 100px;
-    margin-top: 3%;
-
-  }
   #nav{
     border: 1px solid #000;
     border-width: 1px 0;
