@@ -144,7 +144,7 @@
     }
     @media only screen and (max-width:500px) {
       /* For mobile phones: */
-      .header, #p, .proj, .game-desc, .footer {
+      .header, .body, .par, .proj, .game-desc, .footer {
         width: 100%;
       }
     }
