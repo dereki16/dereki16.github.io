@@ -56,8 +56,8 @@
   }
   
   .par p, #p{
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 10%;
+    margin-right: 10%;
     text-align: left;
     font-size: 1.05em;
   }
@@ -93,14 +93,16 @@
 
   .lc {
       text-align: left;
-      margin-left: 200px;
+      margin-left: 10%;
+      margin-right: 10%;
       line-height: 20px;
       font-size: 6em;
   }
 
   .lci {
       text-align: left;
-      margin-left: 200px;
+      margin-left: 10%;
+      margin-right: 10%;
       line-height: 20px;
       font-size: 4.5em;
   }
