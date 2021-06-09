@@ -144,7 +144,7 @@
     }
     @media only screen and (max-width:500px) {
       /* For mobile phones: */
-      .header, .body, .footer, .proj, .game-desc, .par, .form {
+      .header, .body, .footer, .proj, .par, .form, #lc, #lci {
         width: 1100px;
         font-size: 300%;
       }
