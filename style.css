@@ -163,7 +163,7 @@
     }
 
     @media only screen and (max-width:500px) {
-      .game, .body {
+      .game {
         position: relative;
         width: 100%;
         overflow: hidden;
@@ -171,7 +171,7 @@
         float: none;
       }
       
-      .opong, .par {
+      .opong, .body, .par {
         position: absolute;
         top: 0;
         left: 0;
