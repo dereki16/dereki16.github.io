@@ -160,7 +160,8 @@
 
     @media only screen and (max-width:500px) {
       /* For smaller gamescreen: */
-      .opong {
+      .opong, .game {
         width: 800px;
+        height: 350px;
       }
     }
