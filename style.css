@@ -157,14 +157,14 @@
     }
 
     @media only screen and (max-width:500px) {
-      .game, .body, .par {
+      .game, .body {
         position: relative;
         width: 100%;
         overflow: hidden;
         padding-top: 56.25%; /* 16:9 Aspect Ratio */
       }
       
-      .opong, .par-content {
+      .opong, .par {
         position: absolute;
         top: 0;
         left: 0;
