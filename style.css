@@ -14,6 +14,7 @@
     font-family: 'Roboto Slab', serif;
     min-height: 400px;
     margin-top: 3%;
+    white-space: nowrap;
   }
   
   footer {
@@ -90,24 +91,20 @@
     padding-top: 60px;
   }
 
-  #lc {
+  .lc {
       text-align: left;
       margin-left: 200px;
       line-height: 20px;
       font-size: 6em;
   }
 
-  #lci {
+  .lci {
       text-align: left;
       margin-left: 200px;
       line-height: 20px;
       font-size: 4.5em;
   }
 
-  .same-line {
-    white-space: nowrap;
-
-  }
 
   p1 {
       color:white;
