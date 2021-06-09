@@ -145,13 +145,13 @@
     @media only screen and (max-width:500px) {
       /* For mobile phones: */
       .header, .body, .proj, .par, .game-desc, .opong, .footer {
-        width: 100%;
+        width: 1100px;
       }
     }
 
     @media only screen and (max-width:500px) {
       /* For bigger text: */
       #lc, #lci, #p1, .h1 {
-        width: 100%;
+        width: 1100px;
       }
     }
