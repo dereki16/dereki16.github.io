@@ -148,6 +148,8 @@
       /* For mobile phones: */
       .header, .body, .proj, .game-desc, .footer {
         width: 100%;
+        white-space: normal;
+
       }
     }
 
@@ -155,6 +157,8 @@
       /* For bigger text: */
       .lc, .lci, .p1, .h1 {
         width: 100%;
+        line-height: 30px;
+        font-size: 3em;
       }
     }
 
@@ -175,6 +179,5 @@
         width: 100%;
         height: 100%;
         border: none;
-        white-space: normal;
       }
     }
