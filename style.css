@@ -14,7 +14,7 @@
     font-family: 'Roboto Slab', serif;
     min-height: 400px;
     margin-top: 3%;
-    white-space: nowrap;
+    display: flex;
   }
   
   footer {
