@@ -145,8 +145,8 @@
     @media only screen and (max-width:500px) {
       /* For mobile phones: */
       .header, .body, .proj, .par, .form, #lc, #lci, #p1, .h1, #nav {
-        width: 800px;
-        font-size: 150%;
+        width: 1400px;
+        font-size: 500%;
       }
     }
 
