@@ -145,7 +145,7 @@
     @media only screen and (max-width:500px) {
       /* For mobile phones: */
       .header, .body, .proj, .game-desc, .opong, .footer {
-        width: 50%;
+        width: 100%;
       }
     }
 
