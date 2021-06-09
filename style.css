@@ -114,7 +114,6 @@
 
   .game {
     position: relative;
-    overflow: hidden;
     padding-top: 40%;
     
 }
@@ -156,7 +155,7 @@
     }
     @media only screen and (max-width:500px) {
       /* For mobile phones: */
-      .header, .body, .par, .proj, .game-desc, .footer {
+      .header, .body, .proj, .game-desc, .footer {
         width: 100%;
       }
     }
@@ -169,9 +168,7 @@
     }
 
     @media only screen and (max-width:500px) {
-      /* For smaller gamescreen: */
-      .opong, .game {
-        width: 800px;
-        height: 350px;
+      .par {
+        width: 50%;
       }
     }
