@@ -153,7 +153,7 @@
     }
 
     @media only screen and (max-width:500px) {
-      .game, .par {
+      .game, .par-content {
         overflow: hidden;
         /* 16:9 aspect ratio */
         padding-top: 56.25%;
