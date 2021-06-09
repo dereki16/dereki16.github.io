@@ -97,7 +97,7 @@
   #lc {
       text-align: left;
       margin-left: 200px;
-      line-height: 40px;
+      line-height: 10px;
   }
 
   #lci {
@@ -144,7 +144,7 @@
     }
     @media only screen and (max-width:400px) {
       /* For mobile phones: */
-      .header, .body, .footer, .proj, .par, .form, #lc, #lci, #p1, .h1, #nav {
+      .header, .body, .footer, .proj, .par, .form, #lc, #lci, #p1, .h1 {
         width: 1100px;
         font-size: 500%;
       }
