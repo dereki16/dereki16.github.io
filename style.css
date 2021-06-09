@@ -157,7 +157,7 @@
       /* For bigger text: */
       .lc, .lci, .p1, .h1 {
         width: 100%;
-        line-height: 30px;
+        line-height: 50px;
         font-size: 3em;
       }
     }
@@ -168,6 +168,7 @@
         width: 100%;
         overflow: hidden;
         padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        float: none;
       }
       
       .opong, .par {
