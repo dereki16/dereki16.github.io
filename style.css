@@ -154,8 +154,7 @@
 
     @media only screen and (max-width:500px) {
       .game, .par-content {
-        overflow: auto;
-        /* 16:9 aspect ratio */
+        object-fit: scale-down; 
         padding-top: 56.25%;
         position: relative;
       }
