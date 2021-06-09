@@ -14,8 +14,7 @@
     font-family: 'Roboto Slab', serif;
     min-height: 400px;
     margin-top: 3%;
-    display: flex;
-    margin-left: 3%;
+    white-space: nowrap;
   }
   
   footer {
@@ -172,14 +171,7 @@
         float: none;
       }
 
-      .body, .footer {
-        position:absolute;
-        width: 100%;
-        overflow: hidden;
-        padding-top: 56.25%; /* 16:9 Aspect Ratio */
-        float: none;
-        display: flex;
-      }      
+
       
       .opong, .par {
         position: absolute;
