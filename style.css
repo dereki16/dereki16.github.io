@@ -158,7 +158,7 @@
 
     @media only screen and (max-width:500px) {
       /* For smaller gamescreen: */
-      .game, .opong, .par {
+      .opong {
         width: 70%;
       }
     }
