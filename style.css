@@ -55,7 +55,7 @@
     background-color: #4CAF50;
   }
   
-  .par p, #p{
+  .par p, .p{
     margin-left: 10%;
     margin-right: 10%;
     text-align: left;
@@ -108,7 +108,7 @@
   }
 
 
-  p1 {
+  .p1 {
       color:white;
       font-size: 50px;
       padding-left: 5px;
@@ -153,7 +153,7 @@
 
     @media only screen and (max-width:500px) {
       /* For bigger text: */
-      #lc, #lci, #p1, .h1 {
+      .lc, .lci, .p1, .h1 {
         width: 100%;
       }
     }
