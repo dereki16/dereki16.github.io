@@ -142,7 +142,7 @@
         width: 1100px;
       }
     }
-    @media only screen and (max-width:650px) {
+    @media only screen and (max-width:400px) {
       /* For mobile phones: */
       .header, .body, .footer, .proj, .par, .form, #lc, #lci, #p1, .h1 {
         width: 1100px;
@@ -151,9 +151,9 @@
     }
 
     @media only screen and (max-width:500px) {
-      /* For mobile phones: */
+      /* For bigger text: */
       #lc, #lci, #p1, .h1 {
         width: 1100px;
-        font-size: 300%;
+        font-size: 200%;
       }
     }
