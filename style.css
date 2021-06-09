@@ -146,7 +146,6 @@
       /* For mobile phones: */
       .header, .body, .proj, .par, .form, #lc, #lci, #p1, .h1, #nav {
         width: 800px;
-        font-size: 150%;
       }
     }
 
