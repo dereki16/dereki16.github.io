@@ -144,7 +144,7 @@
     }
     @media only screen and (max-width:500px) {
       /* For mobile phones: */
-      .header, .body, .proj, .par, .form, #lc, #lci, #p1, .h1, #nav {
+      .header, .body, .proj, .par, .form, #nav, .game {
         width: 800px;
       }
     }
@@ -153,6 +153,5 @@
       /* For bigger text: */
       #lc, #lci, #p1, .h1 {
         width: 1100px;
-        font-size: 150%;
       }
     }
