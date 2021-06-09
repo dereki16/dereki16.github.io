@@ -139,12 +139,12 @@
         padding: 0;
       }
       .body {
-        width: 100%;
+        width: 1100px;
       }
     }
     @media only screen and (max-width:500px) {
       /* For mobile phones: */
       .header, .body, .footer, .proj, .game-desc, .par, .form {
-        width: 100%;
+        width: 1100px;
       }
     }
