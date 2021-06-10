@@ -14,7 +14,6 @@
     font-family: 'Roboto Slab', serif;
     min-height: 400px;
     margin-top: 3%;
-    white-space: nowrap;
   }
   
   footer {
@@ -55,26 +54,30 @@
     background-color: #4CAF50;
   }
   
-  .par p, .p{
-    margin-left: 10%;
-    margin-right: 10%;
+  .par p{
+    margin-left: 200px;
+    margin-right: 200px;
     text-align: left;
-    font-size: 1.05em;
   }
   
   h1, h2, p, a {
     color: white;
   }
 
-  h2 {
-      font-size: 30px;
+  h1 {
+      font-size: 50px;
   }
   
   h3 {
       color: gray;
   }
 
-
+  iframe {
+    padding: 10px;
+    width: 875px;
+    height: 492px; 
+    border: 0;
+  }
   
   footer p {
     color: gray;
@@ -91,46 +94,34 @@
     padding-top: 60px;
   }
 
-  .lc {
+  #lc {
       text-align: left;
-      margin-left: 10%;
-      margin-right: 10%;
-      line-height: 20px;
-      font-size: 6em;
+      margin-left: 200px;
+      line-height: 10px;
   }
 
-  .lci {
+  #lci {
       text-align: left;
-      margin-left: 10%;
-      margin-right: 10%;
-      line-height: 20px;
-      font-size: 4.5em;
+      margin-left: 200px;
+      line-height: 60px;
+
   }
 
+  .same-line {
+    white-space: nowrap;
 
-  .p1 {
+  }
+
+  p1 {
       color:white;
       font-size: 50px;
       padding-left: 5px;
   }
 
-.opong {
-  width:1100px;
-  height:600px;
-  border:0
-}
-
   .game-desc {
     font-family: 'Electrolize', sans-serif;
 
   }
-
-  .grid {
-    display: grid;
-    height: 100px;
-    grid-template-rows: 30px 1fr;
-  }
-  
 
   @viewport {
     width: extend-to-zoom;
@@ -153,49 +144,8 @@
     }
     @media only screen and (max-width:500px) {
       /* For mobile phones: */
-      .header, .body, .proj, .game-desc, .footer {
-        width: 100%;
-      }
-
-      .par {
-        white-space: normal;
-      }
-    }
-
-    @media only screen and (max-width:500px) {
-      /* For bigger text: */
-      .lc, .lci, .p1, .h1 {
-        width: 100%;
-        line-height: 50px;
-        font-size: 3em;
-      }
-    }
-
-    @media only screen and (max-width:500px) {
-      .game {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-        padding-top: 56.25%; /* 16:9 Aspect Ratio */
-        float: none;
-      }
-
-
-      
-      .opong, .par {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
-
-      .grid {
-        display: grid;
-        height: 100px;
-        grid-template-rows: 30px 1fr;
+      .header, .body, .footer, .proj, .par, .form, #lc, #lci, #p1, .h1 {
+        width: 1100px;
+        font-size: 500%;
       }
     }
