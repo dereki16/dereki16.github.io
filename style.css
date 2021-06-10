@@ -124,20 +124,13 @@
     font-family: 'Electrolize', sans-serif;
 
   }
-  
-  #grid {
+
+  .grid {
     display: grid;
     height: 100px;
     grid-template-rows: 30px 1fr;
   }
   
-  #areaA {
-    background-color: lime;
-  }
-  
-  #areaB {
-    background-color: yellow;
-  }
 
   @viewport {
     width: extend-to-zoom;
@@ -196,5 +189,11 @@
         width: 100%;
         height: 100%;
         border: none;
+      }
+
+      .grid {
+        display: grid;
+        height: 100px;
+        grid-template-rows: 30px 1fr;
       }
     }
