@@ -155,7 +155,10 @@
       /* For mobile phones: */
       .header, .body, .proj, .game-desc, .footer {
         width: 100%;
+      }
 
+      .par {
+        white-space: normal;
       }
     }
 
