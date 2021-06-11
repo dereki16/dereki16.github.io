@@ -17,13 +17,7 @@ body {
   white-space: nowrap;
 }
 
-body {
-  position:absolute;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
-  float: none;
-  display: flex;
-}     
+  
 
 footer {
   position: absolute;
@@ -35,7 +29,7 @@ footer {
   bottom: 0;
 }
 
-#nav{
+.nav{
   border: 1px solid #000;
   border-width: 1px 0;
   margin: 0;
@@ -214,4 +208,5 @@ a
       min-height: 300px;
       white-space: normal;
     }
+    
   }
