@@ -16,6 +16,15 @@
     margin-top: 3%;
     white-space: nowrap;
   }
+
+  .body, .footer {
+    position:absolute;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    float: none;
+    display: flex;
+  }     
   
   footer {
     min-height: 100px;
