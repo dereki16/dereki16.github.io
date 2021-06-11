@@ -12,7 +12,7 @@
     text-align: center;
     font-size: 1.25em;
     font-family: 'Roboto Slab', serif;
-    min-height: 400px;
+    min-height: 100px;
     margin-top: 3%;
     white-space: nowrap;
   }
@@ -191,7 +191,7 @@ a
 
 
       
-      .opong, .par {
+      .opong {
         position: absolute;
         top: 0;
         left: 0;
@@ -206,5 +206,10 @@ a
         display: grid;
         height: 100px;
         grid-template-rows: 30px 1fr;
+      }
+
+      .par {
+        min-height: 300px;
+
       }
     }
