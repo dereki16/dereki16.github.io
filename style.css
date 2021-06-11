@@ -215,6 +215,6 @@ a
 
       .par {
         min-height: 300px;
-        white-space: nowrap;
+        white-space: normal;
       }
     }
