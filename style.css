@@ -17,7 +17,7 @@
     white-space: nowrap;
   }
 
-  .body, .footer {
+  .body, .footer, .par, .game, .game-desc, .opong, .proj {
     position:absolute;
     width: 100%;
     overflow: hidden;
