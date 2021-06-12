@@ -30,7 +30,7 @@ body {
 .topnav a {
   position: sticky;
   top: 0;
-  float: left;
+  float: right;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 160px;
@@ -39,7 +39,7 @@ body {
 }
 
 .topnav a:hover {
-  background-color: black;
+  background-color: #003622;
   color: white;
 }
 
@@ -48,11 +48,22 @@ body {
   /* background-color: #045aaa; */
   color: white;
 }
+
 .par p, .p{
   margin-left: 10%;
   margin-right: 10%;
   text-align: left;
   font-size: 1.05em;
+  white-space: normal;
+  width: auto;
+  display: flex;
+  font-family: 'Avenir', sans-serif;
+
+}
+
+.p {
+  font-size: 2em;
+
 }
 
 h1, h2, p, a {
@@ -65,6 +76,8 @@ h2 {
 
 h3 {
     color: gray;
+          line-height: 80%;
+
 }
 
 
@@ -90,6 +103,7 @@ footer p {
     margin-right: 10%;
     line-height: 20px;
     font-size: 6em;
+
 }
 
 .lci {
@@ -98,6 +112,8 @@ footer p {
     margin-right: 10%;
     line-height: 20px;
     font-size: 4.5em;
+    font-family: 'Avenir', sans-serif;
+
 }
 
 
@@ -169,7 +185,7 @@ a
     .topnav a {
       position: sticky;
       top: 0;
-      float: left;
+      float: right;
       color: #f2f2f2;
       text-align: center;
       padding: 14px 40px;
