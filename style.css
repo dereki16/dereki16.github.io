@@ -17,7 +17,6 @@ body {
   white-space: normal;
 }
 
-
 .topnav {
   position: sticky;
   top: 0;
@@ -45,7 +44,6 @@ body {
 
 .topnav a.active {
   background-color: #04AA6D;
-  /* background-color: #045aaa; */
   color: white;
 }
 
@@ -58,12 +56,10 @@ body {
   width: auto;
   display: flex;
   font-family: 'Avenir', sans-serif;
-
 }
 
 .p {
   font-size: 2em;
-
 }
 
 h1, h2, p, a {
@@ -71,16 +67,13 @@ h1, h2, p, a {
 }
 
 h2 {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 h3 {
-    color: gray;
-          line-height: 80%;
-
+  color: gray;
+  line-height: 80%;
 }
-
-
 
 footer p {
   color: gray;
@@ -103,7 +96,6 @@ footer p {
     margin-right: 10%;
     line-height: 20px;
     font-size: 6em;
-
 }
 
 .lci {
@@ -116,7 +108,6 @@ footer p {
 
 }
 
-
 .p1 {
     color:white;
     font-size: 50px;
@@ -128,18 +119,53 @@ width:1100px;
 height:600px;
 border:0
 }
-a
+
 .game-desc {
   font-family: 'Electrolize', sans-serif;
-
 }
 
-.grid {
-  display: grid;
-  height: 100px;
-  grid-template-rows: 30px 1fr;
+/* Contact page */
+* {box-sizing: border-box;
 }
 
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+textarea, input {
+  background-color: #003622;
+  color: white;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #003622;
+}
+
+.container {
+  border-radius: 5px;
+  padding: 75px;
+  width: 750px;
+  margin: auto;
+  color:white;
+  text-align: left;
+  font-family: 'Avenir', sans-serif;
+}
 
 @viewport {
   width: extend-to-zoom;
@@ -160,27 +186,27 @@ a
       width: 1100px;
     }
   }
+  
   @media only screen and (max-width:500px) {
     /* For mobile phones: */
     .header, .body, .proj, .game-desc, .footer {
       width: 100%;
     }
 
-    .par {
-      white-space: normal;
+    footer {
+      margin-top: 2%;
+      height: 50;
+      width: 100%;
+      text-align: center;
+      font-size: 0.8em;
+      bottom: 0;
     }
-  }
 
-  @media only screen and (max-width:500px) {
-    /* For bigger text: */
     .lc, .lci, .p1, .h1 {
       width: 100%;
       line-height: 50px;
       font-size: 3em;
     }
-  }
-
-  @media only screen and (max-width:500px) {
 
     .topnav a {
       position: sticky;
@@ -193,6 +219,12 @@ a
       font-size: 17px;
     }
 
+    .par {
+      white-space: normal;
+      min-height: 300px;
+      white-space: normal;
+    }
+
     .game {
       position: relative;
       width: 100%;
@@ -200,8 +232,6 @@ a
       float: none;
     }
 
-
-    
     .opong {
       position: absolute;
       top: 0;
@@ -213,27 +243,4 @@ a
       border: none;
     }
 
-    .grid {
-      display: grid;
-      height: 100px;
-      grid-template-rows: 30px 1fr;
-    }
-
-    .par {
-      min-height: 300px;
-      white-space: normal;
-    }
-    
-      
-
-footer {
-  margin-top: 2%;
-  height: 50;
-  width: 100%;
-  text-align: center;
-  font-size: 0.8em;
-  bottom: 0;
-}
-
-    
   }
