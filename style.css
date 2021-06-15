@@ -241,10 +241,12 @@ input[type=submit]:hover {
     .container {
       padding-left: 0px !important;
       padding-right: 0px !important;
-      height: 20px !important;
-      -webkit-appearance: none !important;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      opacity: 1;
     }
-
+    
     .opong {
       position: absolute;
       top: 0;
