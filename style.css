@@ -170,6 +170,7 @@ input[type=submit]:hover {
   text-align: left;
   font-family: 'Avenir', sans-serif;
   -webkit-appearance: none;
+
 }
 
 @viewport {
@@ -194,7 +195,7 @@ input[type=submit]:hover {
   
   @media only screen and (max-width:500px) {
     /* For mobile phones: */
-    .header, .body, .proj, .game-desc, .footer, .container {
+    .header, body, .proj, .game-desc, .footer, .container {
       width: 100%;
       overflow-x: hidden;
     }
@@ -231,7 +232,7 @@ input[type=submit]:hover {
       white-space: normal;
     }
 
-    .game, .container {
+    .game {
       position: relative;
       width: 100%;
       padding-top: 56.25%; /* 16:9 Aspect Ratio */
