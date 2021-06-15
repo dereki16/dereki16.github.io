@@ -195,7 +195,7 @@ input[type=submit]:hover {
   
   @media only screen and (max-width:500px) {
     /* For mobile phones: */
-    .header, body, .proj, .game-desc, .footer, .container {
+    .header, .body, .proj, .game-desc, .footer, .container {
       width: 100%;
       overflow-x: hidden;
     }
@@ -242,6 +242,9 @@ input[type=submit]:hover {
     .container {
       padding-left: 10px !important;
       padding-right: 10px !important;
+    }
+
+    .submit-button {
       -webkit-appearance: none !important;
       -moz-appearance: none;
       appearance: none;
