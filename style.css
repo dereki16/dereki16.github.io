@@ -95,7 +95,7 @@ footer p {
     margin-left: 10%;
     margin-right: 10%;
     line-height: 20px;
-    font-size: 6em;
+    font-size: 5.8em;
 }
 
 .lci {
@@ -194,8 +194,9 @@ input[type=submit]:hover {
   
   @media only screen and (max-width:500px) {
     /* For mobile phones: */
-    .header, .body, .proj, .game-desc, .footer {
+    .header, .body, .proj, .game-desc, .footer, .container {
       width: 100%;
+      overflow-x: hidden;
     }
 
     footer {
@@ -235,6 +236,7 @@ input[type=submit]:hover {
       width: 100%;
       padding-top: 56.25%; /* 16:9 Aspect Ratio */
       float: none;
+      -webkit-appearance: none;
     }
 
     .opong {
