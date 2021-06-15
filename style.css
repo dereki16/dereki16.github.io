@@ -241,7 +241,7 @@ input[type=submit]:hover {
     .container {
       padding-left: 10px !important;
       padding-right: 10px !important;
-      -webkit-appearance: none;
+      -webkit-appearance: none !important;
       -moz-appearance: none;
       appearance: none;
       opacity: 1;
