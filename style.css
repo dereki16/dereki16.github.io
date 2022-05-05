@@ -52,6 +52,18 @@ body {
   color: white;
 }
 
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .par p, .p{
   margin-left: 10%;
   margin-right: 10%;
