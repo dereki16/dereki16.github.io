@@ -15,18 +15,74 @@ body {
   min-height: 100px;
   margin-top: 3%;
   white-space: normal;
-  height: 100%;
+  height: 100vh;
   margin: 0;
   padding: 0;
   border: 0;
+  height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+.nav-toggle {
+  position:absolute;
+  cursor:pointer;
+  margin:.5em;
+  right:0;
+  width: 50px;
+  height: 50px;
+}
+
+.nav-menu {
+  background-color: rgb(29, 29, 29);
+  width: 100%;
+}
+
+.nav-menu li {
+  list-style: none;
+  display: none;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.2 rem;
+}
+
+#nav-checkbox {
+  display: none;
+}
+
+#nav-checkbox:checked ~ ul.nav-menu li {
+  display: block;
+  padding: 10px;
+}
+#nav-checkbox:checked ~ #topnav {
+  height: 200px;
+}
+
+#nav-checkbox:checked ~ label.nav-toggle .close {
+  display: block;
+}
+
+#nav-checkbox:checked ~ label.nav-toggle .menu {
+  display: none;
 }
 
 #topnav {
   overflow: hidden;
   background-color: rgb(29, 29, 29);
+  color: white;
+  z-index: 9999;
 }
 
-#topnav a {
+.nav-toggle {
+  color: green;
+}
+
+/* #topnav a {
   float: right;
   color: #f2f2f2;
   text-align: center;
@@ -43,6 +99,11 @@ body {
 #topnav a.active {
   background-color: #04AA6D;
   color: white;
+} */
+
+.fa fa-bars {
+  color: blue;
+  background: red;
 }
 
 .column {
@@ -50,6 +111,7 @@ body {
   width: 50%;
   padding: 10px;
 }
+
 
 .row::after {
   content: "";
@@ -139,6 +201,7 @@ border: none;
 .game2 {
   width: 1100px;
   height: 700px;
+  border: none;
 }
 
 .game-desc {
@@ -149,14 +212,16 @@ border: none;
   margin-top: -80px;
   width: 900px;
   height: 650px;
-  left: auto;
-  right: auto;
+  width: 100%;
+  height: auto;
 }
 
 .displayvid {
-  margin-top: -100px;
-  width: 1000px;
-  height: 800px;
+  margin-top: -50px;
+  max-width: 1000px;
+  max-height: 800px;
+  width: 100%;
+  height: auto;
 }
 
 .flex {
@@ -169,10 +234,12 @@ border: none;
   height: 100%;
 }
 
-.section-right {
-  padding-left: 50px;
-  padding-top: 100px;
+.section-right-text {
+  width: 75%;
+  margin-left: 300px;
+  margin-top: 100px;
 }
+ /* responsive box and sections and in there check */
 
 .dropdown {
   float: left;
@@ -239,6 +306,18 @@ border: none;
   text-decoration: none;
 }
 
+.btn-burger {
+  float: right;
+  border: none;
+  outline: none;
+  background: #04AA6D;
+  padding: 14px 20px;
+  font-size: 20px;
+  color: #ddd;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .slide-container {
   width: 100%;
   height: 50%;
@@ -247,7 +326,7 @@ border: none;
 
 .mySlides1, .mySlides2, .mySlides3, .mySlides4 {
   width: 100%;
-  height: 100%;
+  height: auto;
   width: 920px;
   height: 500px;
   object-fit: cover;
@@ -284,12 +363,6 @@ border: none;
   overflow: hidden;
   position: relative;
   z-index: -1;
-}
-
-#resume {
-  zoom: 2;
-  -webkit-transform: scale(2);
-  -webkit-transform-origin: 0 0;
 }
 
 #mtn {
@@ -419,16 +492,101 @@ input[type=submit]:hover {
   -webkit-appearance: none;
 }
 
+.filter-menu, .filter-close, svg {
+  background-color: red;
+  -webkit-mask-image: url(icon.svg);
+  mask-image: url(icon.svg);}
+
 @viewport {
   width: extend-to-zoom;
   zoom: 1.0;
 }
 
+
+
 @-ms-viewport {
   width: extend-to-zoom;
   zoom: 1.0;  }
 
-  @media only screen and (max-width:800px) {
+  @media screen and (min-width:560px) {
+    .nav-toggle {
+      display: none;
+    }
+    #topnav {
+      height: 50px;
+    }
+    .nav-menu {
+      margin-top: -35px;
+      overflow: hidden;
+      background-color: rgb(29, 29, 29);
+      width: 100%;
+      z-index: 9999;
+    }    
+    .nav-menu a {
+      float: right;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 24px 64px;
+      text-decoration: none;
+      font-size: 17px;
+      display: inline;
+    }
+    .nav-menu a:hover {
+      background-color: #003622;
+      color: white;
+    }
+    .nav-menu a.active {
+      background-color: #04AA6D;
+      color: white;
+    }
+    .nav-menu li {
+      display: block;
+    }
+  }
+
+  @media only screen and (max-width:1750px) {
+    .game-box {
+      width: 100%;
+      height: 100%;
+    }
+    .game {
+      width: 80%;
+      height: 80%;
+      margin-right: auto;
+    }
+    .game2 {
+      width: 80%;
+      height: 100%;
+      margin-right: auto;
+    }
+    .section-right-text {
+      width: 100%;
+      margin-left: -10px;
+    }
+  }
+
+  @media only screen and (max-width:1280px) {
+    .game-box {
+      width: 100%;
+      height: 100%;
+    }
+    .game {
+      width: 70%;
+      height: 70%;
+      margin-right: auto;
+    }
+    .game2 {
+      width: 70%;
+      height: 90%;
+      margin-right: auto;
+    }
+    .section-right-text {
+      width: 100%;
+      margin-left: -10px;
+    }
+  }
+
+  @media only screen and (max-width:960px) {
     /* For tablets: */
     .header {
       width: 80%;
@@ -436,6 +594,71 @@ input[type=submit]:hover {
     }
     .body {
       width: 1100px;
+    }
+    .column {
+      float: left;
+      width: 100%;
+      padding: 10px;
+    }
+    .vid {
+      width: 100%;
+      height: auto;
+      left: auto;
+      right: auto;
+      padding-top: 30px;
+    }
+    .mySlides1, .mySlides2, .mySlides3, .mySlides4, .container-contact, #mtn {
+      width: 100%;
+      height: 100%;
+    }
+    #resume-container {
+      width: 100%;
+      height: 50%;
+    }
+    #resume {
+      width: 95%;
+      height: 100%;
+    }
+    .section-left {
+      width: 100%;
+      height: 100%;
+    }
+    .section-right {
+      padding-left: 0%;
+      padding-top: 5%;
+    }
+
+    .displayvid {
+      margin-top: -10px;
+      width: 100%;
+      height: 100%;
+      left: auto;
+      right: auto;
+    }
+    .bold {
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: -150px;
+    }
+    .game-box {
+      width: 100%;
+      height: 100%;
+    }
+    .game {
+      width: 50%;
+      height: 50%;
+      margin-right: auto;
+    }
+    .game2 {
+      width: 50%;
+      height: 50%;
+      margin-right: auto;
+      margin-top: -20px;
+    }
+    .section-right-text {
+      width: 100%;
+      margin-left: -1px;
+      margin-top: -5px;
     }
   }
 
@@ -486,7 +709,7 @@ input[type=submit]:hover {
       line-height: 50px;
       font-size: 3em;
     }
-
+/* 
     .topnav a {
       position: sticky;
       top: 0;
@@ -496,8 +719,7 @@ input[type=submit]:hover {
       padding: 14px 40px;
       text-decoration: none;
       font-size: 17px;
-      z-index: 1;
-    }
+    } */
 
     .par {
       white-space: normal;
@@ -507,9 +729,16 @@ input[type=submit]:hover {
 
     .game-box {
       position: relative;
+      padding-top: 56.25%; 
+      overflow: hidden;
+    }
+
+    .game-box iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      padding-top: 56.25%; /* 16:9 Aspect Ratio */
-      float: none;
+      height: 100%;
     }
 
     .container {
@@ -523,17 +752,6 @@ input[type=submit]:hover {
       appearance: none;
       opacity: 1;
       overflow-x: hidden;
-    }
-
-    .game {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
     }
 
   }
