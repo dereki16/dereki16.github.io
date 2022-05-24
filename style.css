@@ -389,6 +389,16 @@ border: none;
           align-items: center;
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -25px;
+}
+
+.flex-center-link {
+  padding: 20px;
+}
+
 .icon-3d {
   padding: 10px;
   -webkit-animation: icon3d 200ms 10;
