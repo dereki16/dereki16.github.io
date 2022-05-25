@@ -371,7 +371,7 @@ border: none;
 
 .flex-center {
   width: 100%;
-  min-height: 50vh;
+  min-height: 30vh;
   
   background: #000;
   
@@ -396,11 +396,17 @@ border: none;
 }
 
 .flex-center-link {
-  padding: 20px;
+  padding: 15px;
+  padding-left: 25px;
+}
+
+.header-project {
+  display: flex;
+  margin-left: 0;
 }
 
 .icon-3d {
-  padding: 10px;
+  padding: 15px;
   -webkit-animation: icon3d 200ms 10;
   animation: icon3d 200ms 10;
   color: #fff;
