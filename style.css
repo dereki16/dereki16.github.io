@@ -40,6 +40,10 @@ html {
   width: 100%;
 }
 
+.nav-menu a:hover {
+  color: #04AA6D;
+}
+
 .nav-menu li {
   list-style: none;
   display: none;
@@ -794,6 +798,16 @@ input[type=submit]:hover {
 
     .icon-3d {
       padding: 10px;
+    }
+
+    .header-project {
+      display: flex;
+      margin-left: 0;
+      font-size: 15px;
+    }
+    
+    .header-project h2 {
+      font-size: 25px;
     }
   
   }
