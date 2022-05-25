@@ -320,6 +320,7 @@ border: none;
   width: 100%;
   height: 50%;
   object-fit: cover;
+  overflow: hidden;
 }
 
 .mySlides1, .mySlides2, .mySlides3, .mySlides4 {
@@ -564,13 +565,13 @@ input[type=submit]:hover {
       height: 100%;
     }
     .game {
-      width: 80%;
-      height: 80%;
+      width: 100%;
+      height: 400px;
       margin-right: auto;
     }
     .game2 {
-      width: 80%;
-      height: 100%;
+      width: 100%;
+      height: 400px;
       margin-right: auto;
     }
     .section-right-text {
@@ -585,13 +586,13 @@ input[type=submit]:hover {
       height: 100%;
     }
     .game {
-      width: 70%;
-      height: 70%;
+      width: 100%;
+      height: 250px;
       margin-right: auto;
     }
     .game2 {
-      width: 70%;
-      height: 90%;
+      width: 100%;
+      height: 250px;
       margin-right: auto;
     }
     .section-right-text {
@@ -659,13 +660,13 @@ input[type=submit]:hover {
       height: 100%;
     }
     .game {
-      width: 50%;
-      height: 50%;
+      width: 100%;
+      height: 450px;
       margin-right: auto;
     }
     .game2 {
-      width: 50%;
-      height: 50%;
+      width: 100%;
+      height: 450px;
       margin-right: auto;
       margin-top: -20px;
     }
@@ -673,6 +674,20 @@ input[type=submit]:hover {
       width: 100%;
       margin-left: -1px;
       margin-top: -5px;
+    }
+  }
+
+  @media only screen and (max-width: 750px) {
+    .game {
+      width: 100%;
+      height: 300px;
+      margin-right: auto;
+    }
+    .game2 {
+      width: 100%;
+      height: 300px;
+      margin-right: auto;
+      margin-top: -20px;
     }
   }
 
