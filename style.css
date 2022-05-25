@@ -425,7 +425,6 @@ border: none;
   -webkit-animation: icon3d 200ms 10;
   animation: icon3d 200ms 10;
   color: #fff;
-  
 
 }
 
@@ -759,17 +758,6 @@ input[type=submit]:hover {
       line-height: 50px;
       font-size: 3em;
     }
-/* 
-    .topnav a {
-      position: sticky;
-      top: 0;
-      float: right;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 40px;
-      text-decoration: none;
-      font-size: 17px;
-    } */
 
     .par {
       white-space: normal;
@@ -804,4 +792,8 @@ input[type=submit]:hover {
       overflow-x: hidden;
     }
 
+    .icon-3d {
+      padding: 10px;
+    }
+  
   }
