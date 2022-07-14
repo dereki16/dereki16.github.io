@@ -523,7 +523,7 @@ input[type=submit]:hover {
 
 }
 
-.container-contact{
+#container-contact{
   width: 750px;
   border-radius: 5px;
   padding-top: 10px;
@@ -653,7 +653,7 @@ input[type=submit]:hover {
       right: auto;
       padding-top: 30px;
     }
-    .mySlides1, .mySlides2, .mySlides3, .mySlides4, .container-contact, #mtn {
+    .mySlides1, .mySlides2, .mySlides3, .mySlides4, #container-contact, #mtn {
       width: 100%;
       height: 100%;
     }
