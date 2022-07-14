@@ -9,4 +9,7 @@ form.addEventListener('submit', function(event){
     if (tob.length > 0) {
         event.preventDefault();
     }
+    else {
+        document.getElementById("contact-form").submit();
+    }
 })
