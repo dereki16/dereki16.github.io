@@ -41,7 +41,7 @@ html {
 }
 
 .nav-menu a:hover {
-  color: #04AA6D;
+  color: #18658f;
 }
 
 .nav-menu li {
@@ -83,7 +83,7 @@ html {
 }
 
 .nav-toggle {
-  color: green;
+  color: rgb(50, 101, 158);
 }
 
 /* #topnav a {
@@ -116,6 +116,18 @@ html {
   padding: 10px;
 }
 
+.single-column {
+  width: 60%;
+  padding: 10px;
+  margin: auto;
+  border-radius: 15px;
+}
+
+#UNCONTAINED, #VATS, #Fragmented, #O-PONG {
+  padding: 10px;
+  border-radius: 15px;
+  background-color:#161616;
+}
 
 .row::after {
   content: "";
@@ -155,6 +167,17 @@ h2 {
 h3 {
   color: gray;
   line-height: 80%;
+}
+
+.con {
+  color:white;
+  font-weight: bold;
+  font-size: xx-large;
+  margin: auto;
+}
+
+.con-p p{
+  color:rgb(202, 202, 202);
 }
 
 footer p {
@@ -236,8 +259,12 @@ border: none;
   height: 100%;
 }
 
+.section-right {
+  margin-top: -50px;
+}
+
 .section-right-text {
-  width: 75%;
+  width: 60%;
   margin-left: 300px;
   margin-top: 100px;
 }
@@ -299,7 +326,7 @@ border: none;
 .btn{
   border: none;
   outline: none;
-  background: #04AA6D;
+  background-color:  #18658f;
   padding: 10px 30px;
   font-size: 20px;
   color: #ddd;
@@ -312,7 +339,7 @@ border: none;
   float: right;
   border: none;
   outline: none;
-  background: #04AA6D;
+  background-color: #18658f;
   padding: 14px 20px;
   font-size: 20px;
   color: #ddd;
@@ -336,10 +363,15 @@ border: none;
   padding-left: 15px;
 }
 
+.responsibilities {
+  text-align: left;
+  padding-left: 5%;
+}
+
 .w3-button {
   border: none;
   outline: none;
-  background: #04AA6D;
+  background-color: #18658f;
   color: #ddd;
   cursor: pointer;
   padding: 5px 20px;
@@ -348,22 +380,22 @@ border: none;
 }
 
 .w3-button:hover {
-  background: #003622;
+  background: #023568;
 }
 
 .btn:hover{
-  background:#003622
+  background:#023568
 }
 
 .projlink:hover {
-  color:#04AA6D
+  color: #18658f;
 }
 
 #wrap {
   width: 1500px;
   height: 2000px;
   padding: 0;
-  overflow: hidden;
+  overlow: hidden;
   position: relative;
   z-index: -1;
 }
@@ -422,6 +454,7 @@ border: none;
 .header-project {
   display: flex;
   margin-left: 0;
+  margin-top: -50px;
 }
 
 .icon-3d {
@@ -477,26 +510,28 @@ input[type=text], select, textarea {
 }
 
 input[type=text], select, textarea {
-  border: 1px solid #04AA6D;
+  border: 1px solid #18658f;
 }
 
 input:-webkit-autofill {
-  -webkit-box-shadow:0 0 0 50px #003622 inset;  
+  -webkit-box-shadow:0 0 0 50px #023568 inset;  
   -webkit-text-fill-color: rgb(255, 255, 255);
 }
 
 input:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0 50px #003622 inset;
+  -webkit-box-shadow: 0 0 0 50px #023568 inset;
   -webkit-text-fill-color: rgb(255, 255, 255);
 }
 
 textarea, input {
-  background-color: #003622;
+  background-color: #023568;
   color: white;
 }
 
 input[type=submit] {
-  background-color: #04AA6D;
+  background-color: #18658f;
+  /* background-color: #04AA6D; original */
+
   color: white;
   padding: 12px 20px;
   border: none;
@@ -505,7 +540,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #003622;
+  background-color: #023568;
 }
 
 .container {
@@ -578,11 +613,11 @@ input[type=submit]:hover {
       display: inline;
     }
     .nav-menu a:hover {
-      background-color: #003622;
+      background-color: #023568;
       color: white;
     }
     .nav-menu a.active {
-      background-color: #04AA6D;
+      background-color: #18658f;
       color: white;
     }
     .nav-menu li {
@@ -725,14 +760,14 @@ input[type=submit]:hover {
   }
 
   ::-webkit-scrollbar-thumb {
-    background:  hsl(120 100% 10% / 1);
-    border: .15em solid hsl(160 100% 35% / 1);
+    background:  rgb(0, 29, 51);
+    border: .15em solid rgb(9, 73, 113);
     border-radius: 100vw;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(120 100% 10% / .8);
-    border: .15em solid hsl(160 100% 25% / 1);
+    background:  rgb(0, 29, 51);
+    border: .15em solid rgb(4, 53, 83);
   }
 
   @supports (scrollbar-color: red blue){
