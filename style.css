@@ -172,7 +172,7 @@ h3 {
 .con {
   color:white;
   font-weight: bold;
-  font-size: xx-large;
+  font-size: 1.5em;
   margin: auto;
 }
 
@@ -387,6 +387,10 @@ border: none;
   background:#023568
 }
 
+.projlink {
+  font-size: 1.7em;
+}
+
 .projlink:hover {
   color: #18658f;
 }
@@ -448,7 +452,12 @@ border: none;
 
 .flex-center-link {
   padding: 15px;
-  padding-left: 25px;
+  margin-bottom: -100px;
+
+  margin-top: 1px;
+  position: absolute;
+  margin: 0 auto;
+  right: 20%;
 }
 
 .header-project {
@@ -665,21 +674,41 @@ input[type=submit]:hover {
       width: 100%;
       margin-left: -10px;
     }
+    .single-column {
+      width: 70%;
+    }
+    .flex-center-link {
+      right: 15%;
+    }
   }
 
-  @media only screen and (max-width:960px) {
+  @media only screen and (max-width:1000px) {
     /* For tablets: */
     .header {
-      width: 80%;
-      padding: 0;
+      /* width: 80%;
+      padding: 0; */
     }
     .body {
-      width: 1100px;
+      /* width: 1100px; */
+    }
+    .lc, .lci, .p1 {
+      width: 100%;
+      line-height: 50px;
+      font-size: 3.5em;
+    }
+    .projlink {
+      font-size: 1.5em;
     }
     .column {
       float: left;
       width: 100%;
       padding: 10px;
+    }
+    .single-column {
+      width: 80%;
+    }
+    .flex-center-link {
+      right: 10%;
     }
     .vid {
       width: 100%;
@@ -748,6 +777,20 @@ input[type=submit]:hover {
       margin-right: auto;
       margin-top: -20px;
     }
+    .single-column {
+      width: 90%;
+    }
+    .flex-center-link {
+      right: 0%;
+    }
+    .lc, .lci, .p1 {
+      width: 100%;
+      line-height: 50px;
+      font-size: 3.2em;
+    }
+    .projlink {
+      font-size: 1.3em;
+    }
   }
 
   ::-webkit-scrollbar {
@@ -778,7 +821,7 @@ input[type=submit]:hover {
   
   @media only screen and (max-width:500px) {
     /* For mobile phones: */
-    .header, .body, .proj, .game-desc, .footer, .container {
+    .header, .body, .proj, .game-desc, .footer, .container, .single-column {
       width: 100%;
       overflow-x: hidden;
     }
@@ -792,10 +835,14 @@ input[type=submit]:hover {
       bottom: 0;
     }
 
-    .lc, .lci, .p1, .h1 {
+    .lc, .lci, .p1 {
       width: 100%;
       line-height: 50px;
       font-size: 3em;
+    }
+
+    .projlink {
+      font-size: 1.1em;
     }
 
     .par {
@@ -818,7 +865,7 @@ input[type=submit]:hover {
       height: 100%;
     }
 
-    .container {
+    .container, .proj {
       padding-left: 10px !important;
       padding-right: 10px !important;
     }
