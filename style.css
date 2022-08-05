@@ -866,12 +866,16 @@ input[type=submit]:hover {
       font-size: 2.5em;
     }
 
-    .projlink, .title {
+    .projlink {
       font-size: 0.8em;
     }
 
-    .con {
+    .title {
       font-size: 1.25em;
+    }
+
+    .con {
+      font-size: 1.3em;
     }
 
     .par {
@@ -915,10 +919,6 @@ input[type=submit]:hover {
       display: flex;
       margin-left: 0;
       font-size: 15px;
-    }
-    
-    .header-project h2 {
-      font-size: 25px;
     }
 
     .flex-center-link, .flex-center-link-2, .flex-center-link-3 {
