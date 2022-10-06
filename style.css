@@ -141,9 +141,20 @@ html {
   clear: both;
 }
 
-.par p, .p{
-  margin-left: 10%;
-  margin-right: 10%;
+.p, .par p {
+  margin-left: 25%;
+  margin-right: 20%;
+  text-align: left;
+  font-size: 1.05em;
+  white-space: normal;
+  width: auto;
+  display: flex;
+  font-family: 'Avenir', sans-serif;
+} 
+
+.par-2 p {
+  margin-left: 8%;
+  margin-right: 8%;
   text-align: left;
   font-size: 1.05em;
   white-space: normal;
@@ -157,9 +168,9 @@ html {
   font-size: 2em;
 }
 
-pc {
+#pc {
 text-align: center;
-color:white;
+color:blue;
 }
 
 h1, h2, p, a {
@@ -175,7 +186,7 @@ h2 {
 }
 
 h3 {
-  color: gray;
+  color: white;
   line-height: 80%;
 }
 
@@ -204,25 +215,47 @@ footer p {
 
 .lc {
     text-align: left;
-    margin-left: 10%;
+    margin-left: 25%;
     margin-right: 10%;
-    line-height: 20px;
-    font-size: 5.8em;
+    line-height: 10px;
+    font-size: 4.5em;
+    color: white
 }
 
 .lci {
     text-align: left;
-    margin-left: 10%;
+    margin-left: 25%;
     margin-right: 10%;
-    line-height: 20px;
+    line-height: 10px;
     font-size: 4.5em;
     font-family: 'Avenir', sans-serif;
     color:#18658f;
 
 }
-.par {
-  text-align: justify;
+
+.p {
+  color:rgb(202, 202, 202);
 }
+.pi {
+  color: rgb(159, 159, 159);
+}
+
+hr {
+  border: 2px solid #175f85;
+  border-radius: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+
+}
+
+/* .par-content {
+  text-align: center;
+  margin: auto;
+}
+
+.p, .lc, .lci, .pi {
+  text-align: center;
+} */
 
 .title {
   padding-left: 0.8%;
@@ -744,9 +777,13 @@ input[type=submit]:hover {
       font-size: 1.5em;
     }
     .lc, .lci {
-      width: 100%;
-      line-height: 50px;
+      margin-left: 5%;
+      margin-right: 5%;
       font-size: 3.5em;
+    }
+    .p, .par p {
+      margin-left: 5%;
+      margin-right: 5%;
     }
     .projlink {
       font-size: 1.5em;
@@ -769,10 +806,10 @@ input[type=submit]:hover {
       right: auto;
       padding-top: 30px;
     }
-    .mySlides1, .mySlides2, .mySlides3, .mySlides4, #container-contact, #mtn {
+    /* .mySlides1, .mySlides2, .mySlides3, .mySlides4, #container-contact, #mtn {
       width: 100%;
       height: 100%;
-    }
+    } */
     .section-left {
       width: 100%;
       height: 100%;
@@ -838,6 +875,12 @@ input[type=submit]:hover {
     border: .15em solid rgb(4, 53, 83);
   }
 
+  ::-webkit-scrollbar-thumb:active { 
+    background:  rgb(0, 17, 30);
+    border: .15em solid rgb(3, 39, 62);
+
+} 
+
   @supports (scrollbar-color: red blue){
     *{
       scrollbar-color: red blue;
@@ -861,7 +904,6 @@ input[type=submit]:hover {
     }
 
     .lc, .lci {
-      width: 100%;
       line-height: 50px;
       font-size: 2.5em;
     }
@@ -878,11 +920,11 @@ input[type=submit]:hover {
       font-size: 1.3em;
     }
 
-    .par {
+    /* .par {
       white-space: normal;
       min-height: 300px;
       white-space: normal;
-    }
+    } */
 
     .game-box {
       position: relative;

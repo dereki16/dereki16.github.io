@@ -4,7 +4,6 @@ var tob = document.getElementById("yenoh");
 var text = document.getElementById("tex");
 
 
-text.style.display = "none";
 form.addEventListener('submit', function(event){
     if (tob.value.length > 0) {
         event.preventDefault();
