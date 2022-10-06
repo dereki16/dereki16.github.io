@@ -1,4 +1,3 @@
 # dereki16.github.io
 
-# Website portfolio of my projects
-derekiniguez.com
+# [Website Portfolio](derekiniguez.com) of my projects
