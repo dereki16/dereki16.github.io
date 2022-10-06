@@ -219,8 +219,8 @@ footer p {
     margin-right: 10%;
     line-height: 10px;
     font-size: 4.5em;
-    color: white
-}
+    color:rgb(217, 253, 255);
+  }
 
 .lci {
     text-align: left;
@@ -234,7 +234,7 @@ footer p {
 }
 
 .p {
-  color:rgb(202, 202, 202);
+  color:rgb(148, 156, 156);
 }
 .pi {
   color: rgb(159, 159, 159);
@@ -652,7 +652,7 @@ input[type=submit]:hover {
 }
 
 #container-contact{
-  width: 750px;
+  width: 850px;
   border-radius: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -664,6 +664,10 @@ input[type=submit]:hover {
   text-align: left;
   font-family: 'Avenir', sans-serif;
   -webkit-appearance: none;
+}
+
+#contact-form {
+  width: 100%;
 }
 
 .filter-menu, .filter-close, svg {
@@ -715,6 +719,7 @@ input[type=submit]:hover {
     .nav-menu li {
       display: block;
     }
+
   }
 
   @media only screen and (max-width:1750px) {
@@ -742,6 +747,10 @@ input[type=submit]:hover {
   }
 
   @media only screen and (max-width:1280px) {
+    .lc, .lci {
+      font-size: 4em;
+      line-height: 10px;
+    }
     .game-box {
       width: 100%;
       height: 100%;
@@ -780,6 +789,7 @@ input[type=submit]:hover {
       margin-left: 5%;
       margin-right: 5%;
       font-size: 3.5em;
+      line-height: 10px;
     }
     .p, .par p {
       margin-left: 5%;
@@ -853,6 +863,9 @@ input[type=submit]:hover {
     .flex-center-link-2, .flex-center-link-3 {
       right:10%;
     }
+    #container-contact {
+      width: 100%;
+    }
   }
 
   ::-webkit-scrollbar {
@@ -903,9 +916,13 @@ input[type=submit]:hover {
       bottom: 0;
     }
 
+    .p {
+      font-size: 1.2em;
+    }
+
     .lc, .lci {
-      line-height: 50px;
-      font-size: 2.5em;
+      line-height: 10px;
+      font-size: 2.2em;
     }
 
     .projlink {
