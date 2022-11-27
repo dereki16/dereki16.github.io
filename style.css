@@ -108,6 +108,10 @@ html {
   color: white;
 } */
 
+.fa {
+  text-decoration: none;
+}
+
 .fa fa-bars {
   color: blue;
   background: red;
@@ -118,6 +122,76 @@ html {
   width: 50%;
   padding: 10px;
   text-align: justify;
+}
+
+.grid {
+  padding-left: 20%;
+  padding-right: 20%;
+}
+.app-grid {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  /* background-color: #2196F3; */
+  padding: 10px;
+  justify-items: center;
+  grid-gap: 10px 10px;
+}
+.app-container-1 {
+  display: grid;
+  grid-template-columns: 60% 40% ;
+  /* background-color: #2196F3; */
+  padding: 10px;
+  justify-items: center;
+  grid-gap: 10px 10px;
+}
+.app-container-2 {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  /* background-color: #2196F3; */
+  padding: 10px;
+  justify-items: center;
+  grid-gap: 10px 10px;
+}
+.grid-item, .app-item {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  background-color:#161616;
+  text-decoration: none;
+  height: 100%;
+
+  margin: auto;
+}
+
+.grid-item:hover {
+  background-color:rgb(0, 17, 30);;
+
+}
+
+.grid-p {
+  font-size: 15px;
+}
+
+#project-selection {
+  display: flex;
+  justify-content: center;
+  padding-left: 35%;
+  padding-right: 35%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.column-row {
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .single-column {
@@ -440,7 +514,22 @@ border: none;
   font-size: 1.7em;
 }
 
-.projlink:hover {
+.projlink-sm {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.projlink:hover, .projlink-sm:hover {
+  color: #18658f;
+}
+
+.sm-img {
+  width: 100%;
+  height: 300px;
+}
+
+.sm-img:hover, .projlink-sm:hover {
+  filter: sepia(100%) saturate(300%) brightness(70%) hue-rotate(180deg);
   color: #18658f;
 }
 
@@ -772,6 +861,16 @@ input[type=submit]:hover {
     .single-column {
       width: 70%;
     }
+    .app-container-1 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .app-container-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .column-row {
+      padding-left: 15%;
+      padding-right: 15%;
+    }
     .flex-center-link {
       right: 15%;
     }
@@ -803,8 +902,28 @@ input[type=submit]:hover {
       width: 100%;
       padding: 10px;
     }
+    .th-column {
+      float: left;
+      width: 100%;
+      padding: 10px;
+    }
     .single-column {
       width: 80%;
+    }
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .grid {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+    .app-grid {
+      padding-left: 2.5%;
+      padding-right: 2.5%;
+    }
+    .column-row {
+      padding-left: 10%;
+      padding-right: 10%;
     }
     .flex-center-link {
       right: 10%;
@@ -902,9 +1021,29 @@ input[type=submit]:hover {
   
   @media only screen and (max-width:750px) {
     /* For mobile phones: */
-    .header, .body, .proj, .game-desc, .footer, .container, .single-column {
+    .header, .body, .proj, .game-desc, .footer, .container, .single-column, .th-column {
       width: 100%;
       overflow-x: hidden;
+    }
+
+    .grid {
+      padding-left: 2.5%;
+      padding-right: 2.5%;
+    }
+
+    .grid-container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .app-container-1 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .app-container-2 {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .column-row {
+      padding-left: 0%;
+      padding-right: 0%;
     }
 
     footer {
