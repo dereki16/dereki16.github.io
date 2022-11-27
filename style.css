@@ -170,8 +170,7 @@ html {
 }
 
 .grid-item:hover {
-  background-color:rgb(0, 17, 30);;
-
+  background-color:rgb(0, 17, 30);
 }
 
 .grid-p {
@@ -467,6 +466,20 @@ border: none;
   text-decoration: none;
 }
 
+.btn-type{
+  border: none;
+  outline: none;
+  background-color:  #18658f;
+  border: 1px black solid;
+  border-radius: 1px;
+  padding: 10px 90px;
+  font-size: 20px;
+  color: #ddd;
+  cursor: pointer;
+  margin: 10px auto;
+  text-decoration: none;
+}
+
 .slide-container {
   width: 100%;
   height: 50%;
@@ -506,7 +519,7 @@ border: none;
   background: #023568;
 }
 
-.btn:hover{
+.btn:hover, .btn-type:hover{
   background:#023568
 }
 
@@ -861,6 +874,10 @@ input[type=submit]:hover {
     .single-column {
       width: 70%;
     }
+    .grid {
+      padding-left: 15%;
+      padding-right: 15%;
+    }
     .app-container-1 {
       grid-template-columns: repeat(1, 1fr);
     }
@@ -985,6 +1002,9 @@ input[type=submit]:hover {
     #container-contact {
       width: 100%;
     }
+    .btn-type {
+      padding: 10px 60px;
+    }
   }
 
   ::-webkit-scrollbar {
@@ -1026,9 +1046,9 @@ input[type=submit]:hover {
       overflow-x: hidden;
     }
 
-    .grid {
-      padding-left: 2.5%;
-      padding-right: 2.5%;
+    .grid, .app-grid {
+      padding-left: 0%;
+      padding-right: 0%;
     }
 
     .grid-container {
@@ -1127,5 +1147,8 @@ input[type=submit]:hover {
   
     .flex-center-link-2, .flex-center-link-3 {
       right:2.5%;
+    }
+    .btn-type {
+      padding: 10px 30px;
     }
 }
