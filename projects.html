@@ -8,9 +8,8 @@
     <link rel="icon" href="img/site-icon.png">
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;400;900&display=swap" rel="stylesheet">
-    <link rel="preload" href="https://youtube.com">
-    <link rel="preload" href="https://simmer.io">
-    <link href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="preconnect" href="https://youtube.com">
+    <link rel="preconnect" href="https://simmer.io">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
@@ -36,14 +35,16 @@
   <body>
     <br>
     <h2>Project Portfolio</h2>
-    <hr><br>
+    <div id="UNCONTAINED"></div><br>
+    <hr>
+    <br><br>
 
     <div class="container">
-      <div id="UNCONTAINED" style="background-color:#161616;">
-        <br><br><br>
+      <div id="game1" style="background-color:#161616;">
+        <br><br>
         <div class="row">
           <div class="header-project">
-            <h2 class="title">UNCONTAINED VR (Unity C#)</h2>
+            <h2 class="title">UNCONTAINED VR (Unity C#)</h2><br>
             <div class="flex-center-link-2">
               <a href="https://github.com/dereki16/Uncontained-VR"><i class="fa fa-github fa-2x icon-3d" src="img/git.png"></i></a>
             </div>
@@ -51,7 +52,7 @@
 
           <div class="column">
             <section class="section-left">
-              <iframe class="displayvid" height="600" src="https://www.youtube.com/embed/gKWwObyfFDg" title="YouTube video player" frameborder="0" allow="accelerometer; muted; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe loading="lazy" preload="none" class="displayvid" height="600" src="https://www.youtube.com/embed/gKWwObyfFDg" title="YouTube video player" frameborder="0" allow="accelerometer; muted; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </section>
           </div>
 
@@ -80,13 +81,14 @@
             </section>
           </div>
         </div>
+        <div id="VATS"></div><br>
       </div>
-      <br>
 
-      <div id="VATS">
-        <br><br><br>
+      <br><br><br><br>
+
+      <div id="game2">
+        <br><br>
           <div class="row">
-
             <div class="header-project">
               <h2 class="title">VATS (Unity C#)</h2>
               <div class="flex-center-link-2">
@@ -96,7 +98,7 @@
 
             <div class="column">
               <section class="section-left">
-                <iframe class="displayvid" height="600" src="https://www.youtube.com/embed/mjyU080Pv1o" title="YouTube video player" frameborder="0" allow="accelerometer; muted; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe loading="lazy" preload="none" class="displayvid" height="600" src="https://www.youtube.com/embed/mjyU080Pv1o" title="YouTube video player" frameborder="0" allow="accelerometer; muted; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </section>
             </div>
 
@@ -123,16 +125,17 @@
                 <p class="bold"> 2020 </p>
               </section>
             </div>
-          </div>
+        </div>
+        <div id="Fragmented"></div><br>
       </div>
-      <br>
 
-      <div id="Fragmented"><br>
+      <br><br><br><br>
+
+      <div id="game3">
+        <br><br>
         <div class="row">
           <div class="column">
             <section class="section-left">
-              <br><br>
-
               <div class="header-project">
                 <h2 class="title">Fragmented (Unity C#)</h2>
                 <div class="flex-center-link-3">
@@ -142,7 +145,7 @@
               </div>
 
               <div class="game-box">
-                <iframe class="game2" src="https://i.simmer.io/@dereki/fragmented" allowfullscreen volume="0"></iframe>
+                <iframe loading="lazy" preload="none" class="game2" src="https://i.simmer.io/@dereki/fragmented" allowfullscreen volume="0"></iframe>
               </div>
             </section>
           </div>
@@ -175,15 +178,16 @@
             </div>
           </div>
         </div>
+        <div id="O-PONG"></div><br>
       </div>
-      <br>
-      
-      <div id="O-PONG"><br>
+  
+        <br><br><br><br>
+  
+        <div id="game4">
+        <br><br>
         <div class="row">
           <div class="column">
             <section class="section-left">
-              <br><br>
-
               <div class="header-project">
                 <h2 class="title">O-PONG (Unity C#)</h2>
                 <div class="flex-center-link-3">
@@ -192,7 +196,7 @@
               </div>
 
               <div class="game-box">
-                <iframe class="game" src="https://i.simmer.io/@dereki/o-pong" allowfullscreen volume="0"></iframe>
+                <iframe loading="lazy" preload="none" class="game" src="https://i.simmer.io/@dereki/o-pong" allowfullscreen volume="0"></iframe>
               </div>
             </section>
           </div>
@@ -218,11 +222,14 @@
                   <li>P1: WS to move up and down. AD to rotate paddles. </li>
                   <li>P2: Arrow keys to do the same. </li>
                   <li>Spacebar to pause.</li>
+
+                  <p>*Note: If game doesn't load properly, please try refreshing.*</p>
                 </ul>
               </div>
               <p class="bold"> 2021</p>
             </section>
           </div>
+        </div>
           
         </div>
       </div>

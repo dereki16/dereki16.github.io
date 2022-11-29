@@ -202,7 +202,7 @@ html {
   padding-right: 2.5%;
 }
 
-#UNCONTAINED, #VATS, #Fragmented, #O-PONG {
+#game1, #game2, #game3, #game4 {
   padding: 10px;
   border-radius: 15px;
   background-color:#161616;
@@ -333,6 +333,7 @@ hr {
 .title {
   padding-left: 0.8%;
   padding-bottom: 0.5%;
+  font-size: 35px;
 }
 .bold {
   font-weight: 800;
@@ -649,9 +650,9 @@ div {
 }
 
 .icon-3d {
-  padding: 15px;
-  -webkit-animation: icon3d 200ms 10;
-  animation: icon3d 200ms 10;
+  padding: 30px;
+  -webkit-animation: icon3d 275ms 10;
+  animation: icon3d 275ms 10;
   color: #fff;
 
 }
