@@ -108,6 +108,65 @@ html {
   color: white;
 } */
 
+
+.lazy-yt-wrapper {
+	max-width: 1200px;
+	margin: 0px auto;
+	padding: 0px;
+}
+
+.lazy-youtube {
+	background-color: #000;
+	margin-bottom: 30px;
+	position: relative;
+	padding-top: 56.25%;
+	overflow: hidden;
+	cursor: pointer;
+}
+.lazy-youtube img {
+	width: 100%;
+	top: -16.82%;
+	left: 0;
+	opacity: 1;
+}
+.lazy-youtube .lazy-play-btn {
+	width: 90px;
+	height: 60px;
+  background-color:red;
+	box-shadow: 0 0 30px rgba( 0,0,0,0.6 );
+	z-index: 1;
+	opacity: 0.8;
+	border-radius: 6px;
+}
+.lazy-youtube .lazy-play-btn:before {
+	content: "";
+	border-style: solid;
+	border-width: 15px 0 15px 26.0px;
+	border-color: transparent transparent transparent #fff;
+}
+.lazy-youtube img,
+.lazy-youtube .lazy-play-btn {
+	cursor: pointer;
+}
+.lazy-youtube img,
+.lazy-youtube iframe,
+.lazy-youtube .lazy-play-btn,
+.lazy-youtube .lazy-play-btn:before {
+	position: absolute;
+}
+.lazy-youtube .lazy-play-btn,
+.lazy-youtube .lazy-play-btn:before {
+	top: 50%;
+	left: 50%;
+	transform: translate3d( -50%, -50%, 0 );
+}
+.lazy-youtube iframe {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
 .fa {
   text-decoration: none;
 }
@@ -380,13 +439,13 @@ border: none;
 }
 
 .section-right {
-  margin-top: -50px;
+  margin-top: -70px;
 }
 
 .section-right-text {
   width: 60%;
   margin-left: 300px;
-  margin-top: 100px;
+  margin-top: -20px;
 }
  /* responsive box and sections and in there check */
 
@@ -831,12 +890,12 @@ input[type=submit]:hover {
       height: 100%;
     }
     .game {
-      width: 100%;
+      width: 95%;
       height: 400px;
       margin-right: auto;
     }
     .game2 {
-      width: 100%;
+      width: 95%;
       height: 400px;
       margin-right: auto;
     }
@@ -859,12 +918,12 @@ input[type=submit]:hover {
       height: 100%;
     }
     .game {
-      width: 100%;
+      width: 95%;
       height: 250px;
       margin-right: auto;
     }
     .game2 {
-      width: 100%;
+      width: 95%;
       height: 250px;
       margin-right: auto;
     }
@@ -1107,6 +1166,8 @@ input[type=submit]:hover {
       position: relative;
       padding-top: 56.25%; 
       overflow: hidden;
+      width: 100%;
+      height: 100%;
     }
 
     .game-box iframe {
@@ -1152,4 +1213,17 @@ input[type=submit]:hover {
     .btn-type {
       padding: 10px 30px;
     }
+
+    @media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
+    .mobile-break {
+       display: none;
+       }
+    .section-right {
+      margin-top: -50px;
+    }
+  }
+
 }
