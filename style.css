@@ -707,6 +707,9 @@ height: 100%;
   overflow: hidden;
   padding-top: 56.25%;
   position: relative;
+  margin:auto;
+  height: 77.5%;
+  width: 100%;
 }
 
 #resume-container iframe {
@@ -715,7 +718,13 @@ height: 100%;
   left: 0;
   position: absolute;
   top: 0;
-  width: 100%;
+  width: 70%;
+  margin-left: 15%;
+  border-radius: 2.5%;
+}
+
+#resume {
+  zoom:125%;
 }
 
 .flex-center {
@@ -1144,6 +1153,11 @@ input[type=submit]:hover {
     #arrow-container {
       width: 9%;
     height: 9%;
+    }
+    #resume-container iframe {
+      height: 100%;
+      width: 90%;
+      margin-left: 5%;
     }
   }
 
