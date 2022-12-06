@@ -414,6 +414,72 @@ border: none;
   font-family: 'Electrolize', sans-serif;
 }
 
+#return-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+  width: 50px;
+  height: 50px;
+  display: block;
+  text-decoration: none;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  border-radius: 35px;
+  display: none;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#return-to-top i {
+  color: #fff;
+  margin: 0;
+  position: relative;
+  left: 16px;
+  top: 13px;
+  font-size: 19px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#return-to-top:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+#return-to-top:hover i {
+  color: #fff;
+  top: 5px;
+}
+
+#arrow-container {
+  width: 4.5%;
+height: 4.5%;
+margin:auto;
+}
+#arrow {
+  filter: saturate(30); 
+ filter: grayscale(0%); 
+ filter: contrast(10%); 
+ filter: brightness(0.25); 
+filter: blur(3px); 
+ filter: invert(10%); 
+ filter: sepia(10%); 
+ filter: hue-rotate(180deg); 
+filter: opacity(50%); 
+border-radius: 70%;
+width: 100%;
+height: 100%;
+}
+#arrow:hover {
+ filter: sepia(300%) saturate(500%) brightness(50%) hue-rotate(160deg);
+ color: #18658f;
+ background-color: red;
+
+}
 .vid {
   margin-top: -80px;
   width: 900px;
@@ -578,6 +644,12 @@ border: none;
 .w3-button:hover {
   background: #023568;
 }
+
+#arrow-button {
+  cursor: pointer;
+  background-color: black;
+}
+
 
 .btn:hover, .btn-type:hover{
   background:#023568
@@ -906,6 +978,10 @@ input[type=submit]:hover {
     .flex-center-link-3{
       right: 50%;
     }
+    #arrow-container {
+      width: 6%;
+    height: 6%;
+    }
   }
 
   @media only screen and (max-width:1280px) {
@@ -1065,6 +1141,10 @@ input[type=submit]:hover {
     .btn-type {
       padding: 10px 60px;
     }
+    #arrow-container {
+      width: 9%;
+    height: 9%;
+    }
   }
 
   ::-webkit-scrollbar {
@@ -1212,6 +1292,10 @@ input[type=submit]:hover {
     }
     .btn-type {
       padding: 10px 30px;
+    }
+    #arrow-container {
+      width: 15%;
+    height: 15%;
     }
 
     @media only screen 
