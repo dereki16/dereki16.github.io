@@ -163,7 +163,7 @@
               </div>
 
               <div class="game-box">
-                <iframe loading="lazy" preload="none" class="game2" src="https://i.simmer.io/@dereki/fragmented" allowfullscreen volume="0"></iframe>
+                <iframe loading="lazy" preload="none" class="game2" src="https://i.simmer.io/@dereki/fragmented" title="Build of my game Fragmented - playable on PC and mobile." allowfullscreen volume="0"></iframe>
               </div>
             </section>
           </div>
@@ -189,8 +189,8 @@
                 <ul>
                   <li>Click and hold left mouse button down, then drag to move. </li>
                   <li>Pause button at top right. </li> 
-                  <p>*Note: To stop music press outside of game box or go to Options.*</p>
                 </ul>
+                <p>*Note: To stop music press outside of game box or go to Options.*</p>
               </div>
               <p class="bold"> 2021 </p>
             </div>
@@ -216,7 +216,7 @@
               </div>
 
               <div class="game-box">
-                <iframe loading="lazy" preload="none" class="game" src="https://i.simmer.io/@dereki/o-pong" allowfullscreen volume="0"></iframe>
+                <iframe loading="lazy" preload="none" class="game" src="https://i.simmer.io/@dereki/o-pong" title="A PC build of my game O-PONG." allowfullscreen volume="0"></iframe>
               </div>
             </section>
           </div>
@@ -242,9 +242,9 @@
                   <li>P1: WS to move up and down. AD to rotate paddles. </li>
                   <li>P2: Arrow keys to do the same. </li>
                   <li>Spacebar to pause.</li>
-
-                  <p>*Note: If game doesn't load properly, please try refreshing.*</p>
                 </ul>
+                <p>*Note: If game doesn't load properly, please try refreshing. Only playable on PC.*</p>
+
               </div>
               <p class="bold"> 2021</p>
             </section>
@@ -257,7 +257,7 @@
 
         <div id="arrow-container">
           <a id="arrow-button" href="#top">
-            <img id="arrow" src="img/arrow1.png">
+            <img id="arrow" src="webp/arrow1.webp" alt="Clickable arrow to go back to top of page.">
           </a>
         </div>
 
@@ -280,6 +280,7 @@
           
           var image = new Image();
               image.src = source;
+              image.setAttribute( "alt", "Clickable image that will start video.");
               image.addEventListener( "load", function() {
                 youtube[ i ].appendChild( image );
               }( i ) );
@@ -287,7 +288,7 @@
               youtube[i].addEventListener( "click", function() {
       
                 var iframe = document.createElement( "iframe" );
-      
+
                     iframe.setAttribute( "allow", "autoplay" );
                     iframe.setAttribute( "frameborder", "0" );
                     iframe.setAttribute( "allowfullscreen", "" );
