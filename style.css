@@ -795,19 +795,15 @@ height: 100%;
 }
 
 .flex-center-link-2 {
-  margin-bottom: -100px;
-
+	padding-right: 30px;
   position: absolute;
-  margin: 0 auto;
-  right: 50%;
+	margin-top: -10px
 }
 
 .flex-center-link-3 {
-  margin-bottom: -100px;
-
+	padding-right: 20px;
   position: absolute;
-  margin: 0 auto;
-  right: 37%;
+	margin-top: -10px;
 }
 .game-card {
   background-color: #161616;
