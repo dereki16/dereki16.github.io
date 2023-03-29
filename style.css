@@ -184,8 +184,8 @@ html {
 }
 
 .grid {
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 .app-grid {
   padding-left: 15%;
@@ -193,12 +193,32 @@ html {
 }
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
   /* background-color: #2196F3; */
   padding: 10px;
   justify-items: center;
   grid-gap: 10px 10px;
 }
+
+
+.flex-center-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+}
+
+
+.fa-github, .fa-linkedin, .fa-youtube {
+  color: white;
+  margin-right: 10px;
+}
+
+.vid {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 .app-container-1 {
   display: grid;
   grid-template-columns: 60% 40% ;
@@ -224,16 +244,29 @@ html {
   background-color:#161616;
   text-decoration: none;
   height: 100%;
-
   margin: auto;
 }
 
 .grid-item:hover {
-  background-color:rgb(0, 17, 30);
+  color: #007bff;
+  background-color:rgb(0, 17, 30);  
+}
+
+.game-item {
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+
 }
 
 .grid-p {
   font-size: 15px;
+}
+
+.grid-item:hover ~ .grid-p {
+  background-color: blue;
+  font-size: 1000px;
 }
 
 #project-selection {
@@ -253,8 +286,9 @@ html {
 }
 
 .single-column {
-  width: 60%;
+  width: 50%;
   padding: 10px;
+
   margin: auto;
   border-radius: 15px;
   padding-left: 2.5%;
@@ -656,7 +690,7 @@ height: 100%;
 }
 
 .projlink {
-  font-size: 1.7em;
+  font-size: 1.2em;
 }
 
 .projlink-sm {
@@ -730,7 +764,7 @@ height: 100%;
 .flex-center {
   width: 100%;
   min-height: 30vh;
-  
+
   background: #000;
   
   display: -webkit-box;
@@ -750,7 +784,6 @@ height: 100%;
 .header {
   display: flex;
   justify-content: center;
-  margin-bottom: -25px;
 }
 
 .flex-center-link {
@@ -778,6 +811,28 @@ height: 100%;
   margin: 0 auto;
   right: 37%;
 }
+.game-card {
+  background-color: #161616;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px #212121;
+  position: relative; /* Added position */
+}
+
+.flex-center-link-4 {
+  display: flex;
+  justify-content: flex-end; /* Aligns the GitHub link to the right */
+  position: absolute; /* Added position */
+  top: 2px; /* Adjust this value to move the link up or down */
+  right: 20px; /* Adjust this value to move the link left or right */
+}
+
+.icon-3d-2 {
+  width: 40px; /* Adjust this value to resize the GitHub link image */
+  height: auto; /* Allows the image to scale proportionally with the width */
+}
+
 
 div {
   text-align: justify;
@@ -786,10 +841,9 @@ div {
 .header-project {
   display: flex;
   margin-left: 0;
-  margin-top: -50px;
 }
 
-.icon-3d {
+.icon-3d, .icon-3d-2 {
   padding: 30px;
   -webkit-animation: icon3d 275ms 10;
   animation: icon3d 275ms 10;
@@ -797,7 +851,7 @@ div {
 
 }
 
-.icon-3d:hover {
+.icon-3d:hover, .icon-3d-2:hover {
   -webkit-animation: icon3d 200ms infinite;
         animation: icon3d 200ms infinite;
 }
@@ -890,7 +944,6 @@ input[type=submit]:hover {
   color:white;
   text-align: left;
   font-family: 'Avenir', sans-serif;
-  -webkit-appearance: none;
 
 }
 
@@ -906,7 +959,6 @@ input[type=submit]:hover {
   color:white;
   text-align: left;
   font-family: 'Avenir', sans-serif;
-  -webkit-appearance: none;
 }
 
 #contact-form {
@@ -1285,7 +1337,7 @@ input[type=submit]:hover {
       overflow-x: hidden;
     }
 
-    .icon-3d {
+    .icon-3d, .icon-3d-2 {
       padding: 10px;
     }
 
@@ -1324,4 +1376,135 @@ input[type=submit]:hover {
     }
   }
 
+}
+
+
+
+/* Grid and game-card layout */
+.game-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.game-grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.game-card {
+  flex: 0 1 calc(50% - 20px);
+  background-color:#161616;
+    border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  max-width: 500px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 767px) {
+  .game-card {
+    flex-basis: 100%;
+  }
+  
+.fa-github, .fa-linkedin, .fa-youtube, .fa-android {
+  color: white;
+  margin-right: -10px;
+  margin-top: 15px;
+}
+#double-icon {
+  margin-right: 20px;
+}
+}
+
+/* Content styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: -60px;
+  margin-top: -65px
+}
+
+.projlink {
+  text-decoration: none;
+  color: #787878;
+	
+}
+
+.projlink:hover {
+  color: #007bff;
+}
+
+.fa-github, .fa-linkedin, .fa-youtube {
+  color: white;
+  transition: color 0.2s;
+}
+
+.fa-github:hover, .fa-linkedin:hover, .fa-youtube:hover, .fa-envelope-o:hover, .fa-android:hover
+  {
+  color: #007bff;
+}
+
+.p1 {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+	
+}
+
+.vid {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+
+}
+
+.flex-center-link,
+.flex-center-link-4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -15px;
+
+}
+
+.replit-preview {
+  width: 100%;
+  height: 300px;
+  border: none;
+}
+
+.website-prev {
+  width: 100%;
+  max-height: 300px;
+}
+
+.grid-item a {
+  padding: 0;
+  margin: 0;
+}
+
+.grid-item:hover::before {
+  background-color: transparent;
+}
+
+.grid-item img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  transition: all 0.5s ease;
+  filter: grayscale(100%) contrast(130%) brightness(60%);
+}
+
+.grid-item:hover img {
+  filter: grayscale(0%) contrast(100%) brightness(100%);
 }
