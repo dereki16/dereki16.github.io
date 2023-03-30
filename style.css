@@ -543,7 +543,7 @@ height: 100%;
 .section-right-text {
   width: 60%;
   margin-left: 300px;
-  margin-top: -20px;
+  margin-top: 50px;
 }
  /* responsive box and sections and in there check */
 
@@ -827,6 +827,10 @@ height: 100%;
   height: auto; /* Allows the image to scale proportionally with the width */
 }
 
+#double-icon {
+  margin-right: -20px;
+}
+
 
 div {
   text-align: justify;
@@ -873,7 +877,16 @@ div {
   height: 50px;
 }
 
+.app-link {
+  color: white;
+  margin-right: 10px;
+	margin-top: -60px;
+	margin-bottom: -100px;
+	}
 
+  .app-link-1 {
+    margin-top: -30px;
+  }
 /* Contact page */
 * {box-sizing: border-box;
 }
@@ -1249,6 +1262,11 @@ input[type=submit]:hover {
       overflow-x: hidden;
     }
 
+    .flex-center-link-5 {
+      margin-top: -12px;
+        margin-left: 10px;
+      }
+
     .grid, .app-grid {
       padding-left: 0%;
       padding-right: 0%;
@@ -1415,15 +1433,25 @@ input[type=submit]:hover {
   .game-card {
     flex-basis: 100%;
   }
+
+  .app-link {
+    color: white;
+    margin-right: 10px;
+    margin-top: -20px;
+    margin-bottom: -100px;
+    }
+    .app-link-1 {
+      margin-top: -5px;
+    }
   
-.fa-github, .fa-linkedin, .fa-youtube, .fa-android {
+.game-link, .fa-linkedin, .fa-youtube, .fa-android {
   color: white;
   margin-right: -15px;
   margin-top: 15px;
   width: 50%;
 }
 #double-icon {
-  margin-right: -20px;
+  margin-right: 0px;
 }
 }
 
@@ -1511,3 +1539,4 @@ input[type=submit]:hover {
 .grid-item:hover img {
   filter: grayscale(0%) contrast(100%) brightness(100%);
 }
+
