@@ -38,12 +38,13 @@ html {
 }
 
 .nav-menu {
-  background-color: rgb(29, 29, 29);
+      background: linear-gradient(45deg, #000000, #00356e);
+	
   width: 100%;
 }
 
 .nav-menu a:hover {
-  color: #18658f;
+  color: #007bff;
 }
 
 .nav-menu li {
@@ -291,6 +292,8 @@ footer a {
   padding: 10px;
   justify-items: center;
   grid-gap: 10px 10px;
+  padding-left: 4%;
+  padding-right: 4%;
 }
 
 #about-desc {
@@ -362,6 +365,8 @@ background-color: #58b958;
   text-align: center;
   width: 100%;
   background-color:#161616;
+  border: 1px solid #6e6e6e;
+
   text-decoration: none;
   height: 100%;
   margin: auto;
@@ -369,7 +374,9 @@ background-color: #58b958;
 
 .grid-item:hover {
   color: #007bff;
-  background-color:rgb(0, 17, 30);  
+  background-color:rgb(0, 17, 30); 
+  background-image: linear-gradient(45deg, rgb(0, 27, 30), #00448c);
+
 }
 
 .game-item {
@@ -379,7 +386,6 @@ background-color: #58b958;
   text-decoration: none;
 
 }
-
 
 
 
@@ -410,11 +416,7 @@ html {
   padding-right: 2.5%;
 }
 
-#game1, #game2, #game3, #game4 {
-  padding: 10px;
-  border-radius: 15px;
-  background-color:#161616;
-}
+
 
 .row::after {
   content: "";
@@ -773,7 +775,6 @@ height: 100%;
   font-size: 20px;
   color: #ddd;
   cursor: pointer;
-  margin: 10px auto;
   text-decoration: none;
 }
 
@@ -933,13 +934,15 @@ height: 100%;
 	margin-top: -10px
 }
 
-.flex-center-link-3 {
+.flex-center-link-3, .flex-center-link-6 {
 	padding-right: 20px;
   position: absolute;
 	margin-top: -10px;
 }
 .game-card {
   background-color: #161616;
+  border: 1px solid #6e6e6e;
+
   color: white;
   padding: 10px;
   border-radius: 20px;
@@ -1006,8 +1009,7 @@ div {
 }
 
 .social-footer {
-  width: 90%;
-  min-height: 30vh;
+  width: 100%;
   margin: auto;
   background: #000;
   
@@ -1041,28 +1043,46 @@ div {
   flex-shrink: 0;
 }
 
+@media (max-width: 1000px) {
+  .social-footer {
+    font-size: 2.2em;
+  }
+
+	
+}
+
+
 @media (max-width: 900px) {
   .social-footer {
-    font-size: 1.2em;
+    font-size: 2.2em;
   }
+	
 }
 
 @media (max-width: 768px) {
   .social-footer {
-    font-size: 0.75em;
+    font-size: 1.4em;
   }
+	object {
+	  font-size: 1em;
+  }
+	.fa {
+		font-size:.3em;
+	}
+
 }
 
 @media (max-width: 480px) {
   .social-footer {
-    gap: 0.5em;
-    font-size: 0.6em;
+    font-size: .7em;
   }
+	.flex-center-link-4 {
+		font-size:.7em;
+	}
 }
 
 
 .social-footer a {
-	padding: 10px;
 }
 
 .social {
@@ -1098,28 +1118,39 @@ input[type=text], select, textarea {
   margin-bottom: 16px;
   resize: vertical;
 }
-
+input:focus, textarea:focus {
+  border-color: rgb(25, 255, 255);/* change the border color to red when input is focused */
+  box-shadow: 0 0 5px rgb(25, 255, 255); /* add a box-shadow for extra emphasis */
+  outline: none; /* remove the default outline */
+}
 input[type=text], select, textarea {
   border: 1px solid #18658f;
 }
 
 input:-webkit-autofill {
   -webkit-box-shadow:0 0 0 50px #122e4a inset;  
-  -webkit-text-fill-color: rgb(255, 255, 255);
+  -webkit-text-fill-color: rgb(25, 255, 255);
 }
 
 input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0 50px #122e4a inset;
-  -webkit-text-fill-color: rgb(255, 255, 255);
+  -webkit-text-fill-color: rgb(25, 255, 255);
 }
 
 textarea, input {
   background-color: #122e4a;
+  /* background-image: linear-gradient(45deg, #161616, #2d2d2d); */
+  background-image: linear-gradient(45deg, #0c2b51, #0084ff);
+
+
   color: white;
+}
+input:focus {
+	border-color: rgb(25, 255, 255);;
 }
 
 input[type=submit] {
-  background-color: #18658f;
+  background-image: linear-gradient(45deg, #0c2b51, #00ff95);
   /* background-color: #04AA6D; original */
 
   color: white;
@@ -1156,6 +1187,7 @@ input[type=submit]:hover {
   color:white;
   text-align: left;
   font-family: 'Avenir', sans-serif;
+
 }
 
 #contact-form {
@@ -1184,7 +1216,7 @@ input[type=submit]:hover {
 #Home-link {
   float: left;
   padding-left: 25px;
-  margin-top: -0.5%;
+  margin-top: -0.1%;
   z-index: 9999999999999999999999999999999999999999;
   position: fixed;
   font-size: 2.5em;
@@ -1269,7 +1301,8 @@ input[type=submit]:hover {
 		font-weight: bold;
     }
     .nav-menu a:hover {
-      background-color: #023568;
+      background-color: #0051a9;
+		
       color: white;
     }
     .nav-menu a.active {
@@ -1301,7 +1334,7 @@ input[type=submit]:hover {
       width: 100%;
       margin-left: -10px;
     }
-    .flex-center-link-3{
+    .flex-center-link-3, .flex-center-link-6{
       right: 50%;
     }
     #arrow-container {
@@ -1507,7 +1540,7 @@ input[type=submit]:hover {
       margin-left: -1px;
       margin-top: -5px;
     }
-    .flex-center-link-2, .flex-center-link-3 {
+    .flex-center-link-2, .flex-center-link-3, .flex-center-link-6 {
       right:10%;
     }
     #container-contact {
@@ -1679,13 +1712,13 @@ input[type=submit]:hover {
       font-size: 15px;
     }
 
-    .flex-center-link, .flex-center-link-2, .flex-center-link-3 {
+    .flex-center-link, .flex-center-link-2, .flex-center-link-3, .flex-center-link-6{
       font-size: small;
       right:2.5%;
 
     }
   
-    .flex-center-link-2, .flex-center-link-3 {
+    .flex-center-link-2, .flex-center-link-3, .flex-center-link-6 {
       right:2.5%;
     }
     .btn-type {
@@ -1727,6 +1760,8 @@ input[type=submit]:hover {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  padding-left: 7.5%;
+  padding-right: 7.5%;
 }
 
 .game-card {
@@ -2007,19 +2042,23 @@ margin-bottom: -100px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-	padding-left: 15%;
-	  padding-right: 15%;
+    padding-left: 10%;
+    padding-right: 10%;
+
   }
+
+  
   
   .app {
-    background-color:#161616;
-    ;
-    border: 1px solid #161616;
+    background-color: #161616;
+    border: 1px solid #6e6e6e;
     border-radius: 4px;
     box-sizing: border-box;
     margin: 10px;
     width: calc(50% - 40px);
     text-align: center;
+	  padding-left: 2.5%;
+	  padding-right: 2.5%;
   }
   
   .video-container {
@@ -2044,14 +2083,14 @@ margin-bottom: -100px;
   .button-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
-	  	  margin-bottom: -10px
-
+    margin-bottom: -10px;
+	  height: 40px;
   }
 
   .button-container img {
     width: 100%;
 	  height: 30px;
+	  padding-bottom: 10px;
   }
   #prev-btn {
     -webkit-transform: scaleX(-1);
@@ -2060,12 +2099,12 @@ margin-bottom: -100px;
   }
 #prev-btn, #next-btn {
 		  	  border-radius: 10%;
-          background-color:#007bff
+          background-color:#007bff;
 
 }
 #prev-btn:hover, #next-btn:hover {
 	cursor: pointer;
-      background-color: #24bf65;
+      background-color: #0b61ff;
 
 
 }
@@ -2098,8 +2137,6 @@ margin-bottom: -100px;
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
-    padding-top: 30px;
-    height: 0;
     overflow: hidden;
 }
 
@@ -2151,17 +2188,22 @@ padding-left: 2.5%;
 }
 
 .containers-container {
-	padding-left: 5%;
-	padding-right: 5%;}
+	padding-left: 10%;
+	padding-right: 10%;
+	
+}
 
-  .flex-center-link-3 {
+  .flex-center-link-3 , .flex-center-link-6{
     margin:0;
       padding: 0;
       margin-top: -40px;
+	  margin-right: 40px;
     }
 
     .container {
       background-color: #161616;
+		  border: 1px solid #6e6e6e;
+
     }
 
     body {
@@ -2175,8 +2217,8 @@ padding-left: 2.5%;
       top: 0;
       left: 0;
       width: 100%;
-      height: 75px;
-      background: linear-gradient(to bottom, #24bf65, #0e5858, transparent);
+      height: 100px;
+      background-image: linear-gradient(180deg, #00356e, #000000, black, transparent);
       z-index: 1000;
     }
 
@@ -2187,3 +2229,92 @@ padding-left: 2.5%;
       }
     }
 
+
+
+    .gradient-button {
+      font-size: 18px;
+      font-weight: bold;
+      padding: 10px 40px;
+      border: 1;
+      border-radius: 2px;
+      background-image: linear-gradient(180deg, #3e95a1, #002099);
+      color: white;
+      cursor: pointer;
+      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease-in-out;
+    }
+.blue-gradient {
+  background-image: linear-gradient(180deg, #0c2b51, #00aeff);
+}
+.green-gradient {
+      background-image: linear-gradient(45deg, #216e55, #00d99b);
+}
+
+#green-hover:hover {
+/*   background-image: linear-gradient(45deg, #00956b, #00a3d9, #005ad9);
+	 */
+  background-image: linear-gradient(45deg, #004650, #00864e);
+
+}
+
+    .gradient-button:hover {
+      transform: scale(1.05);
+    }
+
+    .gradient-button:active {
+      transform: scale(0.95);
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    }
+
+    .gradient-div {
+      width: 300px;
+      height: 200px;
+      background: linear-gradient(to bottom, #f06, transparent);
+    }
+
+
+
+
+    .burger-toggle {
+      position: absolute;
+      cursor: pointer;
+      margin: .5em;
+      right: 0;
+      width: 25px;
+      height: 25px;
+      font-size: 1.5em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: red;
+      background-color: #007bff;
+      z-index: 9999999999999999999999999999999;
+		margin-top: -25px;
+		padding-left: 1px;
+    }
+
+    .burger-toggle span {
+      display: block;
+      height: 4px;
+      width: 100%;
+      background: #000;
+      margin: 4px 0;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-menu {
+      background: linear-gradient(45deg, #000000, #00356e);
+      width: 100%;
+    }
+
+ .anchor a{
+  scroll-margin-top: 250px;
+}
+
+.flex-center-link-6{
+  margin:0;
+    padding: 0;
+    margin-top: -50px;
+    right: 0;
+  }
