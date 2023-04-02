@@ -269,14 +269,6 @@ footer a {
 .fa-6 {
   font-size: 3em;
 }
-
-.column {
-
-}
-
-.column-right {
-
-}
 .grid {
   padding-left: 10%;
   padding-right: 10%;
@@ -393,8 +385,8 @@ background-color: #58b958;
 #project-selection {
   display: flex;
   justify-content: center;
-  padding-left: 35%;
-  padding-right: 35%;
+  padding-left: 40%;
+  padding-right: 40%;
 }
 
 html {
@@ -636,7 +628,6 @@ filter: blur(3px);
 filter: opacity(50%); 
 border-radius: 70%;
 width: 100%;
-height: 100%;
 }
 #arrow:hover {
  filter: sepia(300%) saturate(500%) brightness(50%) hue-rotate(160deg);
@@ -2041,11 +2032,15 @@ margin-bottom: -100px;
   .app-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    padding-left: 10%;
-    padding-right: 10%;
+	  	margin: auto;
+	display: flex;
+	justify-content: center;
+	width: 90%;
 
   }
+.app-containers-container {
+
+}
 
   
   
@@ -2059,6 +2054,7 @@ margin-bottom: -100px;
     text-align: center;
 	  padding-left: 2.5%;
 	  padding-right: 2.5%;
+	  
   }
   
   .video-container {
@@ -2077,7 +2073,7 @@ margin-bottom: -100px;
   }
   .app-layout {
     width: 100%;
-	  height: 500px;
+	  height: 400px;
   }
   
   .button-container {
@@ -2234,7 +2230,7 @@ padding-left: 2.5%;
     .gradient-button {
       font-size: 18px;
       font-weight: bold;
-      padding: 10px 40px;
+      padding: 10px 15px;
       border: 1;
       border-radius: 2px;
       background-image: linear-gradient(180deg, #3e95a1, #002099);
@@ -2317,4 +2313,14 @@ padding-left: 2.5%;
     padding: 0;
     margin-top: -50px;
     right: 0;
+  }
+
+  .app-container {
+    display: flex;
+    flex-wrap: wrap;
+	  	margin: auto;
+	display: flex;
+	justify-content: center;
+	width: 90%;
+
   }
