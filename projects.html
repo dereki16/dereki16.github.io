@@ -16,244 +16,207 @@
   <div id="top"></div>
 
   <header>
-    <nav><br>
-      <div id="topnav">
+    <h2 class="hidden" id="Home-link"><a class="hidden icon-3d" id="home-a" href="index.html">D</a></h2>
+    <nav class="hidden" id="topnav"><br>
+      <div>
         <input type="checkbox" id="nav-checkbox" class="nav-checkbox">
         <label for="nav-checkbox" class="nav-toggle">
-          <i class="fa fa-bars"></i>
+          <i class="fa fa-bars blue"></i>
         </label>
         <br>
-        <ul class="nav-menu">
-          <li><a href="resume.html">Resume</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="aboutme.html">About Me</a></li>
-          <li><a class="active" href="projects.html">Games</a></li>
-          <li><a href="index.html">Home</a></li>
+        <ul class="hidden nav-menu">
+          <li><a id="resume-tab" href="pdf/Resume3.pdf#zoom=110" target="_blank">Resume</a></li>
+          <li><a href="projects.html">Games</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#aboutme">About Me</a></li>          
         </ul>
       </div>
     </nav>
   </header>
 
   <body>
-    <br>
+    <br><br><br><br>
     <h2>Unity C# Games</h2>
-    <div id="UNCONTAINED"></div>
-    <hr>
-    <br><br><br class="mobile-break">
-
+    <br><hr><br>
+  <div class="containers-container">
     <div class="container">
-      <div id="game1" style="background-color:#161616;">
-        <br><br>
-        <div class="row">
-          <div class="header-project">
-            <h2 class="title">VR Survival</h2><br>
-            <div class="flex-center-link-5">
-              <a href="https://github.com/dereki16/Uncontained-VR" target="_blank"><i class="fa fa-github fa-2x icon-3d" src="img/git.png"></i></a>
-            </div>
-          </div>
-
-          <div class="column">
-            <section class="section-left">
-              <div class="lazy-yt-wrapper">
-                <div class="lazy-youtube" data-embed="gKWwObyfFDg">
-                  <div class="lazy-play-btn"></div>
-                </div>
-              </div>
-              <!-- <iframe loading="lazy" preload="none" class="displayvid" height="600" src="https://www.youtube.com/embed/gKWwObyfFDg" title="YouTube video player" frameborder="0" allow="accelerometer; muted; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-            </section>
-          </div>
-
-          <div class="column">
-            <section class="section-right">      
-              <p class="bold"> Overview</p>        
-              <!-- <p> In this post-apocalyptic world, see if you have what it takes to survive. Uncontained features a Tutorial which helps guide players through objectives and how to utilize the tools in the world. These tools help keep a barrier between yourself and the undead by building barricades on windows, as well as a gun for protection. </p>
-              <p> Once equipped with this knowledge, the player can then proceed to go through rounds and gain points to unlock blocked off doors. Enabling players to further explore through the world and find the access code to a safe which lets them escape to safety.</p>
-              <p> </p> -->
-              <div class="con-p">
-                <p> In this immersive post-apocalyptic world, see if you have what it takes to survive. Uncontained features room unlocking, barricade building, zombie shooting fun. <br><br> This is a VR game I developed in Unity with help from Hannah Dale as the level designer / art director, Andrew Aguas as the audio editor, and free assets.</p>
-              </div>
-              <p class="bold"> Features</p>
-              <div class="con-p">
-                <ul>
-                  <li>Object Pooling to create and store multiple game objects. </li>
-                  <li>Navigation and pathfinding so zombies can chase and attack player. </li>
-                  <li>XR plug-in framework to help support VR. </li>
-                  <li>Randomization of goals to help with replayability. </li>
-                  <li>Interactive tutorial to help teach player how they can engage with the world. </li>
-                  <li>Input system in options menu allowing for switching between different styles of orientation and turning speed for preferrential movement. </li>
-                  <li>UI for win case, lose case, main and pause menu.</li>
-                </ul>
-              </div>
-              <p class="bold"> 2022 </p>
-            </section>
-          </div>
+      <div class="game-vitals">
+        <div class="title">VR Survival</div>
+        <div class="flex-center-link-3">
+          <a href="https://github.com/dereki16/Uncontained-VR" target="_blank"><i class="fa fa-github fa-2x icon-3d" src="img/git.png"></i></a>
         </div>
-        <div id="VATS"></div><br>
-      </div>
-
-      <br>
-      <br>
-      <br class="mobile-break"><br class="mobile-break">
-
-
-      <div id="game2">
-        <br><br>
-          <div class="row">
-            <div class="header-project">
-              <h2 class="title">VATS</h2>
-              <div class="flex-center-link-5">
-                <a href="https://github.com/dereki16/VATS" target="_blank"><i class="fa fa-github fa-2x icon-3d" src="img/git.png"></i></a>
-              </div>
-            </div>
-
-            <div class="column">
-              <section class="section-left">
-                <div class="lazy-yt-wrapper">
-                  <div class="lazy-youtube" data-embed="mjyU080Pv1o">
-                    <div class="lazy-play-btn"></div>
-                  </div>
-                </div>
-                <!-- <iframe loading="lazy" preload="none" class="displayvid" height="600" src="https://www.youtube.com/embed/mjyU080Pv1o" title="YouTube video player" frameborder="0" allow="accelerometer; muted; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-              </section>
-            </div>
-
-            <div class="column">
-              <section class="section-right">     
-                <p class="bold"> Overview</p> 
-                <div class="con-p">
-                  <p> Our goal was to create a virtual tank where all sorts of sea life can be viewed with ease. <br><br> Virtual Aquarium Tank System or VATS was my Capstone project for college  - oversaw by professor Drew Clinkenbeard, that I along with Isaac Torres and Lewis Truong completed. We were in talks with the Monterey Bay Aquarium to have this simulation be featured; however, communication fell through due to COVID.</p>
-                </div>      
-                <!-- <p> Virtual Aquarium Tank System or VATS was my Capstone project for college, that I along with Isaac Torres and Lewis Truong completed. We were in talks with the Monterey Bay Aquarium to have this simulation be featured; however, communication fell through due to COVID. Even the best aquariums in the world can't exhibit deep sea dwellers or behemoths such as the blue whale. It'd be impractical.</p>
-                <p> Our goal was to create a virtual tank where all sorts of sea life can be viewed with ease. The fish are able to swim around through the use of Boids in Explore mode and provide a snippet of information on the individual fish model when clicked on.</p>
-                <p> I created the Fish Evalutaion Vector (FEV) which was meant to provide more in depth knowledge on the sea life we were able to obtain. I was able to display this information by utilizing JSON files.</p> -->
-                <p class="bold"> Responsibilities</p>
-                <div class="con-p">
-                  <ul>
-                    <li>Create the Fish Evaluation Vector (FEV) meant to provide in depth knowledge on sea life. </li>
-                    <li>This was accomplished through the use of JSON files. </li>
-                    <li>Provide responsive UI that swaps through the different models and information. </li>
-                    <li>Lay out a list view that allows for an easier browse through different sea life. </li>
-                    <li>Acquire models and undertake a fair amount of research on each of the sea creatures. </li>
-                    <li>Add post processing effects to elicit a deeper blue color for the look of the ocean.</li>
-                  </ul>
-                </div>
-                <p class="bold"> 2020 </p>
-              </section>
-            </div>
-        </div>
-        <div id="Fragmented"></div><br>
-      </div>
-
-      <br>
-      <br>
-      <br class="mobile-break"><br class="mobile-break">
-
-
-      <div id="game3">
-        <br><br>
-        <div class="row">
-          <div class="column">
-            <section class="section-left">
-              <div class="header-project">
-                <h2 class="title">Fragmented</h2>
-                <div class="flex-center-link-5">
-                  <a href="https://github.com/dereki16/Fragmented" target="_blank"><i id="double-icon" class="fa fa-github fa-2x icon-3d" src="img/git.png"></i></a>
-                  <a href="https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented" target="_blank"><i class="fa fa-android fa-2x icon-3d"></i></a>
-                </div>
-              </div>
-
-              <div class="game-box">
-                <iframe loading="lazy" preload="none" class="game2" src="https://i.simmer.io/@dereki/fragmented" title="Build of my game Fragmented - playable on PC and mobile." allowfullscreen volume="0"></iframe>
-              </div>
-            </section>
-          </div>
-          
-          <div class="column">
-            <div class="section-right-text">
-              <p class="bold"> Overview</p>
-              <div class="con-p">
-                <p> Fragmented is meant to be an endless runner mobile game where the player is hurtling through space in a minefield of colorful debris. Think Picasso meets endless space runner matched with a trap beat for music. <br><br> Developed by me. Assets provided by Hannah Dale.</p>
-              </div>
-              <p class="bold"> Features</p>
-              <div class="con-p">
-                <ul>
-                  <li>Object pooling to instantiate and store obstacles. </li>
-                  <li>Color randomization per obstacle as well as a complimentary secondary color programmed to be similar to the first in terms of color wheel. </li>
-                  <li>Camera shake triggered by impact of obstacles. </li>
-                  <li>Four sets of speed for obstacles to travel at depending on boost. </li>
-                  <li>Custom sound effects for boost collection and obstacle collision.</li>
-                </ul>
-              </div>
-              <p class="bold"> Controls</p>
-              <div class="con-p">
-                <ul>
-                  <li>Click and hold left mouse button down, then drag to move. </li>
-                  <li>Pause button at top right. </li> 
-                </ul>
-                <p>*Note: To stop music press outside of game box or go to Options.*</p>
-              </div>
-              <p class="bold"> 2021 </p>
-            </div>
-          </div>
-        </div>
-        <div id="O-PONG"></div><br>
-      </div>
-  
         <br>
+
+        <div class="game-video">
+          <iframe src="https://www.youtube.com/embed/gKWwObyfFDg" height="500px"frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="game-description">
+        <p class="bold">Overview</p>
+        <div class="con-p">
+          <p>In this immersive post-apocalyptic world, see if you have what it takes to survive. Uncontained features room unlocking, barricade building, zombie shooting fun.</p>
+          <p>This is a VR game I developed in Unity with help from Hannah Dale as the level designer / art director, Andrew Aguas as the audio editor, and free assets.</p>
+        </div>
+
+        <p class="bold">Features</p>
+        <ul>
+          <li>Object Pooling to create and store multiple game objects.</li>
+          <li>Navigation and pathfinding so zombies can chase and attack player.</li>
+          <li>XR plug-in framework to help support VR.</li>
+          <li>Randomization of goals to help with replayability.</li>
+          <li>Interactive tutorial to help teach player how they can engage with the world.</li>
+          <li>Input system in options menu allowing for switching between different styles of orientation and turning speed for preferrential movement.</li>
+          <li>UI for win case, lose case, main and pause menu.</li>
+        </ul>
+        <p class="bold">2022</p>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+
+  <div class="containers-container">
+    <div class="container">
+      <div class="game-vitals">
+        <div class="title">VATS</div>
+        <div class="flex-center-link-3">
+          <a href="https://github.com/dereki16/Uncontained-VR" target="_blank"><i class="fa fa-github fa-2x icon-3d" src="img/git.png"></i></a>
+        </div>
         <br>
-        <br class="mobile-break"><br class="mobile-break">
-  
-        <div id="game4">
-        <br><br>
-        <div class="row">
-          <div class="column">
-            <section class="section-left">
-              <div class="header-project">
-                <h2 class="title">O-PONG</h2>
-                <div class="flex-center-link-5">
-                  <a href="https://github.com/dereki16/O-PONG" target="_blank"><i class="fa fa-github fa-2x icon-3d" src="img/git.png"></i></a>
-                </div>
-              </div>
 
-              <div class="game-box">
-                <iframe loading="lazy" preload="none" class="game" src="https://i.simmer.io/@dereki/o-pong" title="A PC build of my game O-PONG." allowfullscreen volume="0"></iframe>
-              </div>
-            </section>
-          </div>
-         
-          <div class="column">
-            <section class="section-right-text">
-              <p class="bold"> Overview</p>
-              <div class="con-p">
-                <p> O-Pong was the first original game I completed. I had a great deal of love and respect for the original. Its simple, yet challenging and fun. I was inspired to take a unique spin on the idea by making the playing field ovular. <br><br> I also made it possible to rotate your paddle to position the ball in a difficult to reach spot, and teleport from one end to another.</p>            
-              </div>
-              <p class="bold"> Features</p>
-              <div class="con-p">
-                <ul>
-                  <li>The manipulation of splines for players' paddles to follow an ovular pattern. </li>
-                  <li>Randomized position for ball to spawn in, as well as direction to follow. </li>
-                  <li>Options menu allowing player to change both player's and ball's speed. </li>
-                  <li>Custom sound effects for player hitting ball and ball going out of bounds. </li>
-                </ul>
-              </div>
-              <p class="bold"> Controls</p>
-              <div class="con-p">
-                <ul>
-                  <li>P1: WS to move up and down. AD to rotate paddles. </li>
-                  <li>P2: Arrow keys to do the same. </li>
-                  <li>Spacebar to pause.</li>
-                </ul>
-                <p>*Note: If game doesn't load properly, please try refreshing. Only playable on PC.*</p>
-
-              </div>
-              <p class="bold"> 2021</p>
-            </section>
-          </div>
+        <div class="game-video">
+          <iframe src="https://www.youtube.com/embed/mjyU080Pv1o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
+      </div>
           
+      <div class="game-description">
+        <p class="bold"> Overview</p> 
+        <div class="con-p">
+          <p> Our goal was to create a virtual tank where all sorts of sea life can be viewed with ease. <br><br> Virtual Aquarium Tank System or VATS was my Capstone project for college  - oversaw by professor Drew Clinkenbeard, that I along with Isaac Torres and Lewis Truong completed. We were in talks with the Monterey Bay Aquarium to have this simulation be featured; however, communication fell through due to COVID.</p>
+        </div>      
+        <p class="bold"> Responsibilities</p>
+        <div class="con-p">
+          <ul>
+            <li>Create the Fish Evaluation Vector (FEV) meant to provide in depth knowledge on sea life. </li>
+            <li>This was accomplished through the use of JSON files. </li>
+            <li>Provide responsive UI that swaps through the different models and information. </li>
+            <li>Lay out a list view that allows for an easier browse through different sea life. </li>
+            <li>Acquire models and undertake a fair amount of research on each of the sea creatures. </li>
+            <li>Add post processing effects to elicit a deeper blue color for the look of the ocean.</li>
+          </ul>
+        </div>
+        <p class="bold"> 2020 </p>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="containers-container">
+    <div id="game3">
+      <br><br>
+      <div class="container">
+        <div class="game-vitals">
+          <div class="title">Fragmented</div>
+          <div class="flex-center-link-3">
+            <a href="https://github.com/dereki16/Fragmented" target="_blank"><i id="double-icon" class="fa fa-github fa-2x icon-3d" src="img/git.png"></i></a>
+            <a href="https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented" target="_blank"><i class="fa fa-android fa-2x icon-3d"></i></a>
+          </div>
+          <div class="game-box">
+            <iframe loading="lazy" preload="none" class="game2" src="https://i.simmer.io/@dereki/fragmented" title="Build of my game Fragmented - playable on PC and mobile." allowfullscreen volume="0"></iframe>
+          </div>
         </div>
 
-        <br><br>
+        <div class="game-description">
+            <p class="bold"> Overview</p>
+            <div class="con-p">
+              <p> Fragmented is meant to be an endless runner mobile game where the player is hurtling through space in a minefield of colorful debris. Think Picasso meets endless space runner matched with a trap beat for music. <br><br> Developed by me. Assets provided by Hannah Dale.</p>
+            </div>
+            <p class="bold"> Features</p>
+            <div class="con-p">
+              <ul>
+                <li>Object pooling to instantiate and store obstacles. </li>
+                <li>Color randomization per obstacle as well as a complimentary secondary color programmed to be similar to the first in terms of color wheel. </li>
+                <li>Camera shake triggered by impact of obstacles. </li>
+                <li>Four sets of speed for obstacles to travel at depending on boost. </li>
+                <li>Custom sound effects for boost collection and obstacle collision.</li>
+              </ul>
+            </div>
+            <p class="bold"> Controls</p>
+            <div class="con-p">
+              <ul>
+                <li>Click and hold left mouse button down, then drag to move. </li>
+                <li>Pause button at top right. </li> 
+              </ul>
+              <p>*Note: To stop music press outside of game box or go to Options.*</p>
+            </div>
+            <p class="bold"> 2021 </p>
+          </div>
+        </div>
+      </div>
+      <div id="O-PONG"></div><br>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="containers-container">
+    <div id="game4">
+      <br><br>
+      <div class="container">
+        <div class="game-vitals">
+          <div class="title">O-PONG</div>
+          <div class="flex-center-link-3">
+            <object alt="Link to github repo."><a href="https://github.com/dereki16/sign-up-site-asgmt" class="project-fa fa fa-github fa-2x icon-3d" src="img/git.png" target="_blank"></a></object>
+          </div>
+          <div class="game-box">
+            <iframe loading="lazy" preload="none" class="game" src="https://i.simmer.io/@dereki/o-pong" title="A PC build of my game O-PONG." allowfullscreen volume="0"></iframe>
+          </div>
+        </div>
+       
+        <div class="game-description">
+            <p class="bold"> Overview</p>
+            <div class="con-p">
+              <p> O-Pong was the first original game I completed. I had a great deal of love and respect for the original. Its simple, yet challenging and fun. I was inspired to take a unique spin on the idea by making the playing field ovular. <br><br> I also made it possible to rotate your paddle to position the ball in a difficult to reach spot, and teleport from one end to another.</p>            
+            </div>
+            <p class="bold"> Features</p>
+            <div class="con-p">
+              <ul>
+                <li>The manipulation of splines for players' paddles to follow an ovular pattern. </li>
+                <li>Randomized position for ball to spawn in, as well as direction to follow. </li>
+                <li>Options menu allowing player to change both player's and ball's speed. </li>
+                <li>Custom sound effects for player hitting ball and ball going out of bounds. </li>
+              </ul>
+            </div>
+            <p class="bold"> Controls</p>
+            <div class="con-p">
+              <ul>
+                <li>P1: WS to move up and down. AD to rotate paddles. </li>
+                <li>P2: Arrow keys to do the same. </li>
+                <li>Spacebar to pause.</li>
+              </ul>
+              <p>*Note: If game doesn't load properly, please try refreshing. Only playable on PC.*</p>
+
+            </div>
+            <p class="bold"> 2021</p>
+        </div>
+      </div>
+    </div>
+
+
+  <br>
+  <br>
+  <br>
+
+  
 
         <div id="arrow-container">
           <a id="arrow-button" href="#top">
@@ -261,7 +224,6 @@
           </a>
         </div>
 
-      </div>
       <br>
 
     </div>
@@ -304,15 +266,40 @@
 
       
   </body>
+  <footer>
+    <div class="hidden vertical-writing" id="verticalText" onclick="copyToClipboard()">
+      derekini.dev@gmail.com
+    </div>  </footer>
+
+
+  <div class="sticky"></div>
+
 
   <footer>
     <div class="flex-center">
-      <a href="https://github.com/dereki16" alt="Link to my personal github account." target="_blank"><i class="fa fa-github fa-4x icon-3d"></i></a>
-      <a href="https://www.linkedin.com/in/derek-iniguez/" alt="Link to my LinkedIn account." target="_blank"><i class="fa fa-linkedin fa-4x icon-3d"></i></a>
-      <a href="https://www.youtube.com/channel/UC1syY6LwUp01hJX7zBARzxw" alt="Link to my YouTube account." target="_blank"><i class="fa fa-youtube fa-4x icon-3d"></i></a>
-      <a href="contact.html"><i class="fa fa-envelope-o fa-4x icon-3d" alt="Link to my contact page to send me an email."></i></a>
-      <a href="https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented" alt="Link to my google play store page for my mobile app - Fragmented." target="_blank"><i class="fa fa-android fa-4x icon-3d"></i></a>
+      <a href="https://github.com/dereki16" alt="Link to my personal github account." target="_blank"><i class="hidden fa fa-github fa-4x icon-3d"></i></a>
+      <a href="https://www.linkedin.com/in/derek-iniguez/" alt="Link to my LinkedIn account." target="_blank"><i class="hidden fa fa-linkedin fa-4x icon-3d"></i></a>
+      <a href="https://www.youtube.com/channel/UC1syY6LwUp01hJX7zBARzxw" alt="Link to my YouTube account." target="_blank"><i class="hidden fa fa-youtube fa-4x icon-3d"></i></a>
+      <a href="contact.html"><i class="hidden fa fa-envelope-o fa-4x icon-3d" alt="Link to my contact page to send me an email."></i></a>
+      <a href="https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented" alt="Link to my google play store page for my mobile app - Fragmented." target="_blank"><i class="hidden fa fa-android fa-4x icon-3d"></i></a>
+      <div class="hidden vertical-line social-line"></div>
+      <div class="hidden vertical-line email-line"></div>
+
     </div>
-    <p> Copyright © 2023 Derek Iniguez </p><br>
   </footer>
+  <div class="social-footer">
+    <a href="https://github.com/dereki16" alt="Link to my personal github account." target="_blank"><i class="fa fa-github fa-3x icon-3d"></i></a>
+    <a href="https://www.linkedin.com/in/derek-iniguez/" alt="Link to my LinkedIn account." target="_blank"><i class="fa fa-linkedin fa-3x icon-3d"></i></a>
+    <a href="https://www.youtube.com/channel/UC1syY6LwUp01hJX7zBARzxw" alt="Link to my YouTube account." target="_blank"><i class="fa fa-youtube fa-3x icon-3d"></i></a>
+    <a href="contact.html"><i class="fa fa-envelope-o fa-3x icon-3d" alt="Link to my contact page to send me an email."></i></a>
+    <a href="https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented" alt="Link to my google play store page for my mobile app - Fragmented." target="_blank"><i class="fa fa-android fa-3x icon-3d"></i></a>
+  </div>
+  
+  <p> Copyright © 2023 Derek Iniguez </p><br>
+
 </html>
+
+<script src="js/nav.js"></script>
+<script src="js/main.js"></script>
+<script src="simpleParallax.js"></script>
+<script src="js/contact.js"></script>
