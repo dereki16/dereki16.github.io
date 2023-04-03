@@ -35,6 +35,7 @@
           <li><a href="#contact" onclick="closeDropdown()">Contact</a></li>
           <li><a href="#projects" onclick="closeDropdown()">Projects</a></li>
           <li><a href="#aboutme" onclick="closeDropdown()">About Me</a></li>
+          <li><hr class="green-line"></li>
         </ul>
       </div>
     </nav>
@@ -42,7 +43,7 @@
 
   <body>
   <div class="body">
-    <div class=""><br><br><br><br><br><br>
+    <div class=""><br><br><br><br><br>
       <div class="hidden par-content">
         <h3 class="p"> Hey, I'm </h3>
         <h1 class="lc"> Derek Iniguez</h1>
@@ -50,7 +51,7 @@
       </div>
       <p class="hidden pi">with a passion for web development, and expertise extending to game and app development as well. </p>
 
-    </div><br><br><br><br><br><br>
+    </div><br><br><br><br>
 
     <div class="hidden proj">
       <h1 class="h1"> Projects </h1>
@@ -59,7 +60,7 @@
         <a class="btn-type gradient-button blue-gradient" href="#websites">Websites</a>
         <a class="btn-type gradient-button blue-gradient" href="#apps">Apps</a>
       </div>
-      <br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br>
 
         <br>
         <div id="aboutme"></div>
@@ -69,7 +70,8 @@
         <hr><br>
         <div class="hidden row">
           <div class="column left">
-            <h3 id="comment">// welcome to my domain!</h3><br><br><p id="about-desc">I'm Derek, a developer with a passion for creating innovative projects that live on the internet.  <br><br> Whether it's developing websites, apps or games (even a VR game!), I understand the hard work it takes to bring an idea to life. However, I am dedicated to constantly improving my skills and knowledge.</p>
+            <h3 class="comment top">// hello world!</h3>
+            <h3 class="comment">// welcome to my domain</h3><br><br><p id="about-desc">I'm Derek, a developer with a passion for creating applications.  <br><br> Whether it's developing websites, apps or games (even a VR game!), I understand the hard work it takes to bring an idea to life. <br><br> I enjoy the challenge and constantly push to improve my skills and learn.</p>
           </div>
           <div class="hidden column-right">
             <img id="me" src="webp/me2.webp"  width="400" height="400" alt="A picture of me, Derek Iniguez.">
@@ -79,6 +81,7 @@
         
         <div id="hidden tech-par">
           <p>Here are some of the technologies I've been using:</p>
+          <p class="bold"> HTML, CSS, JS, Azure, Bootstrap, Visual Studio, Unity C#, C++, ASP.NET, SQL, Swift</p>
         </div>
         <div id="tech-stack" class="hidden symbol-container">
           <img class="symbol" id="html" src="webp/html.webp" alt="Image icon of html.">
@@ -102,7 +105,7 @@
           <br><br>
         </div>
 
-        <br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br>
 
     
         <div id="projects"></div>
@@ -204,7 +207,7 @@
           </div>
         </div>
   
-        <br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br>
   
           <br>
           <div id="websites"></div>
@@ -286,7 +289,7 @@
   
           <br>
           <div id="apps"></div>
-          <br><br><br><br><br><br><br><br><br><br><br>
+          <br><br><br><br><br><br><br>
           <div id="app-itag"></div>
   
           <h1 class="hidden h1"> Apps </h1>
@@ -302,8 +305,8 @@
                   <video width="280" height="515" class="video" id="video2" src="vids/itagvid2.mp4" alt="Video 2" style="display: none;" loop="true" autoplay="autoplay" playsinline muted></video>
                 </div>
                 <div class="button-container">
-                  <button id="prev-btn" class="gradient-button green-gradient"><img src="img/right-arrow.png" alt="Previous"></button>
-                  <button id="next-btn" class="gradient-button green-gradient"><img src="img/right-arrow.png" alt="Next"></button>
+                  <button id="prev-btn" class="gradient-button blue-gradient"><img src="img/right-arrow.png" alt="Previous"></button>
+                  <button id="next-btn" class="gradient-button blue-gradient"><img src="img/right-arrow.png" alt="Next"></button>
                 </div>
                 <br>
                 <object alt="Link to github repo."><a href="https://github.com/dereki16/iTag" class="fa fa-github fa-2x icon-3d" target="_blank"></a></object>
@@ -389,7 +392,7 @@
           </div>
   </div>
 
-        <br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br>
 
         <br>
         <div id="contact"></div>
@@ -405,16 +408,16 @@
         <input type="hidden" name="_captcha" value="false">
 
         <label for="fname">Name</label>
-        <input type="text" id="name" name="firstname" placeholder="Your name..">
+        <input class="myTextarea" type="text" id="name" name="firstname" placeholder="Your name..">
     
         <label for="email">Email</label>
-        <input type="text" id="email" name="email" placeholder="Your email address.." required>
+        <input class="myTextarea" type="text" id="email" name="email" placeholder="Your email address.." required>
         
         <label for="subject">Subject</label>
-        <input type="text" id="subj" name="subject" placeholder="Say hello!">
+        <input class="myTextarea" type="text" id="subj" name="subject" placeholder="Say hello!">
 
         <label for="subject">Message</label>
-        <textarea id="msg" name="message" placeholder="Write something.." style="height:200px"></textarea>
+        <textarea class="myTextarea" name="message" placeholder="Write something.." style="height:200px"></textarea>
        
         <!-- H U N -->
         <div id="tex">

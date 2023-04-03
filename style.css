@@ -51,7 +51,8 @@ html {
   list-style: none;
   display: none;
   text-align: center;
-  
+  color: rgb(25,255,255);
+
 }
 
 .nav-menu a {
@@ -146,8 +147,9 @@ background-color: white;
 	cursor: pointer; /* Change the cursor to a pointer when hovering over the text */
 color: white;
 }
+
 .vertical-writing:hover {
-	color: #007bff;
+	color: #00ff95;
 }
 /* .vertical-writing {
   writing-mode: vertical-lr;
@@ -368,6 +370,8 @@ background-color: #58b958;
   color: #007bff;
   background-color:rgb(0, 17, 30); 
   background-image: linear-gradient(45deg, rgb(0, 27, 30), #00448c);
+  border: 1px solid rgb(25, 255, 255);
+
 
 }
 
@@ -1108,40 +1112,46 @@ input[type=text], select, textarea {
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
+
 }
 input:focus, textarea:focus {
   border-color: rgb(25, 255, 255);/* change the border color to red when input is focused */
   box-shadow: 0 0 5px rgb(25, 255, 255); /* add a box-shadow for extra emphasis */
   outline: none; /* remove the default outline */
+
 }
 input[type=text], select, textarea {
   border: 1px solid #18658f;
+
+  border-color: rgb(25, 255, 255);/* change the border color to red when input is focused */
+
 }
 
 input:-webkit-autofill {
   -webkit-box-shadow:0 0 0 50px #122e4a inset;  
+  background-image: linear-gradient(135deg, #051324, #0c2b51, #0069a6);
+  color: rgb(25, 255, 255);
   -webkit-text-fill-color: rgb(25, 255, 255);
 }
 
-input:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0 50px #122e4a inset;
-  -webkit-text-fill-color: rgb(25, 255, 255);
-}
+
 
 textarea, input {
-  background-color: #122e4a;
   /* background-image: linear-gradient(45deg, #161616, #2d2d2d); */
+
+}
+textarea:focus, input:foucs {
   background-image: linear-gradient(45deg, #0c2b51, #0084ff);
 
-
-  color: white;
 }
 input:focus {
 	border-color: rgb(25, 255, 255);;
+
 }
 
 input[type=submit] {
   background-image: linear-gradient(45deg, #0c2b51, #00ff95);
+
   /* background-color: #04AA6D; original */
 
   color: white;
@@ -1153,7 +1163,24 @@ input[type=submit] {
 
 input[type=submit]:hover {
   background-color: #023568;
+  -webkit-text-fill-color: rgb(25, 255, 255);
+
 }
+
+
+.myTextarea {
+  transition: background-color 0.3s;
+  background-image: linear-gradient(45deg, #0c2b51, #0084ff);
+
+  color: rgb(25, 255, 255);
+}
+
+.myTextarea.has-content {
+  background-image: linear-gradient(135deg, #051324, #0c2b51, #0069a6);
+  color: rgb(25, 255, 255);
+
+}
+
 
 .container {
   border-radius: 5px;
@@ -1202,7 +1229,9 @@ input[type=submit]:hover {
 
 #resume-tab{
   border: 1px solid #007bff;
+
 }
+
 
 #Home-link {
   float: left;
@@ -1256,6 +1285,10 @@ input[type=submit]:hover {
     .nav-toggle {
       display: none;
     }
+
+    .green-line {
+      display: none;
+}
 
     .container {
       background-color: #161616;
@@ -1384,7 +1417,15 @@ input[type=submit]:hover {
 
   @media only screen and (max-width:1000px) {
     /* For tablets: */
+	  #resume-tab {
+		  	padding: 8px;
+		  		background-color: rgba(0,10,10,.4);
 
+	  }
+	#resume-taab:hover {
+		
+	}
+	  
 	  .symbol {
 		  width: 20%;
 		  height: 100px;
@@ -1875,7 +1916,7 @@ input[type=submit]:hover {
   display: block;
   max-width: 100%;
   height: auto;
-  transition: all 0.5s ease;
+  transition: all 0.1s ease;
   filter: grayscale(100%) contrast(130%) brightness(60%);
 }
 
@@ -1915,11 +1956,15 @@ input[type=submit]:hover {
   background-color: #ccc;
 }
 
-#comment {
+.comment {
   color:#58b958;
   margin-left: 20px;
-	margin-top: 100px;
 	
+}
+
+.top {
+	margin-top: 120px;
+
 }
 
 #about-desc {
@@ -1983,7 +2028,7 @@ margin-bottom: -100px;
 .symbol {
   position: relative;
   animation: moveUp 0.5s ease-in-out;
-  transition: transform 0.3s ease-in-out;
+  transition: transform .2s ease-in-out;
 }
 
 .symbol:hover {
@@ -2043,7 +2088,12 @@ margin-bottom: -100px;
 
 }
 
-  
+  .green-line {
+	      border: .1px solid #1d5c85;
+	    border-radius: 100px;
+  margin-left: 35%;
+  margin-right:35%;
+  }
   
   .app {
     background-color: #161616;
@@ -2243,14 +2293,22 @@ padding-left: 2.5%;
 .blue-gradient {
   background-image: linear-gradient(180deg, #0c2b51, #00aeff);
 }
+.blue-gradient:hover {
+  background-image: linear-gradient(180deg, #002c47, rgb(42 201 201));
+			color: rgb(25, 255,255);
+
+}
 .green-gradient {
-      background-image: linear-gradient(45deg, #216e55, #00d99b);
+      background-image: linear-gradient(45deg, #009564, #00b6d9);
+
 }
 
 #green-hover:hover {
 /*   background-image: linear-gradient(45deg, #00956b, #00a3d9, #005ad9);
 	 */
-  background-image: linear-gradient(45deg, #004650, #00864e);
+  background-image: linear-gradient(45deg, #004650, #008681);
+		color: rgb(25, 255,255);
+
 
 }
 
@@ -2325,3 +2383,4 @@ padding-left: 2.5%;
 	width: 90%;
 
   }
+
