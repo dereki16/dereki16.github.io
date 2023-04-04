@@ -2139,11 +2139,7 @@ margin-bottom: -100px;
 	  height: 30px;
 	  padding-bottom: 10px;
   }
-  #prev-btn {
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-  
-  }
+
 #prev-btn, #next-btn {
 		  	  border-radius: 10%;
           background-color:#007bff;
@@ -2384,3 +2380,6 @@ padding-left: 2.5%;
 
   }
 
+  .footer-text {
+    color: gray;
+  }
