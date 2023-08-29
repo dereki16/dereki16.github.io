@@ -13,29 +13,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
-  <div id="top"></div>
 
-  <header>
-    <h2 class="hidden" id="Home-link"><a class="hidden icon-3d" id="home-a" href="index.html">D</a></h2>
-    <nav class="hidden" id="topnav"><br>
-      <div>
-        <input type="checkbox" id="nav-checkbox" class="nav-checkbox">
-        <label for="nav-checkbox" class="nav-toggle">
-          <i class="fa fa-bars blue"></i>
-        </label>
-        <br>
-        <ul class="hidden nav-menu">
-          <li><a id="resume-tab" href="pdf/Resume3.pdf#zoom=110" target="_blank">Resume</a></li>
-          <li><a href="projects.html">Games</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-          <li><a href="index.html#projects">Projects</a></li>
-          <li><a href="index.html#aboutme">About Me</a></li>          
-        </ul>
-      </div>
-    </nav>
-  </header>
+ <!-- Navbar -->
+<section class="top-nav sticky">
+  <h2 class="hidden" id="Home-link"><a class="hidden icon-3d" id="home-a" href="index.html">D</a></h2>
+  <input id="menu-toggle" type="checkbox" />
+<label class='menu-button-container' for="menu-toggle">
+  <div class='menu-button'></div>
+</label>
+<ul class="menu">
+  <li class="nav-item">
+    <a class="nav-link" href="#UNCONTAINED" title="See my VR game here." onclick="closeDropdown()">VR Survival</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#VATS" title="See my Capstone project here." onclick="closeDropdown()">Capstone Project</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#Fragmented" title="See my mobile game here." onclick="closeDropdown()">Mobile Game</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="index.html#contact" title="Reach out to me here." onclick="closeDropdown()">Contact</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="resume-tab" href="pdf/Resume3.pdf#zoom=110" target="_blank">Resume</a>
+  </li>
+</ul>
+</section>
 
-  <div class="navbar"></div>
 
 
   <body>
@@ -63,7 +67,7 @@
         <p class="bold">Overview</p>
         <div class="con-p">
           <p>In this immersive post-apocalyptic world, see if you have what it takes to survive. Uncontained features room unlocking, barricade building, zombie shooting fun.</p>
-          <p>This is a VR game I developed in Unity with help from Hannah Dale as the level designer / art director, Andrew Aguas as the audio editor, and free assets.</p>
+          <p>This is a VR game I developed in Unity with help from Andrew Aguas as the audio editor, and free assets.</p>
         </div>
 
         <p class="bold">Features</p>
@@ -156,9 +160,9 @@
             </div>
             <p class="bold"> Overview</p>
             <div class="con-p">
-              <p> Fragmented is meant to be an endless runner mobile game where the player is hurtling through space in a minefield of colorful debris. Think Picasso meets endless space runner matched with a trap beat for music. <br><br> Developed by me. Assets provided by Hannah Dale.</p>
+              <p> Fragmented is meant to be an endless runner mobile game where the player is hurtling through space in a minefield of colorful debris. Think Picasso meets endless space runner matched with a trap beat for music.</p>
             </div>
-            <p class="bold"> Features</p>
+            <!-- <p class="bold"> Features</p>
             <div class="con-p">
               <ul>
                 <li>Object pooling to instantiate and store obstacles. </li>
@@ -167,7 +171,7 @@
                 <li>Four sets of speed for obstacles to travel at depending on boost. </li>
                 <li>Custom sound effects for boost collection and obstacle collision.</li>
               </ul>
-            </div>
+            </div> -->
             <p class="bold"> 2021 </p>
           </div>
         </div>
@@ -209,7 +213,7 @@
             <div class="con-p">
               <p> O-Pong was the first original game I completed. I had a great deal of love and respect for the original. Its simple, yet challenging and fun. I was inspired to take a unique spin on the idea by making the playing field ovular. <br><br> I also made it possible to rotate your paddle to position the ball in a difficult to reach spot, and teleport from one end to another.</p>            
             </div>
-            <p class="bold"> Features</p>
+            <!-- <p class="bold"> Features</p>
             <div class="con-p">
               <ul>
                 <li>The manipulation of splines for players' paddles to follow an ovular pattern. </li>
@@ -217,7 +221,7 @@
                 <li>Options menu allowing player to change both player's and ball's speed. </li>
                 <li>Custom sound effects for player hitting ball and ball going out of bounds. </li>
               </ul>
-            </div>
+            </div> -->
             <p class="bold"> 2021</p>
         </div>
       </div>
@@ -307,8 +311,10 @@
   </div>
   
   <p class="footer-text">designed and developed by Derek Iniguez © 2023</p><br>
+
+  <script src="js/nav.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
 
-<script src="js/nav.js"></script>
-<script src="js/main.js"></script>
+

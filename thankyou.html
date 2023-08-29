@@ -15,27 +15,31 @@
 
   <div id="top"></div>
 
-  <header>
-    <h2 class="hidden" id="Home-link"><a class="hidden icon-3d" id="home-a" href="index.html">D</a></h2>
-    <nav class="hidden" id="topnav"><br>
-      <div>
-        <input type="checkbox" id="nav-checkbox" class="nav-checkbox">
-        <label for="nav-checkbox" class="nav-toggle">
-          <i class="fa fa-bars blue"></i>
-        </label>
-        <br>
-        <ul class="hidden nav-menu">
-          <li><a id="resume-tab" href="pdf/Resume3.pdf#zoom=110" target="_blank">Resume</a></li>
-          <li><a href="projects.html">Games</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-          <li><a href="index.html#projects">Projects</a></li>
-          <li><a href="index.html#aboutme">About Me</a></li>          
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-  <div class="navbar"></div>
+ <!-- Navbar -->
+ <section class="top-nav sticky">
+  <h2 class="hidden" id="Home-link"><a class="hidden icon-3d" id="home-a" href="index.html">D</a></h2>
+  <input id="menu-toggle" type="checkbox" />
+<label class='menu-button-container' for="menu-toggle">
+  <div class='menu-button'></div>
+</label>
+<ul class="menu">
+  <li class="nav-item">
+    <a class="nav-link" href="index.html#aboutme" title="See more about me here." onclick="closeDropdown()">About Me</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="index.html#projects" title="See my projects here." onclick="closeDropdown()">Projects</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="index.html#contact" title="Reach out to me here." onclick="closeDropdown()">Contact</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="projects.html" title="See my game projects here." onclick="closeDropdown()">Games</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="resume-tab" href="pdf/Resume3.pdf#zoom=110" target="_blank">Resume</a>
+  </li>
+</ul>
+</section>
 
   <body>
     <br><br><br><br>
@@ -80,6 +84,5 @@
 
 </html>
 
-<script src="js/nav.js"></script>
 <script src="js/main.js"></script>
 <script src="js/contact.js"></script>
