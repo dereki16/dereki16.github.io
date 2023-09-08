@@ -22,3 +22,6 @@ const observer = new IntersectionObserver((entries) => {
     document.body.removeChild(textarea);
     alert("Email successfully copied!");
   }
+
+  
+  

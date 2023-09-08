@@ -3,13 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hi! I'm a software engineer passionate about expressing creativity through programming video games, websites, and apps. Check out some of my work here.">
+    <meta name="description" content="Hi! I'm a software engineer passionate about expressing creativity through programming websites, video games, and apps. Check out some of my work here.">
     <title>Derek Iniguez</title>
-    <link rel="icon" href="img/site-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;400;900&display=swap" rel="stylesheet">    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preload" href="js/font.js" as="script">
+    <script src="js/font.js"></script>
+    <link rel="icon" href="webp/site-icon.webp">
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
 
@@ -17,7 +15,7 @@
 
  <!-- Navbar -->
 <section class="top-nav sticky">
-  <h2 class="hidden" id="Home-link"><a class="hidden icon-3d" id="home-a" href="index.html">D</a></h2>
+  <h2 class="" id="Home-link"><a class=" icon-3d" id="home-a" href="index.html">D</a></h2>
   <input id="menu-toggle" type="checkbox" />
 <label class='menu-button-container' for="menu-toggle">
   <div class='menu-button'></div>
@@ -72,7 +70,8 @@
     <div class="hidden row">
       <div class="column left">
         <h3 class="comment top">// hello world!</h3>
-        <h3 class="comment">// welcome to my domain</h3><br><br><p id="about-desc">I'm Derek, a developer with a passion for creating applications.  <br><br> Whether it's developing websites, apps or games (even a VR game!), I understand the hard work it takes to bring an idea to life. <br><br> I enjoy the challenge and constantly push to improve my skills and learn.</p>
+        <h3 class="comment">// welcome to my domain</h3>
+        <br><br><p id="about-desc">I'm Derek, a developer with a passion for creating applications.  <br><br> Whether it's developing websites, apps or games (even a VR game!), I understand the hard work it takes to bring an idea to life. <br><br> I enjoy the challenge and constantly push to improve my skills and learn.</p>
       </div>
       <div class="hidden column-right">
         <img id="me" src="webp/me2.webp"  width="400" height="400" alt="A picture of me, Derek Iniguez.">
@@ -109,107 +108,7 @@
 
     <div id="projects"></div>
 
-      <div id="games"></div>
-      <br><br><br>
-
-      <h1 class="hidden h1"> Games </h1>
-      <hr><br>
-
-      <div class="hidden">
-        <div class="game-grid">
-          <div class="game-grid-container">
-            <div class="hidden game-card">
-              <div class="header">  
-                <!-- fix the icons for each project -->
-                <div class="game-item">
-
-                  <h2><a class="projlink" href="projects.html#UNCONTAINED">VR Survival</a></h2>
-                  <div class="flex-center-link-4">
-                    <a href="https://github.com/dereki16/Uncontained-VR" alt="Link to github repo." target="_blank"><i class="game-link fa fa-github fa-2x icon-3d"></i></a>
-                  </div>
-
-              
-                  <p class="p1">Immerse yourself into a world overrun by zombies.</p>
-                  <br><br><br>
-                  <video preload="auto" muted class="vid" controls alt="Short clip of my Zombie Survival Video Game in Virtual Reality made in Unity.">
-                    <source src="https://github.com/dereki16/dereki16.github.io/raw/main/vids/uvr(short).mp4" type="video/mp4">
-                  </video>
-                  <br>
-                </div>
-              </div>
-            </div>
-
-            <div class="hidden game-card">
-              <div class="header">
-                <div class="game-item">
-
-                  <h2><a class="projlink" href="projects.html#VATS">VATS</a></h2>
-                  <div class="flex-center-link-4">
-                    <a href="https://github.com/dclinkenbeard/VATS" alt="Link to github repo." target="_blank"><i class="game-link fa fa-github fa-2x icon-3d"></i></a>
-                  </div>
-  
-                  <p class="p1">Dive deep in this Virtual Aquarium Tank System.</p>
-                  <br><br><br>
-                  <video preload="auto" muted class="vid" controls alt="Captstone project of a Virtual Aquarium Tank System made in Unity with responsive UI.">
-                    <source src="https://github.com/dereki16/dereki16.github.io/raw/main/vids/vats(short).mp4" type="video/mp4">
-                  </video>
-                  <br>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-
-        <div class="game-grid">
-          <div class="game-grid-container">
-            <div class="hidden game-card">
-              <div class="header">
-                <div class="game-item">
-                  <h2><a class="projlink" href="projects.html#Fragmented">Mobile</a></h2>
-                  <div class="flex-center-link-4">
-                    <a href="https://github.com/dereki16/Fragmented" alt="Link to github repo." target="_blank"><i class="fa fa-github fa-2x icon-3d"></i></a>
-                    <a href="https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented" alt="Link to my app's google play store page." target="_blank"><i class="fa fa-android fa-2x icon-3d"></i></a>
-                  </div>
-  
-                  <p class="p1">Frustratingly fun game of dodge the colorful debris.</p>
-                  <br><br><br>
-                  <video muted class="vid" controls alt="My mobile application released on Google Play Store of an artistic, endless runner.">
-                    <source src="./vids/Fragmented (short).mp4" type="video/mp4">
-                  </video>
-                  <br>
-                </div>
-              </div>
-            </div>
-
-            <div class="hidden game-card">
-              <div class="header">
-                <div class="game-item">
-                  <h2><a class="projlink" href="projects.html#O-PONG">O-PONG</a></h2>
-                  <div class="flex-center-link-4">
-                    <a href="https://github.com/dereki16/O-PONG" alt="Link to github repo." target="_blank"><i class="game-link fa fa-github fa-2x icon-3d"></i></a>
-                  </div>       
-  
-                  <p class="p1">An ovular twist on the 1972 classic.</p>
-                  <br><br><br>
-                  <video muted class="vid" controls alt="My rendition of the 1972 classic, Pong.">
-                    <source src="./vids/O-Pong (short).mp4" type="video/mp4">
-                  </video>
-                  <br>
-
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <br><br><br><br><br><br><br>
-
-      <br>
-      <div id="websites"></div>
+    <div id="websites"></div>
       <br><br><br>
 
       <h1 class="hidden h1"> Websites </h1>
@@ -221,177 +120,36 @@
         <div class="grid">
           <div class="grid-container">
 
-            <a href="https://razorpagesmovie20230326084758.azurewebsites.net/" class="hidden grid-item" target="_blank">
-              <h3 class="grid-title"> Razor Movies </h3>
-              <img class="website-prev" src="webp/RazorMovies.webp">
-              <object alt="Link to github repo."><a href="https://github.com/dereki16/RazorPagesMovie" class="fa fa-github fa-2x icon-3d" target="_blank"></a></object>
-              <p class="grid-p">Movie site with CRUD movie list, accesses info from an API. Developed in ASP.NET with Bootstrap and published through Azure.</p>
-            </a>
-
-            <a href="https://tech-doc-rwd.derekiniguez1.repl.co/" class="hidden grid-item" target="_blank">
-              <h3> Technical Doc </h3>
-              <img class="website-prev" src="webp/TechDoc.webp">
-              <object alt="Link to github repo."><a href="https://github.com/dereki16/Technical-Documentation-RWD" class="fa fa-github fa-2x icon-3d" target="_blank"></a></object>
-              <p class="grid-p">Designed a technical documentation for HTML & CSS for a certificate in Responsive Web Design.</p>
-            </a>
-
-            <a href="https://product-landing-page-rwd.derekiniguez1.repl.co/" class="hidden grid-item" target="_blank">
-              <h3> Product Landing Page </h3>
-              <img class="website-prev" src="webp/ProductPage.webp">
-              <object alt="Link to github repo."><a href="https://github.com/dereki16/Product-Landing-Page-RWD" class="fa fa-github fa-2x icon-3d" target="_blank"></a></object>
-              <p class="grid-p">A product landing page designed for a certificate in Responsive Web Design.</p>
-            </a>
-            
-            <a preload="auto" href="https://quote-finder.derekiniguez1.repl.co/" class="hidden grid-item" target="_blank">
-              <h3> Quote Finder </h3>
-              <img class="website-prev" src="webp/QuoteFinder.webp">
-              <object alt="Link to github repo."><a href="https://github.com/dereki16/quote-finder" class="fa fa-github fa-2x icon-3d" target="_blank"></a></object>
-              <p class="grid-p">Quote finder using EJS that takes input and finds quotes with input; also includes authors and categories.
-              </p>
-            </a>
-              
-            <a href="https://geography-quiz.derekiniguez1.repl.co/" class="hidden grid-item" target="_blank">
-              <h3> US Quiz </h3>
-              <img class="website-prev" src="webp/usq.webp">
-              <object alt="Link to github repo."><a href="https://github.com/dereki16/us-geo-quiz-asgmt" class="fa fa-github fa-2x icon-3d" target="_blank"></a></object>
-              <p class="grid-p">Developed a US quiz utilizing HTML, CSS, JavaScript, jQuery and AJAX that grades you and keeps track of attempts.</p>
-            </a>
-
-            <a href="https://isbn-library.derekiniguez1.repl.co/" class="hidden grid-item" target="_blank">
-              <h3> ISBN Library </h3>
-              <img class="website-prev" src="webp/OpenLibrary.webp">
-              <object alt="Link to github repo."><a href="https://github.com/dereki16/isbn-library" class="fa fa-github fa-2x icon-3d" target="_blank"></a></object>
-              <p class="grid-p">Used AJAX, jQuery and an API to retrieve info from openlibrary.org and display it on my own open library.
-              </p>
-            </a>
-
-            <a preload="auto" href="https://game-dev-v2.derekiniguez1.repl.co/welcome" class="hidden grid-item" target="_blank">
-              <h3> Game Dev Info </h3>
-              <img class="website-prev" src="webp/TechLesson.webp">
-              <object alt="Link to github repo."><a href="https://github.com/dereki16/gamedev-infov2" class="fa fa-github fa-2x icon-3d" target="_blank"></a></object>
-              <p class="grid-p">Created an informational website on game development that uses EJS and an API for motivational quotes.
-              </p>
-            </a>
-
-            <a href="https://signup-form.derekiniguez1.repl.co/" class="hidden grid-item" target="_blank">
-              <h3> Sign Up Form </h3>
-              <img class="website-prev" src="webp/SignupForm.webp">
-              <object alt="Link to github repo."><a href="https://github.com/dereki16/sign-up-site-asgmt" class="fa fa-github fa-2x icon-3d" target="_blank"></a></object>
-              <p class="grid-p">Sign-up form that checks password confirmation, and uses API to display city, coordinates, state, and county.
-              </p>
-            </a>
-
           </div>
         </div>
       </div>
-      <br><br>
 
-      <br>
+      <div id="games"></div>
+      <br><br><br>
+
+      <h1 class="hidden h1"> Games </h1>
+      <hr><br>
+
+      <div class="hidden">
+        <div class="game-grid">
+            <div class="game-grid-container">
+               
+            </div>
+        </div>
+    </div>
+    
       <div id="apps"></div>
       <br><br><br><br><br><br><br>
       <div id="app-itag"></div>
 
       <h1 class="hidden h1"> Apps </h1>
       <hr><br>
-
       <div class="app-grid">
         <div class="hidden app-container">
-          <div class="app app-1">
-            <!-- App 1 content goes here -->
-            <h3 class="hidden"> iTag </h3>
-              <div class="hidden app-layout video-container">
-                <video width="280" height="515" class="video" id="video1" src="vids/itagvid1.mp4" alt="Video 1" loop="true" autoplay="autoplay" playsinline muted></video>
-                <video width="280" height="515" class="video" id="video2" src="vids/itagvid2.mp4" alt="Video 2" style="display: none;" loop="true" autoplay="autoplay" playsinline muted></video>
-              </div>
-              <div class="button-container">
-                <button id="prev-btn" class="gradient-button blue-gradient">prev</button>
-                <button id="next-btn" class="gradient-button blue-gradient">next</button>
-              </div>
-              <br>
-              <object alt="Link to github repo."><a href="https://github.com/dereki16/iTag" class="fa fa-github fa-2x icon-3d" target="_blank"></a></object>
-              <div id="app-flixter"></div>
-              <p>iTag, a group project, is an augmented reality tag game application where players can sign up and join.
-              </p>
 
-            </div> 
-            <div class="app app-2">
-              <!-- App 2 content goes here -->
-              <h3 class="hidden"> Flixter </h3>
-              <div class="hidden app-layout video-container">
-                <video width="280" height="515" class="video" alt="Netflix mockup mobile application demonstration." loop="true" autoplay="autoplay" playsinline muted>
-                  <source src="vids/flixtervid.mp4"  class="video" type="video/mp4">
-                </video>
-              </div>
-              <br>
-              <object alt="Link to github repo."><a href="https://github.com/dereki16/flixter"class="app-link fa fa-github fa-2x icon-3d" target="_blank"></a></object>
-              <div id="app-tweeter"></div>
-              <p class="grid-p">Movie browsing app like Netflix where users can tap a cell to see more details about a particular movie.
-              </p>
-            </div>  
-          </div>            
-        </div>
-      </div>
-      
-
-
-      <div class="app-grid">
-        <div class="hidden app-container">
-          <div class="app app-1">
-          <!-- App 1 content goes here -->
-            <h3 class="hidden"> Tweeter </h3>
-            <div class="hidden app-layout video-container">
-              <video width="280" height="515" class="video" alt="Twitter mockup showing app functionalities." loop="true" autoplay="autoplay" playsinline muted>
-                <source src="vids/tweetervid.mp4" type="video/mp4">
-              </video>              
-            </div>
-            <br>
-            
-            <object alt="Link to github repo."><a href="https://github.com/dereki16/tweeter" class="app-link fa fa-github fa-2x icon-3d" target="_blank"></a></object>
-            <div id="app-parstagram"></div>
-            <p class="grid-p">Twitter mockup where a user can view tweets with user profile pic, username, and tweet text. 
-            </p>          
-          </div>
-          <div class="app app-2">
-            <!-- App 2 content goes here -->
-            <h3 class="hidden"> Parstagram </h3>
-            <div class="hidden app-layout video-container">
-
-              <video width="280" height="515" class="video" alt="Instagram clone displaying likes, posts, and sigin/signout." loop="true" autoplay="autoplay" playsinline muted>
-                <source src="vids/parstagramvid.mp4" type="video/mp4">
-              </video>              
-            </div>
-            <br>
-
-            <object alt="Link to github repo."><a href="https://github.com/dereki16/Parstagram" class="app-link fa fa-github fa-2x icon-3d"  target="_blank"></a></object>
-            <div id="app-tippy"></div>
-            <p class="grid-p">Instagram clone with a custom Parse backend that allows a user to post photos and view a global photos feed.
-            </p>          
-          </div>
         </div>
       </div>
 
-
-      <div class="app-grid">
-        <div class="hidden app-container">
-          <div class="app app-1">
-            <!-- App 1 content goes here -->
-            <h3 class="hidden"> Tippy </h3>
-            <div class="hidden app-layout video-container">
-              <video width="280" height="515" class="video" alt="Tipping application that helps users tip 15%, 18%, and 20%." loop="true" autoplay="autoplay" playsinline muted>
-                <source src="vids/tippyvid.mp4" type="video/mp4">
-              </video>              
-            </div>
-            <br>
-
-            <object alt="Link to github repo."><a href="https://github.com/dereki16/big-tipper" class="app-link fa fa-github fa-2x icon-3d" target="_blank"></a></object>
-            <p class="grid-p">A calculating application for IOS where users can enter a bill amount and get recommended tip value.
-            </p>          
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <br><br><br><br><br>
 
     <br>
     <div id="contact"></div>
@@ -477,9 +235,11 @@
   </div>
   
   <p class="footer-text">designed and developed by Derek Iniguez © 2023</p><br>
-
-  <script src="js/main.js"></script>
-  <script src="js/contact.js"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="js/main.js" async></script>
+  <script src="js/contact.js" async></script>
+  <script src="js/projects.js"></script>
 
 </body>
 </html>
