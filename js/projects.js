@@ -32,14 +32,14 @@ const projects = [
         iconType: 'github',
         description: 'A product landing page designed for a certificate in Responsive Web Design.'
     },
-    {
-        title: 'Quote Finder',
-        link: 'https://quote-finder.derekiniguez1.repl.co/',
-        imgSrc: 'webp/QuoteFinder.webp',
-        repoLink: 'https://github.com/dereki16/quote-finder',
-        iconType: 'github',
-        description: 'Quote finder using EJS that takes input and finds quotes with input; also includes authors and categories.'
-    },
+    // {
+    //     title: 'Quote Finder',
+    //     link: 'https://quote-finder.derekiniguez1.repl.co/',
+    //     imgSrc: 'webp/QuoteFinder.webp',
+    //     repoLink: 'https://github.com/dereki16/quote-finder',
+    //     iconType: 'github',
+    //     description: 'Quote finder using EJS that takes input and finds quotes with input; also includes authors and categories.'
+    // },
     {
         title: 'US Quiz',
         link: 'https://geography-quiz.derekiniguez1.repl.co/',
@@ -93,6 +93,11 @@ function createProjectElements() {
         `;
 
         gridContainer.appendChild(projectElement);
+        // After appending all project elements
+        if (gridContainer.children.length % 2 !== 0) {
+            gridContainer.style.content = '" " " "';  // this triggers the ::before and ::after
+        }
+
     });
 }
 
@@ -199,6 +204,32 @@ function createGameElements() {
 
 document.addEventListener('DOMContentLoaded', createGameElements);
 
+
+
+function handleVideoSwitching(appInstanceIndex) {
+    const video1 = document.getElementById(`video${appInstanceIndex + 1}-1`);
+    const video2 = document.getElementById(`video${appInstanceIndex + 1}-2`);
+    const prevBtn = document.getElementById(`prev-btn-${appInstanceIndex}`);
+    const nextBtn = document.getElementById(`next-btn-${appInstanceIndex}`);
+
+    let currentVideo = 1;
+
+    function switchVideo() {
+        if (currentVideo === 1) {
+            video1.style.display = "none";
+            video2.style.display = "block";
+            currentVideo = 2;
+        } else {
+            video2.style.display = "none";
+            video1.style.display = "block";
+            currentVideo = 1;
+        }
+    }
+
+    prevBtn.addEventListener("click", switchVideo);
+    nextBtn.addEventListener("click", switchVideo);
+}
+
 // apps
 
 const apps = [
@@ -266,23 +297,15 @@ const apps = [
 function createAppElements() {
     const appContainer = document.querySelector('.app-container');
 
-   
+    apps.forEach((app, appIndex) => {
+        const appElement = document.createElement('div');
+        appElement.classList.add('app');
+        let videosHTML = '';
 
-    // create for loop for each app instance
-    apps.forEach(app => {
-    // create div for app
-    const appElement = document.createElement('div');
-
-    // add any necessary classes
-    appElement.classList.add('app');
-    // add let for nested data structure
-    let videosHTML = '';
-
-        // If the app is iTag, handle its unique video setup
         if (app.title === 'iTag') {
             app.video.forEach((video, index) => {
                 videosHTML += `
-                <video width="280" height="515" class="video" id="video${index + 1}" src="${video.src}" alt="${video.alt}" ${index === 1 ? 'style="display: none;"' : ''} loop="true" autoplay="autoplay" playsinline muted></video>
+                <video width="280" height="515" class="video" id="video${appIndex + 1}-${index + 1}" src="${video.src}" alt="${video.alt}" ${index === 1 ? 'style="display: none;"' : ''} loop="true" autoplay="autoplay" playsinline muted></video>
                 `;
             });
             videosHTML = `
@@ -290,8 +313,8 @@ function createAppElements() {
                 ${videosHTML}
             </div>
             <div class="button-container">
-                <button id="prev-btn" class="gradient-button blue-gradient">prev</button>
-                <button id="next-btn" class="gradient-button blue-gradient">next</button>
+                <button id="prev-btn-${appIndex}" class="gradient-button blue-gradient">prev</button>
+                <button id="next-btn-${appIndex}" class="gradient-button blue-gradient">next</button>
             </div>
             `;
         } else {
@@ -313,7 +336,40 @@ function createAppElements() {
         `;
 
         appContainer.appendChild(appElement);
+
+        if (app.title === 'iTag') {
+            handleVideoSwitching(appIndex);
+        }
     });
 }
 
 document.addEventListener('DOMContentLoaded', createAppElements);
+
+document.addEventListener('DOMContentLoaded', () => {
+    // The callback will be fired when #apps enters or exits the viewport
+    function handleIntersect(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) { 
+                const videos = entry.target.querySelectorAll('.video');
+                videos.forEach(video => {
+                    video.play();
+                });
+            } else {
+                const videos = entry.target.querySelectorAll('.video');
+                videos.forEach(video => {
+                    video.pause();
+                });
+            }
+        });
+    }
+
+    const options = {
+        root: null, 
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, options);
+    const appsDiv = document.querySelector('#apps');
+    observer.observe(appsDiv);
+});

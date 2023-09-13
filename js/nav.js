@@ -9,3 +9,11 @@
 //     navbar.classList.remove("sticky");
 //   }
 // }
+
+
+function closeDropdown() {
+    const menuToggle = document.getElementById("menu-toggle");
+    if (menuToggle.checked) {
+        menuToggle.checked = false;
+    }
+}
