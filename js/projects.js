@@ -6,7 +6,7 @@ const projects = [
         imgSrc: 'webp/PopperSocial.webp',
         repoLink: 'https://www.linkedin.com/company/popper-social/about/',
         iconType: 'linkedin',
-        description: "Crafted a dynamic landing page using HTML, CSS, JS, AJAX, jQuery, Bootstrap, integrating MailerLite, and animating with GSAP's ScrollTrigger. Utilized GitHub and Firebase for seamless tech synergy."
+        description: "Developed a dynamic landing page integrating MailerLite and GSAP animations. Crafted with HTML, CSS, JS, AJAX, jQuery, and Bootstrap. Hosted and managed through GitHub and Firebase."
     },
     {
         title: 'Razor Movies',
@@ -14,7 +14,15 @@ const projects = [
         imgSrc: 'webp/RazorMovies.webp',
         repoLink: 'https://github.com/dereki16/Razor-Movies-Project',
         iconType: 'github',
-        description: 'Movie site with CRUD movie list, accesses info from an API. Developed in ASP.NET with Bootstrap and published through Azure.'
+        description: 'Built a responsive movie site supporting CRUD operations, using external APIs for data. Developed using ASP.NET, hosted on Azure and implemented a strategy to counteract cold start delays.'
+    },
+    {
+        title: 'Portfolio Site',
+        link: 'https://derekiniguez.com',
+        imgSrc: 'webp/portfolio.png',
+        repoLink: 'https://github.com/dereki16/dereki16.github.io',
+        iconType: 'github',
+        description: 'Designed and developed a portfolio site to display my work, optimized for performance and security using Cloudflare.'
     },
     {
         title: 'Technical Doc',
@@ -22,7 +30,7 @@ const projects = [
         imgSrc: 'webp/TechDoc.webp',
         repoLink:'https://github.com/dereki16/Technical-Documentation-RWD',
         iconType: 'github',
-        description: 'Designed a technical documentation for HTML & CSS for a certificate in Responsive Web Design.'
+        description: 'Created a technical documentation on HTML & CSS as part of a Responsive Web Design certification.'
     },
     {
         title: 'Product Landing Page',
@@ -30,7 +38,7 @@ const projects = [
         imgSrc: 'webp/ProductPage.webp',
         repoLink: 'https://github.com/dereki16/Product-Landing-Page-RWD',
         iconType: 'github',
-        description: 'A product landing page designed for a certificate in Responsive Web Design.'
+        description: 'Designed a sleek product landing page as a key project for my Responsive Web Design certification.'
     },
     // {
     //     title: 'Quote Finder',
@@ -46,7 +54,7 @@ const projects = [
         imgSrc: 'webp/usq.webp',
         repoLink: 'https://github.com/dereki16/us-geo-quiz-asgmt',
         iconType: 'github',
-        description: 'Developed a US quiz utilizing HTML, CSS, JavaScript, jQuery and AJAX that grades you and keeps track of attempts.'
+        description: 'Built an interactive US quiz application using HTML, CSS, JavaScript, jQuery, and AJAX. Features real-time grading and keeps a record of user attempts.'
     },
     {
         title: 'ISBN Library',
@@ -54,7 +62,7 @@ const projects = [
         imgSrc: 'webp/OpenLibrary.webp',
         repoLink: 'https://github.com/dereki16/isbn-library',
         iconType: 'github',
-        description: 'Used AJAX, jQuery and an API to retrieve info from openlibrary.org and display it on my own open library.'
+        description: 'Developed a custom library interface using AJAX and jQuery to fetch and present data from the openlibrary.org API.'
     },
     {
         title: 'Game Dev Info',
@@ -62,7 +70,7 @@ const projects = [
         imgSrc: 'webp/TechLesson.webp',
         repoLink: 'https://github.com/dereki16/gamedev-infov2',
         iconType: 'github',
-        description: 'Created an informational website on game development that uses EJS and an API for motivational quotes.'
+        description: 'Designed an educational website about game development, incorporating EJS templates and an external API to feature motivational quotes.'
     }
 ];
 
@@ -93,15 +101,13 @@ function createProjectElements() {
         `;
 
         gridContainer.appendChild(projectElement);
-        // After appending all project elements
         if (gridContainer.children.length % 2 !== 0) {
-            gridContainer.style.content = '" " " "';  // this triggers the ::before and ::after
+            gridContainer.style.content = '" " " "';  
         }
 
     });
 }
 
-// Call the function when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', createProjectElements);
 
 const games = [
@@ -162,7 +168,6 @@ const games = [
         description: 'An ovular twist on the 1972 classic',
         video: './vids/O-Pong (short).mp4'
     }
-    // ... other games
 ];
 
 function createGameElements() {
@@ -231,7 +236,6 @@ function handleVideoSwitching(appInstanceIndex) {
 }
 
 // apps
-
 const apps = [
     {
         title: 'iTag',
@@ -246,7 +250,7 @@ const apps = [
             }
         ],
         repoLink: 'https://github.com/dereki16/iTag',
-        description: 'iTag, a group project, is an augmented reality tag game application where players can sign up and join.'
+        description: 'Collaboratively developed "iTag," an augmented reality game app, enabling players to sign up and engage in virtual tag matches.'
     },
     {
         title: 'Flixter',
@@ -257,7 +261,7 @@ const apps = [
             }
         ],
         repoLink: 'https://github.com/dereki16/flixter',
-        description: 'Movie browsing app like Netflix where users can tap a cell to see more details about a particular movie.'
+        description: 'Created a movie browsing application, akin to Netflix, allowing users to select movies and delve into detailed overviews.'
     },
     {
         title: 'Tweeter',
@@ -268,7 +272,7 @@ const apps = [
             }
         ],
         repoLink: 'https://github.com/dereki16/tweeter',
-        description: 'Twitter mockup where a user can view tweets with user profile pic, username, and tweet text.'
+        description: 'Engineered a Twitter replica, showcasing tweets complete with user profile pics, usernames, and content.'
     },
     {
         title: 'Parstagram',
@@ -279,7 +283,7 @@ const apps = [
             }
         ],
         repoLink: 'https://github.com/dereki16/Parstagram',
-        description: 'Instagram clone with a custom Parse backend that allows a user to post photos and view a global photos feed.'
+        description: 'Constructed an Instagram-inspired platform with a tailored Parse backend, facilitating photo posting and a global feed viewing.'
     },
     {
         title: 'Tippy',
@@ -290,7 +294,7 @@ const apps = [
             }
         ],
         repoLink: 'https://github.com/dereki16/big-tipper',
-        description: 'A calculating application for IOS where users can enter a bill amount and get recommended tip value.'
+        description: 'Designed an iOS calculator app that recommends tip amounts based on the entered bill value.'
     }
 ];
 
@@ -346,7 +350,6 @@ function createAppElements() {
 document.addEventListener('DOMContentLoaded', createAppElements);
 
 document.addEventListener('DOMContentLoaded', () => {
-    // The callback will be fired when #apps enters or exits the viewport
     function handleIntersect(entries, observer) {
         entries.forEach(entry => {
             if (entry.isIntersecting) { 

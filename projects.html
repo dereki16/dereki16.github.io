@@ -22,16 +22,16 @@
 </label>
 <ul class="menu">
   <li class="nav-item">
-    <a class="nav-link" href="#UNCONTAINED" title="See my VR game here." onclick="closeDropdown()">VR Survival</a>
-  </li>
-  <li class="nav-item">
     <a class="nav-link" href="#VATS" title="See my Capstone project here." onclick="closeDropdown()">Capstone</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#Fragmented" title="See my mobile game here." onclick="closeDropdown()">Mobile Game</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="index.html#contact" title="Reach out to me here." onclick="closeDropdown()">Contact</a>
+    <a class="nav-link" href="#O-PONG" title="See my first game here." onclick="closeDropdown()">O-PONG</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="index.html#contact" title="Reach out to me here.">Contact</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" id="resume-tab" href="pdf/Resume3.pdf#zoom=110" target="_blank">Resume</a>
@@ -39,17 +39,13 @@
 </ul>
 </section>
 
-    <br><br><br><br>
-    <div id="UNCONTAINED"></div>
 
-    <h1 class="hidden h1">Unity C# Games</h1>
-    <br><hr><br>
+    <h1 id="projects-padding" class="hidden h1">Unity C# Games</h1>
+    <hr>
 
 
   <div class="containers-container">
   </div>
-
-      <br>
 
     <div id="arrow-container">
       <a id="arrow-button" href="#top">
@@ -60,36 +56,35 @@
     <hr>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type='text/javascript'> 
-      ( function() {
+      (function() {
+    var youtube = document.querySelectorAll(".lazy-youtube");
 
-        var youtube = document.querySelectorAll( ".lazy-youtube" );
-        
-        for (var i = 0; i < youtube.length; i++) {
-          
-          var source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed +"/sddefault.jpg";
-          
-          var image = new Image();
-              image.src = source;
-              image.setAttribute( "alt", "Clickable image that will start video.");
-              image.addEventListener( "load", function() {
-                youtube[ i ].appendChild( image );
-              }( i ) );
-          
-              youtube[i].addEventListener( "click", function() {
-      
-                var iframe = document.createElement( "iframe" );
+    for (var i = 0; i < youtube.length; i++) {
+        // Using an immediately-invoked function expression (IIFE) to correctly pass the index 'i'
+        (function(index) {
+            var source = "https://img.youtube.com/vi/" + youtube[index].dataset.embed + "/sddefault.jpg";
 
-                    iframe.setAttribute( "allow", "autoplay" );
-                    iframe.setAttribute( "frameborder", "0" );
-                    iframe.setAttribute( "allowfullscreen", "" );
-                    iframe.setAttribute( "src", "https://www.youtube.com/embed/"+ this.dataset.embed +"?rel=0&showinfo=0&autoplay=1" );
-      
-                    this.innerHTML = "";
-                    this.appendChild( iframe );
-              } );	
-        };
-        
-      } )();
+            var image = new Image();
+            image.src = source;
+            image.setAttribute("alt", "Clickable image that will start video.");
+            image.addEventListener("load", function() {
+                youtube[index].appendChild(this); // 'this' refers to the image itself
+            });
+
+            youtube[index].addEventListener("click", function() {
+                var iframe = document.createElement("iframe");
+                iframe.setAttribute("allow", "autoplay");
+                iframe.setAttribute("frameborder", "0");
+                iframe.setAttribute("allowfullscreen", "");
+                iframe.setAttribute("src", "https://www.youtube.com/embed/" + this.dataset.embed + "?rel=0&showinfo=0&autoplay=1");
+                this.innerHTML = "";
+                this.appendChild(iframe);
+            });
+
+        })(i); // Pass the current index 'i' to the IIFE
+    }
+})();
+
     </script>
 
       

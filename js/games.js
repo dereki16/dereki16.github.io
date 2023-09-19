@@ -1,62 +1,93 @@
+document.querySelectorAll(".nav-link").forEach(link => {
+    link.addEventListener("click", function(e) {
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            e.preventDefault(); 
+
+            const topOffset = 110;
+            const yPos = targetElement.getBoundingClientRect().top + window.pageYOffset - topOffset;
+
+            window.scrollTo({
+                top: yPos,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
 const projects = [
     {
+        id: 'UNCONTAINED',
         title: 'VR Survival',
         link: 'projects.html#UNCONTAINED',
+        srcType: 'video',
         iframeSrc: 'https://www.youtube.com/embed/gKWwObyfFDg',
         overview: 'In this immersive post-apocalyptic world, see if you have what it takes to survive. Uncontained features room unlocking, barricade building, zombie shooting fun.',
-        description: 'This is a VR game I developed in Unity with help from Andrew Aguas as the audio editor, and free assets.',
+        credits: 'Developed in Unity and Oculus/Meta with Andrew Aguas handling audio and the incorporation of free assets.',
         features: [
-            'Object Pooling to create and store multiple game objects.',
-            'Navigation and pathfinding so zombies can chase and attack player.',
-            'XR plug-in framework to help support VR.',
-            'Randomization of goals to help with replayability.',
-            'Interactive tutorial to help teach player how they can engage with the world.',
-            'Input system in options menu allowing for switching between different styles of orientation and turning speed for preferrential movement.',
-            'UI for win case, lose case, main and pause menu.'
+            'Efficient object pooling for dynamic game elements.',
+            'Zombie navigation & pathfinding for immersive engagement.',
+            'XR plug-in integration for robust VR support.',
+            'Random goal generation to boost replay value.',
+            'Interactive tutorial for player acclimatization.',
+            'Customizable input system for varied movement styles.',
+            'Comprehensive UI for game scenarios and navigation.'
         ],
         year: '2022'
     },
     {
+        id: 'VATS',
         title: 'VATS',
-        link: 'https://github.com/dereki16/Uncontained-VR', // You provided this link for VATS, please replace if incorrect
+        link: 'https://github.com/dereki16/Uncontained-VR', 
+        srcType: 'video',
         iframeSrc: 'https://www.youtube.com/embed/mjyU080Pv1o',
-        overview: 'Our goal was to create a virtual tank where all sorts of sea life can be viewed with ease. Virtual Aquarium Tank System or VATS was my Capstone project for college - oversaw by professor Drew Clinkenbeard, that I along with Isaac Torres and Lewis Truong completed. We were in talks with the Monterey Bay Aquarium to have this simulation be featured; however, communication fell through due to COVID.',
-        description: '', // You didn't provide a distinct "description" apart from the "overview", so I've left it empty.
+        overview: 'Virtual Aquarium Tank System or VATS was my college capstone project that offers a virtual deep dive into marine life. We were engaged with the Monterey Bay Aquarium for potential collaboration but were disrupted by the COVID pandemic.',
+        credits: 'Oversaw by <a href="https://linkedin.com/drew-clinkenbeard-profile" target="_blank">professor Drew Clinkenbeard</a>, I along with <a href="https://linkedin.com/isaac-torres-profile" target="_blank">Isaac Torres</a> and <a href="https://linkedin.com/lewis-truong-profile" target="_blank">Lewis Truong</a> completed this project.',
         features: [
-            'Create the Fish Evaluation Vector (FEV) meant to provide in-depth knowledge on sea life.',
-            'This was accomplished through the use of JSON files.',
-            'Provide responsive UI that swaps through the different models and information.',
-            'Lay out a list view that allows for an easier browse through different sea life.',
-            'Acquire models and undertake a fair amount of research on each of the sea creatures.',
-            'Add post-processing effects to elicit a deeper blue color for the look of the ocean.'
+            'Introduced the Fish Evaluation Vector (FEV) for marine life insights.',
+            'Efficient data management using JSON files.',
+            'Responsive UI for smooth navigation of sea-life models and data.',
+            'Streamlined a list view for effortless marine species browsing.',
+            'Conducted comprehensive research and model acquisition for each marine creature.',
+            'Provided a deep oceanic visual feel through post-processing effects.'
         ],
         year: '2020'
     },
     {
+        id: 'Fragmented',
         title: 'Fragmented',
         link: 'https://github.com/dereki16/Fragmented',
-        androidLink: 'https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented',
-        iframeSrc: 'https://i.simmer.io/@dereki/fragmented',
+        img: 'webp/fragmented.webp',
+        androidLink: 'https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented?mute=1',
+        srcType: 'game',
+        iframeSrc: 'https://i.simmer.io/@dereki/fragmentedv2',
         controls: [
-            'Click and hold left mouse button down, then drag to move.',
-            'Pause button at top right.',
-            '*Note: To stop music go to Options or press outside of game box.*'
+            'Drag with the left mouse button to maneuver.',
+            'Pause with the button on the top right.',
+            '*Note: To mute music, navigate to Options or click outside the game window.*'
         ],
-        overview: 'Fragmented is meant to be an endless runner mobile game where the player is hurtling through space in a minefield of colorful debris. Think Picasso meets endless space runner matched with a trap beat for music.',
+        overview: 'Navigate space in "Fragmented," an endless runner set in a vivid minefield of cosmic debris—envision a Picasso-inspired cosmos synced to pulsing trap beats.',
         year: '2021'
     },
     {
+        id: 'O-PONG',
         title: 'O-PONG',
         link: 'https://github.com/dereki16/sign-up-site-asgmt',
+        img: 'webp/opong.webp',
+        srcType: 'game',
         iframeSrc: 'https://i.simmer.io/@dereki/o-pong',
         controls: [
             'P1: WS to move up and down. AD to rotate paddles.',
             'P2: Arrow keys to do the same.',
             'Spacebar to pause.',
-            '*Note: If game doesn\'t load properly, please try refreshing. Only playable on PC.*'
-        ],
-        overview: 'O-Pong was the first original game I completed. I had a great deal of love and respect for the original. Its simple, yet challenging and fun. I was inspired to take a unique spin on the idea by making the playing field ovular. I also made it possible to rotate your paddle to position the ball in a difficult to reach spot, and teleport from one end to another.',
+            '*Note: Please refresh if there\'s issues loading. Only playable on PC.*'
+        ], 
+        overview: '"O-Pong," my first original game, reimagines classic Pong within an ovular arena. Players can rotate paddles, strategically position balls, and teleport for a twist on the iconic challenge.',
         year: '2021'
+        
     }
 ];
 
@@ -91,26 +122,63 @@ function createProjectElements() {
         if (project.androidLink) {
             linkHTML += `
             <a href="${project.androidLink}" target="_blank">
-                <i class="fa fa-android fa-2x icon-3d game-icon"></i>
+                <i class="fa fa-android fa-2x icon-3d game-icon android-link"></i>
             </a>`;
         }
+        let placeholderHTML = '';
+        if (project.img) {
+            placeholderHTML = `<img src="${project.img}" alt="${project.title} Placeholder" class="game-placeholder"/>`;
+        } else {
+            placeholderHTML = '<div class="game-placeholder"></div>';  
+        }
 
-        projectElement.innerHTML += `
+        let iframeHTML = '';
+        if (project.srcType == 'video') {
+            console.log("Adding video for: " + project.iframeSrc);
+            iframeHTML += `
+            <div class="game-video video-box-padding">
+                <iframe src="${project.iframeSrc}"border="none" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>`;
+        }
+        if (project.srcType == 'game') {
+            console.log("Adding game for: " + project.iframeSrc);
+        
+            iframeHTML += `
+            <div class="game-video">
+                <div class="game-wrapper">
+                    ${placeholderHTML}
+                    <iframe data-src="${project.iframeSrc}" controls muted border="none" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>`;
+        }
+        
+
+        let creditsHTML ='';
+        if (project.credits) {
+            creditsHTML += `
+            <p class="bold">Credits</p>
+            <div class="con-p">
+                <p>${project.credits}</p>
+            </div>`;
+        }
+        // container class
+        projectElement.innerHTML += ` 
+            <div class="project-nav" id="${project.id}"</div>
             <div class="game-vitals">
-                <div class="title">${project.title}</div>
-                <div class="flex-center-link-6">
-                    ${linkHTML}
+                <div class="header">
+                    <div class="title">${project.title}</div>
+                    <div class="flex-center-link-6">
+                        ${linkHTML}
+                    </div>
                 </div>
-                <br>
-                <div class="game-video">
-                    <iframe src="${project.iframeSrc}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+                ${iframeHTML}
             </div>
             <div class="game-description">
                 <p class="bold">Overview</p>
                 <div class="con-p">
                     <p>${project.overview}</p>
                 </div>
+                ${creditsHTML}
                 ${controlsHTML ? `<p class="bold">Controls</p><ul>${controlsHTML}</ul>` : ''}
                 ${featuresHTML ? `<p class="bold">Features</p><ul>${featuresHTML}</ul>` : ''}
                 <p class="bold">${project.year}</p>
@@ -121,5 +189,40 @@ function createProjectElements() {
     });
 }
 
+function addIframeEventListeners() {
+    document.querySelectorAll('.game-placeholder').forEach(placeholder => {
+        placeholder.addEventListener('click', function() {
+            const iframe = placeholder.nextElementSibling;
 
-document.addEventListener('DOMContentLoaded', createProjectElements);
+            placeholder.style.display = 'none';
+            iframe.style.display = 'block';
+
+            if (!iframe.src) {
+                iframe.src = iframe.dataset.src;
+                console.log(`Loading iframe with src: ${iframe.src}`);
+            } else if (iframe.src != iframe.dataset.src) {
+                console.log(`Iframe already has src: ${iframe.src}`);
+                iframe.src = iframe.dataset.src;
+            }
+
+            document.querySelectorAll('.game-video').forEach(gameVideo => {
+                gameVideo.classList.remove('game-box-padding');
+            });
+
+            iframe.closest('.game-video').classList.add('game-box-padding');
+
+            document.querySelectorAll('.game-wrapper iframe').forEach(otherIframe => {
+                if (otherIframe !== iframe) {
+                    otherIframe.style.display = 'none';
+                    otherIframe.previousElementSibling.style.display = 'block';
+                    otherIframe.src = ''; 
+                }
+            });
+        });
+    });
+}
+
+createProjectElements();
+addIframeEventListeners();
+
+console.log("Please ignore the 3rd party errors. Thanks.");
