@@ -1,11 +1,33 @@
+window.addEventListener('load', function(e) {
+    const hash = sessionStorage.getItem('scrollTo');
+    
+    if (hash) {
+        const targetElement = document.querySelector('#' + hash);
+
+        if (targetElement) {
+            e.preventDefault();
+            const topOffset = 110;
+            const elementPosition = targetElement.offsetTop;
+            const scrollToPosition = elementPosition - topOffset;
+            
+            window.scrollTo({
+                top: scrollToPosition,
+                behavior: 'smooth'
+            });
+
+            sessionStorage.removeItem('scrollTo'); 
+        }
+    }
+});
+
+
 document.querySelectorAll(".nav-link").forEach(link => {
     link.addEventListener("click", function(e) {
-        
         const targetId = this.getAttribute('href');
         const targetElement = document.querySelector(targetId);
-        
+
         if (targetElement) {
-            e.preventDefault(); 
+            e.preventDefault();
 
             const topOffset = 110;
             const yPos = targetElement.getBoundingClientRect().top + window.pageYOffset - topOffset;
@@ -18,11 +40,12 @@ document.querySelectorAll(".nav-link").forEach(link => {
     });
 });
 
+
 const projects = [
     {
         id: 'UNCONTAINED',
         title: 'VR Survival',
-        link: 'projects.html#UNCONTAINED',
+        link: 'https://github.com/dereki16/Uncontained-VR',
         srcType: 'video',
         iframeSrc: 'https://www.youtube.com/embed/gKWwObyfFDg',
         overview: 'In this immersive post-apocalyptic world, see if you have what it takes to survive. Uncontained features room unlocking, barricade building, zombie shooting fun.',
@@ -41,11 +64,11 @@ const projects = [
     {
         id: 'VATS',
         title: 'VATS',
-        link: 'https://github.com/dereki16/Uncontained-VR', 
+        link: 'https://github.com/dclinkenbeard/VATS', 
         srcType: 'video',
         iframeSrc: 'https://www.youtube.com/embed/mjyU080Pv1o',
         overview: 'Virtual Aquarium Tank System or VATS was my college capstone project that offers a virtual deep dive into marine life. We were engaged with the Monterey Bay Aquarium for potential collaboration but were disrupted by the COVID pandemic.',
-        credits: 'Oversaw by <a href="https://linkedin.com/drew-clinkenbeard-profile" target="_blank">professor Drew Clinkenbeard</a>, I along with <a href="https://linkedin.com/isaac-torres-profile" target="_blank">Isaac Torres</a> and <a href="https://linkedin.com/lewis-truong-profile" target="_blank">Lewis Truong</a> completed this project.',
+        credits: 'Oversaw by <a href="https://www.linkedin.com/in/dr-drew-c/" target="_blank">professor Drew Clinkenbeard</a>, I along with <a href="https://www.linkedin.com/in/isaac-torres-628532182/" target="_blank">Isaac Torres</a> and <a href="https://www.linkedin.com/in/lewis-truong-a50b40195/" target="_blank">Lewis Truong</a> completed this project.',
         features: [
             'Introduced the Fish Evaluation Vector (FEV) for marine life insights.',
             'Efficient data management using JSON files.',
@@ -61,7 +84,7 @@ const projects = [
         title: 'Fragmented',
         link: 'https://github.com/dereki16/Fragmented',
         img: 'webp/fragmented.webp',
-        androidLink: 'https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented?mute=1',
+        // androidLink: 'https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented?mute=1',
         srcType: 'game',
         iframeSrc: 'https://i.simmer.io/@dereki/fragmentedv2',
         controls: [
@@ -75,7 +98,7 @@ const projects = [
     {
         id: 'O-PONG',
         title: 'O-PONG',
-        link: 'https://github.com/dereki16/sign-up-site-asgmt',
+        link: 'https://github.com/dereki16/o-pong',
         img: 'webp/opong.webp',
         srcType: 'game',
         iframeSrc: 'https://i.simmer.io/@dereki/o-pong',

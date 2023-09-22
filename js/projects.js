@@ -122,6 +122,7 @@ const games = [
             }
         ],
         description: 'Immerse yourself into a world overrun by zombies.',
+        poster: 'webp/uvr.webp',
         video: 'https://github.com/dereki16/dereki16.github.io/raw/main/vids/uvr(short).mp4'
     },
     {
@@ -135,6 +136,7 @@ const games = [
             }
         ],
         description: 'Dive deep in this Virtual Aquarium Tank System.',
+        poster: 'webp/vats.webp',
         video: 'https://github.com/dereki16/dereki16.github.io/raw/main/vids/vats(short).mp4'
     },
     {
@@ -145,14 +147,15 @@ const games = [
                 url: 'https://github.com/dereki16/Fragmented',
                 alt: 'Link to github repo.',
                 icon: 'fa-github'
-            },
-            {
-                url: 'https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented',
-                alt: "Link to my app's google play store page.",
-                icon: 'fa-android'
             }
+            // {
+            //     url: 'https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented',
+            //     alt: "Link to my app's google play store page.",
+            //     icon: 'fa-android'
+            // }
         ],
         description: 'Frustratingly fun game of dodge the colorful debris.',
+        poster: 'webp/frag2.webp',
         video: './vids/Fragmented (short).mp4'
     },
     {
@@ -166,6 +169,7 @@ const games = [
             }
         ],
         description: 'An ovular twist on the 1972 classic',
+        poster: 'webp/opong2.webp',
         video: './vids/O-Pong (short).mp4'
     }
 ];
@@ -195,7 +199,7 @@ function createGameElements() {
                     </div>
                     <p class="p1">${game.description}</p>
                     <br><br><br>
-                    <video muted class="vid" controls alt="Short clip of my ${game.title} game.">
+                    <video muted class="vid" controls poster="${game.poster}" alt="Short clip of my ${game.title} game.">
                         <source src="${game.video}" type="video/mp4">
                     </video>
                     <br>
@@ -375,4 +379,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const observer = new IntersectionObserver(handleIntersect, options);
     const appsDiv = document.querySelector('#apps');
     observer.observe(appsDiv);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll(".projlink").forEach(link => {
+        link.addEventListener("click", function(e) {
+            const hrefValue = this.getAttribute('href');
+            const hash = hrefValue.split('#')[1];
+
+            if (hash) {
+                window.location.href = hrefValue; 
+                sessionStorage.setItem('scrollTo', hash); 
+            }
+        });
+    });
 });

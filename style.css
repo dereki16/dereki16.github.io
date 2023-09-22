@@ -1057,6 +1057,8 @@ width: 100%;
     position: absolute;
 }
 
+
+
 @media (min-width: 1051px) {
 	#me {
 	width: calc(75% - (8vw - 100px) / 0.2);
@@ -1067,7 +1069,11 @@ width: 100%;
 	  width: 50%;
   }
 }
-	
+@media (min-width: 1600px) {
+	#me {
+	width: 50%;
+}
+}
 
 #mtn {
   width: 100%;
