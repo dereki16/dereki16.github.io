@@ -2309,7 +2309,7 @@ padding-left: 2.5%;
 
 }
 
-#green-hover:hover {
+.green-hover:hover {
 /*   background-image: linear-gradient(45deg, #00956b, #00a3d9, #005ad9);
 	 */
   background-image: linear-gradient(45deg, #004650, #008681);

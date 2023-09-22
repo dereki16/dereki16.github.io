@@ -89,13 +89,13 @@ function createProjectElements() {
             let altText = project.iconType === 'linkedin' ? 'Link to LinkedIn.' : 'Link to GitHub repo.';
             repoHtml = `
             <object alt="${altText}">
-                <a href="${project.repoLink}" class="fa ${iconClass} fa-2x icon-3d" target="_blank"></a>
+                <a href="${project.repoLink}" aria-label="Visit the repo for ${project.title}." class="fa ${iconClass} fa-2x icon-3d" target="_blank"></a>
             </object>`;
         }
 
         projectElement.innerHTML = `
             <h3 class="grid-title"> ${project.title} </h3>
-            <img class="website-prev" src="${project.imgSrc}">
+            <img class="website-prev" src="${project.imgSrc}" alt="Image for website.">
             ${repoHtml}
             <p class="grid-p">${project.description}</p>
         `;
@@ -184,7 +184,7 @@ function createGameElements() {
         let linksHTML = '';
         game.links.forEach(link => {
             linksHTML += `  
-            <a href="${link.url}" alt="${link.alt}" target="_blank">
+            <a href="${link.url}" aria-label="${link.alt}" target="_blank">
                 <i class="game-link fa ${link.icon} fa-2x icon-3d"></i>
             </a>
             `;
@@ -193,7 +193,7 @@ function createGameElements() {
         gameElement.innerHTML += `
             <div class="header">  
                 <div class="game-item">
-                    <h2><a class="projlink" href="${game.link}">${game.title}</a></h2>
+                    <h2><a class="projlink" href="${game.link}" aria-label="See more about this game here.">${game.title}</a></h2>
                     <div class="flex-center-link-4">
                         ${linksHTML}
                     </div>
@@ -338,7 +338,7 @@ function createAppElements() {
         appElement.innerHTML = `
         <h3>${app.title}</h3>
         ${videosHTML}
-        <object alt="Link to github repo."><a href="${app.repoLink}" class="fa fa-github fa-2x icon-3d" target="_blank"></a></object>
+        <object alt="Link to github repo."><a href="${app.repoLink}" aria-label="Visit the repo for${app.title}." class="fa fa-github fa-2x icon-3d" target="_blank"></a></object>
         <div id="app-flixter"></div>
         <p>${app.description}</p>
         `;

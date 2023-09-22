@@ -68,7 +68,7 @@ const projects = [
         srcType: 'video',
         iframeSrc: 'https://www.youtube.com/embed/mjyU080Pv1o',
         overview: 'Virtual Aquarium Tank System or VATS was my college capstone project that offers a virtual deep dive into marine life. We were engaged with the Monterey Bay Aquarium for potential collaboration but were disrupted by the COVID pandemic.',
-        credits: 'Oversaw by <a href="https://www.linkedin.com/in/dr-drew-c/" target="_blank">professor Drew Clinkenbeard</a>, I along with <a href="https://www.linkedin.com/in/isaac-torres-628532182/" target="_blank">Isaac Torres</a> and <a href="https://www.linkedin.com/in/lewis-truong-a50b40195/" target="_blank">Lewis Truong</a> completed this project.',
+        credits: 'Oversaw by <a href="https://www.linkedin.com/in/dr-drew-c/" aria-label="Visit porfessor C\'s LinkedIn." target="_blank">professor Drew Clinkenbeard</a>, I along with <a href="https://www.linkedin.com/in/isaac-torres-628532182/" aria-label="Visit Isaac\'s LinkedIn." target="_blank">Isaac Torres</a> and <a href="https://www.linkedin.com/in/lewis-truong-a50b40195/" aria-label="Visit Lewis\' LinkedIn." target="_blank">Lewis Truong</a> completed this project.',
         features: [
             'Introduced the Fish Evaluation Vector (FEV) for marine life insights.',
             'Efficient data management using JSON files.',
@@ -138,19 +138,19 @@ function createProjectElements() {
         let linkHTML = '';
         if (project.link) {
             linkHTML += `
-            <a href="${project.link}" target="_blank">
+            <a href="${project.link}" aria-label="Visit the Github repo for${project.title}." target="_blank">
                 <i class="fa fa-github fa-2x icon-3d game-icon"></i>
             </a>`;
         }
         if (project.androidLink) {
             linkHTML += `
-            <a href="${project.androidLink}" target="_blank">
+            <a href="${project.androidLink}" aria-label="Visit the Google Play Store page." target="_blank">
                 <i class="fa fa-android fa-2x icon-3d game-icon android-link"></i>
             </a>`;
         }
         let placeholderHTML = '';
         if (project.img) {
-            placeholderHTML = `<img src="${project.img}" alt="${project.title} Placeholder" class="game-placeholder"/>`;
+            placeholderHTML = `<img src="${project.img}" alt="Poster img for ${project.title} Placeholder" class="game-placeholder"/>`;
         } else {
             placeholderHTML = '<div class="game-placeholder"></div>';  
         }
