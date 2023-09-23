@@ -95,7 +95,7 @@ function createProjectElements() {
 
         projectElement.innerHTML = `
             <h3 class="grid-title"> ${project.title} </h3>
-            <img class="website-prev" src="${project.imgSrc}" alt="Image for website.">
+            <img class="website-prev" src="${project.imgSrc}" alt="Image for website." width="300" height="200">
             ${repoHtml}
             <p class="grid-p">${project.description}</p>
         `;
