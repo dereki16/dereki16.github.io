@@ -1,5 +1,9 @@
 window.addEventListener('load', function(e) {
-    const hash = sessionStorage.getItem('scrollTo');
+    let hash = sessionStorage.getItem('scrollTo');
+    
+    if (!hash) {
+        hash = window.location.hash.substring(1); // remove the '#' at the start
+    }
     
     if (hash) {
         const targetElement = document.querySelector('#' + hash);
@@ -15,11 +19,10 @@ window.addEventListener('load', function(e) {
                 behavior: 'smooth'
             });
 
-            sessionStorage.removeItem('scrollTo'); 
+            sessionStorage.removeItem('scrollTo');
         }
     }
 });
-
 
 document.querySelectorAll(".nav-link").forEach(link => {
     link.addEventListener("click", function(e) {
@@ -85,7 +88,7 @@ const projects = [
         title: 'Fragmented',
         link: 'https://github.com/dereki16/Fragmented',
         img: 'webp/fragmented.webp',
-        // androidLink: 'https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented?mute=1',
+        androidLink: 'https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented',
         srcType: 'game',
         iframeSrc: 'https://i.simmer.io/@dereki/fragmentedv2',
         controls: [

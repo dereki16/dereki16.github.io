@@ -147,12 +147,12 @@ const games = [
                 url: 'https://github.com/dereki16/Fragmented',
                 alt: 'Link to github repo.',
                 icon: 'fa-github'
+            },
+            {
+                url: 'https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented',
+                alt: "Link to my app's google play store page.",
+                icon: 'fa-android'
             }
-            // {
-            //     url: 'https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented',
-            //     alt: "Link to my app's google play store page.",
-            //     icon: 'fa-android'
-            // }
         ],
         description: 'Frustratingly fun game of dodge the colorful debris.',
         poster: 'webp/frag2.webp',
