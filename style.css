@@ -1570,6 +1570,10 @@ input[type=submit]:hover {
 		width: 1%;
       height: 75px;
     }
+	#tech-stack #firebase {
+		width: 8%!important;
+		margin: -10px -10px 0px -10px;
+	}
     .row, .about-row {
       display: grid;
       grid-template-columns: auto;
@@ -1994,6 +1998,10 @@ input[type=submit]:hover {
 	display: flex;
 	justify-content: center;
 }
+#tech-stack #firebase {
+	width: 8%!important;
+	margin: -1vw -1vw 0px -1vw;
+}
 #dotnet {
  filter: sepia(90%) saturate(300%) brightness(100%) hue-rotate(160deg);
  color: #18658f;
@@ -2017,9 +2025,7 @@ input[type=submit]:hover {
 }
 
 @media (max-width: 768px) {
-	#tech-stack img {
-	width: 7.5%;
-}
+
   .symbol-container {
     flex-wrap: nowrap;
   }
