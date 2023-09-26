@@ -23,23 +23,24 @@ window.addEventListener('load', function(e) {
 
 document.querySelectorAll(".nav-link").forEach(link => {
     link.addEventListener("click", function(e) {
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
+        if (this.getAttribute('href').startsWith('#')) {
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
 
-        if (targetElement) {
-            e.preventDefault();
+            if (targetElement) {
+                e.preventDefault();
 
-            const topOffset = 110;
-            const yPos = targetElement.getBoundingClientRect().top + window.pageYOffset - topOffset;
+                const topOffset = 110;
+                const yPos = targetElement.getBoundingClientRect().top + window.pageYOffset - topOffset;
 
-            window.scrollTo({
-                top: yPos,
-                behavior: 'smooth'
-            });
+                window.scrollTo({
+                    top: yPos,
+                    behavior: 'smooth'
+                });
+            }
         }
     });
 });
-
 
 const projects = [
     {
@@ -248,4 +249,4 @@ function addIframeEventListeners() {
 createProjectElements();
 addIframeEventListeners();
 
-console.log("Please ignore the 3rd party errors. Thanks.");
+console.log("Please ignore the 3rd party logs. Thanks!");
