@@ -17,6 +17,14 @@ const projects = [
         description: 'Built a responsive movie site supporting CRUD operations, using external APIs for data. Developed using ASP.NET, hosted on Azure and implemented a strategy to counteract cold start delays.'
     },
     {
+        title: 'App Buddy',
+        link: 'https://application-bud.web.app/',
+        imgSrc: 'webp/app-buddy.webp',
+        repoLink: 'https://github.com/dereki16/application-buddy',
+        iconType: 'github',
+        description: "Crafted a web app meant to streamline and simplify the job application process. Built with Bootstrap, HTML, CSS, and JavaScript, this app is hosted on GitHub and Firebase."
+    },
+    {
         title: 'Portfolio Site',
         link: 'https://derekiniguez.com',
         imgSrc: 'webp/portfolio.png',
