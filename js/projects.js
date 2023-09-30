@@ -33,44 +33,12 @@ const projects = [
         description: 'Designed and developed a portfolio site to display my work, optimized for performance and security using Cloudflare.'
     },
     {
-        title: 'Technical Doc',
-        link: 'https://tech-doc-rwd.derekiniguez1.repl.co/',
-        imgSrc: 'webp/TechDoc.webp',
-        repoLink:'https://github.com/dereki16/Technical-Documentation-RWD',
-        iconType: 'github',
-        description: 'Created a technical documentation on HTML & CSS as part of a Responsive Web Design certification.'
-    },
-    {
-        title: 'Product Landing Page',
-        link: 'https://product-landing-page-rwd.derekiniguez1.repl.co/',
-        imgSrc: 'webp/ProductPage.webp',
-        repoLink: 'https://github.com/dereki16/Product-Landing-Page-RWD',
-        iconType: 'github',
-        description: 'Designed a sleek product landing page as a key project for my Responsive Web Design certification.'
-    },
-    // {
-    //     title: 'Quote Finder',
-    //     link: 'https://quote-finder.derekiniguez1.repl.co/',
-    //     imgSrc: 'webp/QuoteFinder.webp',
-    //     repoLink: 'https://github.com/dereki16/quote-finder',
-    //     iconType: 'github',
-    //     description: 'Quote finder using EJS that takes input and finds quotes with input; also includes authors and categories.'
-    // },
-    {
         title: 'US Quiz',
         link: 'https://geography-quiz.derekiniguez1.repl.co/',
         imgSrc: 'webp/usq.webp',
         repoLink: 'https://github.com/dereki16/us-geo-quiz-asgmt',
         iconType: 'github',
         description: 'Built an interactive US quiz application using HTML, CSS, JavaScript, jQuery, and AJAX. Features real-time grading and keeps a record of user attempts.'
-    },
-    {
-        title: 'ISBN Library',
-        link: 'https://isbn-library.derekiniguez1.repl.co/',
-        imgSrc: 'webp/OpenLibrary.webp',
-        repoLink: 'https://github.com/dereki16/isbn-library',
-        iconType: 'github',
-        description: 'Developed a custom library interface using AJAX and jQuery to fetch and present data from the openlibrary.org API.'
     },
     {
         title: 'Game Dev Info',
@@ -117,6 +85,70 @@ function createProjectElements() {
 }
 
 document.addEventListener('DOMContentLoaded', createProjectElements);
+
+// smaller websites
+const smallerProjects = [
+    {
+        title: 'Technical Doc',
+        link: 'https://tech-doc-rwd.derekiniguez1.repl.co/',
+        imgSrc: 'webp/TechDoc.webp',
+        repoLink:'https://github.com/dereki16/Technical-Documentation-RWD',
+        iconType: 'github',
+        description: 'Created a technical documentation on HTML & CSS as part of a Responsive Web Design certification.'
+    },
+    {
+        title: 'ISBN Library',
+        link: 'https://isbn-library.derekiniguez1.repl.co/',
+        imgSrc: 'webp/OpenLibrary.webp',
+        repoLink: 'https://github.com/dereki16/isbn-library',
+        iconType: 'github',
+        description: 'Developed a custom library interface using AJAX and jQuery to fetch and present data from the openlibrary.org API.'
+    },
+    {
+        title: 'Product Page',
+        link: 'https://product-landing-page-rwd.derekiniguez1.repl.co/',
+        imgSrc: 'webp/ProductPage.webp',
+        repoLink: 'https://github.com/dereki16/Product-Landing-Page-RWD',
+        iconType: 'github',
+        description: 'Designed a sleek product landing page as a key project for my Responsive Web Design certification.'
+    }
+    // {
+    //     title: 'Quote Finder',
+    //     link: 'https://quote-finder.derekiniguez1.repl.co/',
+    //     imgSrc: 'webp/QuoteFinder.webp',
+    //     repoLink: 'https://github.com/dereki16/quote-finder',
+    //     iconType: 'github',
+    //     description: 'Quote finder using EJS that takes input and finds quotes with input; also includes authors and categories.'
+    // },
+];
+
+function createSmallerProjectElements() {
+    const gridContainer = document.querySelector('.smaller-project-container');
+
+    smallerProjects.forEach(smallProject => {
+        const projectElement = document.createElement('a');
+        projectElement.href = smallProject.link;
+        projectElement.target = '_blank';
+        projectElement.classList.add('grid-item-2');
+
+        projectElement.innerHTML = `
+            <div> 
+                <h3 class="grid-title">${smallProject.title}</h3>
+                <img class="website-prev" src="${smallProject.imgSrc}" alt="Image for website." width="100%" height="auto">
+                <div>
+                    <a href="${smallProject.repoLink}" aria-label="Visit the repo for ${smallProject.title}" target="_blank">
+                        <i class="fa fa-${smallProject.iconType} fa-2x icon-3d"></i>
+                    </a>
+                </div>
+                <p class="grid-p">${smallProject.description}</p>
+            </div>
+        `;
+
+        gridContainer.appendChild(projectElement);
+    });
+}
+document.addEventListener('DOMContentLoaded', createSmallerProjectElements);
+
 
 const games = [
     {
@@ -296,18 +328,19 @@ const apps = [
         ],
         repoLink: 'https://github.com/dereki16/Parstagram',
         description: 'Constructed an Instagram-inspired platform with a tailored Parse backend, facilitating photo posting and a global feed viewing.'
-    },
-    {
-        title: 'Tippy',
-        video: [
-            {
-                alt: 'Tipping application that helps users tip 15%, 18%, and 20%.',
-                src: 'vids/tippyvid.mp4'
-            }
-        ],
-        repoLink: 'https://github.com/dereki16/big-tipper',
-        description: 'Designed an iOS calculator app that recommends tip amounts based on the entered bill value.'
     }
+    // },
+    // {
+    //     title: 'Tippy',
+    //     video: [
+    //         {
+    //             alt: 'Tipping application that helps users tip 15%, 18%, and 20%.',
+    //             src: 'vids/tippyvid.mp4'
+    //         }
+    //     ],
+    //     repoLink: 'https://github.com/dereki16/big-tipper',
+    //     description: 'Designed an iOS calculator app that recommends tip amounts based on the entered bill value.'
+    // }
 ];
 
 function createAppElements() {
