@@ -6,15 +6,8 @@ const projects = [
         imgSrc: 'webp/PopperSocial.webp',
         repoLink: 'https://www.linkedin.com/company/popper-social/about/',
         iconType: 'linkedin',
-        description: "Developed a dynamic landing page integrating MailerLite and GSAP animations. Crafted with HTML, CSS, JS, AJAX, jQuery, and Bootstrap. Hosted and managed through GitHub and Firebase."
-    },
-    {
-        title: 'Razor Movies',
-        link: 'https://razormoviesproject.azurewebsites.net/',
-        imgSrc: 'webp/RazorMovies.webp',
-        repoLink: 'https://github.com/dereki16/Razor-Movies-Project',
-        iconType: 'github',
-        description: 'Built a responsive movie site supporting CRUD operations, using external APIs for data. Developed using ASP.NET, hosted on Azure and implemented a strategy to counteract cold start delays.'
+        description: "Developed a dynamic landing page for a social media app using {languages}. Integrated <span class='service'>MailerLite</span> and <span class='service'>GSAP animations</span>. Hosted and managed through <span class='host'>GitHub and Firebase</span>.",
+        languages: ["HTML", "CSS", "JS", "AJAX", "jQuery", "Bootstrap"],
     },
     {
         title: 'App Buddy',
@@ -22,7 +15,17 @@ const projects = [
         imgSrc: 'webp/app-buddy.webp',
         repoLink: 'https://github.com/dereki16/application-buddy',
         iconType: 'github',
-        description: "Crafted a web app meant to streamline and simplify the job application process. Built with Bootstrap, HTML, CSS, and JavaScript, this app is hosted on GitHub and Firebase."
+        description: "Crafted a web app meant to streamline the job application process. Integrated <span class='service'>ChatGPT's API</span> and created a chatbot with the purpose of helping users in their job search.",
+        languages: [""]
+    },
+    {
+        title: 'Razor Movies',
+        link: 'https://razormoviesproject.azurewebsites.net/',
+        imgSrc: 'webp/RazorMovies.webp',
+        repoLink: 'https://github.com/dereki16/Razor-Movies-Project',
+        iconType: 'github',
+        description: "Built a responsive movie site supporting CRUD operations, using <span class='service'>The Movie Database API</span> for data. Developed using {languages}, hosted on Azure and implemented a strategy to counteract cold start delays.",
+        languages: ["ASP.NET"]
     },
     {
         title: 'Portfolio Site',
@@ -30,7 +33,8 @@ const projects = [
         imgSrc: 'webp/portfolio.png',
         repoLink: 'https://github.com/dereki16/dereki16.github.io',
         iconType: 'github',
-        description: 'Designed and developed a portfolio site to display my work, optimized for performance and security using Cloudflare.'
+        description: "Designed and developed a portfolio site to display my work, optimized for performance and security using <span class='host'>Cloudflare</span>.",
+        languages: [""]
     },
     {
         title: 'US Quiz',
@@ -38,7 +42,8 @@ const projects = [
         imgSrc: 'webp/usq.webp',
         repoLink: 'https://github.com/dereki16/us-geo-quiz-asgmt',
         iconType: 'github',
-        description: 'Built an interactive US quiz application using HTML, CSS, JavaScript, jQuery, and AJAX. Features real-time grading and keeps a record of user attempts.'
+        description: 'Built an interactive US quiz application using {languages}. Features real-time grading and keeps a record of user attempts.',
+        languages: ["HTML", "CSS", "JavaScript", "jQuery", "AJAX"]
     },
     {
         title: 'Game Dev Info',
@@ -46,7 +51,8 @@ const projects = [
         imgSrc: 'webp/TechLesson.webp',
         repoLink: 'https://github.com/dereki16/gamedev-infov2',
         iconType: 'github',
-        description: 'Designed an educational website about game development, incorporating EJS templates and an external API to feature motivational quotes.'
+        description: "Designed an educational website about game development, incorporating {languages} templates and an <span class='service'>external API for motivational quotes</span>.",
+        languages: ["EJS"]
     }
 ];
 
@@ -59,6 +65,12 @@ function createProjectElements() {
         projectElement.target = '_blank';
         projectElement.classList.add('grid-item');
 
+        const techString = project.languages.map(lang => 
+            `<span class="tech">${lang}</span>` 
+        ).join(", ");
+
+        const displayedDescription = project.description.replace("{languages}", techString);
+
         let repoHtml = '';
         if (project.repoLink) {
             let iconClass = project.iconType === 'linkedin' ? 'fa-linkedin' : 'fa-github';
@@ -69,11 +81,11 @@ function createProjectElements() {
             </object>`;
         }
 
-        projectElement.innerHTML = `
+       projectElement.innerHTML = `
             <h3 class="grid-title"> ${project.title} </h3>
             <img class="website-prev" src="${project.imgSrc}" alt="Image for website." width="300" height="200">
             ${repoHtml}
-            <p class="grid-p">${project.description}</p>
+            <p class="grid-p">${displayedDescription}</p>
         `;
 
         gridContainer.appendChild(projectElement);

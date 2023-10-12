@@ -2637,3 +2637,57 @@ ul {
 		font-size: 7vw;
 	}
 }
+#website-container p {
+  color: #c7c7c7;
+}
+.tech {
+	color: #45acff;
+}
+.service {
+  color: #ff7171;
+}
+.host {
+  color: #66f9d3;
+}
+
+.legend {
+  display: flex;
+  justify-content: center; 
+  flex-wrap: wrap;
+}
+.legend p {
+	margin: 5px 0;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  padding: 0;
+}
+
+.color-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+@media (max-width: 500px) {
+	.legend p {
+		font-size: 1.5vh;
+	}
+	.color-circle {
+		width: 15px;
+		height: 15px;
+	}
+}
+@media (max-width: 340px) {
+	.legend p {
+		font-size: 1.2vh;
+	}
+	.color-circle {
+		width: 10px;
+		height: 10px;
+	}
+}
