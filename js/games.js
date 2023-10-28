@@ -161,15 +161,12 @@ function createProjectElements() {
 
         let iframeHTML = '';
         if (project.srcType == 'video') {
-            console.log("Adding video for: " + project.iframeSrc);
             iframeHTML += `
             <div class="game-video video-box-padding">
                 <iframe src="${project.iframeSrc}"border="none" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>`;
         }
-        if (project.srcType == 'game') {
-            console.log("Adding game for: " + project.iframeSrc);
-        
+        if (project.srcType == 'game') {        
             iframeHTML += `
             <div class="game-video">
                 <div class="game-wrapper">

@@ -268,28 +268,38 @@ document.addEventListener('DOMContentLoaded', createGameElements);
 
 
 function handleVideoSwitching(appInstanceIndex) {
-    const video1 = document.getElementById(`video${appInstanceIndex + 1}-1`);
-    const video2 = document.getElementById(`video${appInstanceIndex + 1}-2`);
-    const prevBtn = document.getElementById(`prev-btn-${appInstanceIndex}`);
-    const nextBtn = document.getElementById(`next-btn-${appInstanceIndex}`);
+    const videoContainer = document.querySelector(`#video-container-${appInstanceIndex}`);
+    const prevBtn = document.querySelector(`#prev-btn-${appInstanceIndex}`);
+    const nextBtn = document.querySelector(`#next-btn-${appInstanceIndex}`);
 
-    let currentVideo = 1;
+    let currentVideo = 2;
 
     function switchVideo() {
-        if (currentVideo === 1) {
-            video1.style.display = "none";
-            video2.style.display = "block";
-            currentVideo = 2;
+        const videoContainer = document.getElementById('video-container'); // Replace with the actual ID of the container
+    
+        if (videoContainer) {
+            const video1 = videoContainer.querySelector('#video1');
+            const video2 = videoContainer.querySelector('#video2');
+    
+            if (currentVideo === 1) {
+                video1.classList.add('hidden');
+                video2.classList.remove('hidden');
+                currentVideo = 2;
+            } else {
+                video2.classList.add('hidden');
+                video1.classList.remove('hidden');
+                currentVideo = 1;
+            }
         } else {
-            video2.style.display = "none";
-            video1.style.display = "block";
-            currentVideo = 1;
+            console.error('Video container element not found.');
         }
+        console.log(currentVideo);
     }
-
+      
     prevBtn.addEventListener("click", switchVideo);
     nextBtn.addEventListener("click", switchVideo);
 }
+
 
 // apps
 const apps = [
@@ -366,11 +376,11 @@ function createAppElements() {
         if (app.title === 'iTag') {
             app.video.forEach((video, index) => {
                 videosHTML += `
-                <video width="280" height="515" class="video" id="video${appIndex + 1}-${index + 1}" src="${video.src}" alt="${video.alt}" ${index === 1 ? 'style="display: none;"' : ''} loop="true" autoplay="autoplay" playsinline muted></video>
+                <video class="video" id="video${index + 1}" src="${video.src}" alt="${video.alt}" loop="true" autoplay="autoplay" playsinline muted></video>            
                 `;
             });
             videosHTML = `
-            <div class="app-layout video-container">
+            <div id="video-container" class="app-layout video-container">
                 ${videosHTML}
             </div>
             <div class="button-container">
@@ -382,7 +392,7 @@ function createAppElements() {
             app.video.forEach(video => {
                 videosHTML += `
                 <div class="app-layout video-container">
-                    <video width="280" height="515" class="video" src="${video.src}" alt="${video.alt}" loop="true" autoplay="autoplay" playsinline muted></video>
+                    <video class="video" src="${video.src}" alt="${video.alt}" loop="true" autoplay="autoplay" playsinline muted></video>
                 </div>
                 `;
             });

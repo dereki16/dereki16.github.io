@@ -22,4 +22,8 @@ const observer = new IntersectionObserver((entries) => {
     alert("Email successfully copied!");
   }
 
+
+  document.querySelector('#verticalText').addEventListener('click', () => {
+    copyToClipboard();
+  });
   
