@@ -17,3 +17,7 @@ function closeDropdown() {
         menuToggle.checked = false;
     }
 }
+
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', closeDropdown); 
+});

@@ -24,7 +24,7 @@ const projects = [
         imgSrc: 'webp/RazorMovies.webp',
         repoLink: 'https://github.com/dereki16/Razor-Movies-Project',
         iconType: 'github',
-        description: "Built a responsive movie site supporting CRUD operations, using <span class='service'>The Movie Database API</span> for data. Developed using {languages}, hosted on Azure and implemented a strategy to counteract cold start delays.",
+        description: "Built a responsive movie site supporting CRUD operations, using <span class='service'>The Movie Database API</span> for data. Developed using {languages}, hosted on <span class='host'>Azure</span> and implemented a strategy to counteract cold start delays.",
         languages: ["ASP.NET"]
     },
     {

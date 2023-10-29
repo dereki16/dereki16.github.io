@@ -962,15 +962,6 @@ width: 100%;
   overflow: hidden;
 }
 
-.mySlides1, .mySlides2, .mySlides3, .mySlides4 {
-  width: 100%;
-  height: auto;
-  width: 920px;
-  height: 500px;
-  object-fit: cover;
-  padding-left: 15px;
-}
-
 .responsibilities {
   text-align: left;
 }
@@ -1008,14 +999,14 @@ width: 100%;
 	font-size: 2.5vw;
 }
 .projlink {
-	font-size: 1.5vw;
+	font-size: 2.75vh;
 }
 .projlink {
   text-decoration: none;
   color: #787878;
 }
 @media (max-width: 767px) {
-.app h3, .projlink, .grid-title {
+.app h3, .grid-title {
 		font-size: 5vw;
 	}
 }
@@ -1638,10 +1629,6 @@ textarea {
       right: auto;
       padding-top: 30px;
     }
-    /* .mySlides1, .mySlides2, .mySlides3, .mySlides4, #container-contact, #mtn {
-      width: 100%;
-      height: 100%;
-    } */
 
     .section-right {
       padding-left: 0%;
@@ -2707,5 +2694,18 @@ ul {
 	.color-circle {
 		width: 10px;
 		height: 10px;
+	}
+}
+
+.myslides1 {
+	width: 100%;
+	height: auto;
+	padding: 5%;
+}
+
+@media (min-width: 500px) {
+	.myslides1 {
+		max-width: 50%;
+		padding: 2%;
 	}
 }
