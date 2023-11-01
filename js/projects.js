@@ -19,6 +19,15 @@ const projects = [
         languages: [""]
     },
     {
+        title: 'Transient Ink',
+        link: 'https://transientink.com/',
+        imgSrc: 'webp/transient.webp',
+        repoLink: '',
+        iconType: '',
+        description: "<br><br>Established an online business presence through the <span class='host'>Shopify</span> platform centered around selling temporary tattoos, accessories, with more to come.",
+        languages: [""]
+    },
+    {
         title: 'Razor Movies',
         link: 'https://razormoviesproject.azurewebsites.net/',
         imgSrc: 'webp/RazorMovies.webp',
