@@ -24,7 +24,7 @@ const projects = [
         imgSrc: 'webp/transient.webp',
         repoLink: '',
         iconType: '',
-        description: "<br><br>Established an online business presence through the <span class='host'>Shopify</span> platform centered around selling temporary tattoos, accessories, with more to come.",
+        description: "<br><br>Established an online business presence through the <span class='host'>Shopify</span> platform centered around selling temporary tattoos and accessories, with more to come.",
         languages: [""]
     },
     {
