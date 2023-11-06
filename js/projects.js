@@ -29,7 +29,7 @@ const projects = [
     },
     {
         title: 'Razor Movies',
-        link: 'https://razormoviesproject.azurewebsites.net/',
+        link: 'https://derekiniguez.com/rm-doc.html',
         imgSrc: 'webp/RazorMovies.webp',
         repoLink: 'https://github.com/dereki16/Razor-Movies-Project',
         iconType: 'github',
