@@ -1,11 +1,11 @@
 // websites
 const projects = [
     {
-        title: 'popper.social',
-        link: 'https://popper.social/',
-        imgSrc: 'webp/PopperSocial.webp',
-        repoLink: 'https://www.linkedin.com/company/popper-social/about/',
-        iconType: 'linkedin',
+        title: 'popper',
+        link: '',
+        imgSrc: 'webp/popper.png',
+        repoLink: '',
+        iconType: '',
         description: "Developed a dynamic landing page for a social media app using {languages}. Integrated <span class='service'>MailerLite</span> and <span class='service'>GSAP animations</span>. Hosted and managed through <span class='host'>GitHub and Firebase</span>.",
         languages: ["HTML", "CSS", "JS", "AJAX", "jQuery", "Bootstrap"],
     },

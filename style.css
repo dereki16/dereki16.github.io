@@ -1711,11 +1711,7 @@ textarea {
 
 } 
 
-  @supports (scrollbar-color: red blue){
-    *{
-      scrollbar-color: red blue;
-    }
-  }
+
 
 @media (min-width: 851px) {
 	.social-footer {

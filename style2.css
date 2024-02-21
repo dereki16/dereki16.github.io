@@ -1,0 +1,71 @@
+html,body,blockquote,code,h1,h2,h3,h4,h5,h6,p,pre{margin:0;padding:0}
+button,fieldset,form,input,legend,textarea,select{margin:0;padding:0}
+fieldset{border:0}
+a,a *{cursor:pointer}
+div{margin:0;padding:0;background-color:transparent;text-align:left}
+hr,img{border:0}
+applet,iframe,object{border:0;margin:0;padding:0}
+button,input[type=button],input[type=image],input[type=reset],input[type=submit],label{cursor:pointer;}
+ul,li{list-style:none;margin:0;padding:0;}
+strong{font-weight:bold;}
+em{font-style:italic;} 
+
+.poster-container {
+  width: 100%;
+}
+.poster-container img {
+  width: 100%;
+  height: auto;
+}
+.item {
+  display: flex;
+}
+.flex-row {
+  flex-direction: row;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-column-reverse {
+  flex-direction: column-reverse;
+}
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+.light-gray-bg {
+  background-color: #eeee;
+}
+.gray-bg {
+  background-color: gray;
+}
+.black-bg {
+  background-color: black;  
+}
+/* Text Colors */
+.white-text {
+  color: white;
+}
+.black-text {
+  color: black;
+}
+/* Headings */
+
+body {
+    background-color: gray;
+
+}
+
+
+h1              { font-size: 2em; margin: .67em .3em }
+h2              { font-size: 1.5em; margin: .75em .4em }
+h3              { font-size: 1.17em; margin: .83em .5em }
+h4, p,
+blockquote, ul,
+fieldset, form,
+ol, dl, dir,
+menu            { margin: 1.12em .6em }
+h5              { font-size: .83em; margin: 1.5em .7em }
+h6              { font-size: .75em; margin: 1.67em .8em }
+p {
+  margin-left: .6em;
+}
