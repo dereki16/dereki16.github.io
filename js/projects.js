@@ -1,8 +1,35 @@
 // websites
 const projects = [
     {
+        title: 'Liminal Webs',
+        link: 'https://liminalwebs.com/',
+        imgSrc: 'webp/liminal-webs.webp',
+        repoLink: 'https://www.linkedin.com/company/liminal-webs',
+        iconType: 'linkedin',
+        description: "Founded an online web development and design agency based in California to help support small businesses with affordable prices. Used {languages}<span class='service'>GSAP animations</span> and hosted through <span class='host'>Github, Firebase, and Cloudflare</span>",
+        languages: ["HTML", "CSS", "JS", ""],
+    },
+    {
+        title: 'Cosecha Church',
+        link: 'https://cosecha-db18b.web.app/',
+        imgSrc: 'webp/cosecha-church.webp',
+        repoLink: '',
+        iconType: '',
+        description: "<br><br>Volunteered services to help revitalize the online presence of a local Riverside's Spanish church.  Used {languages} and hosted through <span class='host'>Github and Firebase.</span>",
+        languages: ["HTML", "CSS", "JS"],
+    },
+    {
+        title: 'Transient Ink',
+        link: 'https://liminalwebs.com/projects/transient-ink.html',
+        imgSrc: 'webp/transient.webp',
+        repoLink: '',
+        iconType: '',
+        description: "<br>Established an online business presence through the <span class='host'>Shopify</span> platform centered around selling temporary tattoos and accessories, with more to come.",
+        languages: [""]
+    },
+    {
         title: 'popper',
-        link: '',
+        link: 'https://poppers-landing-page.web.app/',
         imgSrc: 'webp/popper.png',
         repoLink: '',
         iconType: '',
@@ -19,15 +46,6 @@ const projects = [
         languages: [""]
     },
     {
-        title: 'Transient Ink',
-        link: 'https://transientink.com/',
-        imgSrc: 'webp/transient.webp',
-        repoLink: '',
-        iconType: '',
-        description: "<br><br>Established an online business presence through the <span class='host'>Shopify</span> platform centered around selling temporary tattoos and accessories, with more to come.",
-        languages: [""]
-    },
-    {
         title: 'Razor Movies',
         link: 'https://derekiniguez.com/rm-doc.html',
         imgSrc: 'webp/RazorMovies.webp',
@@ -36,33 +54,33 @@ const projects = [
         description: "Built a responsive movie site supporting CRUD operations, using <span class='service'>The Movie Database API</span> for data. Developed using {languages}, hosted on <span class='host'>Azure</span> and implemented a strategy to counteract cold start delays.",
         languages: ["ASP.NET"]
     },
-    {
-        title: 'Portfolio Site',
-        link: 'https://derekiniguez.com',
-        imgSrc: 'webp/portfolio.png',
-        repoLink: 'https://github.com/dereki16/dereki16.github.io',
-        iconType: 'github',
-        description: "Designed and developed a portfolio site to display my work, optimized for performance and security using <span class='host'>Cloudflare</span>.",
-        languages: [""]
-    },
-    {
-        title: 'US Quiz',
-        link: 'https://geography-quiz.derekiniguez1.repl.co/',
-        imgSrc: 'webp/usq.webp',
-        repoLink: 'https://github.com/dereki16/us-geo-quiz-asgmt',
-        iconType: 'github',
-        description: 'Built an interactive US quiz application using {languages}. Features real-time grading and keeps a record of user attempts.',
-        languages: ["HTML", "CSS", "JavaScript", "jQuery", "AJAX"]
-    },
-    {
-        title: 'Game Dev Info',
-        link: 'https://game-dev-v2.derekiniguez1.repl.co/welcome',
-        imgSrc: 'webp/TechLesson.webp',
-        repoLink: 'https://github.com/dereki16/gamedev-infov2',
-        iconType: 'github',
-        description: "Designed an educational website about game development, incorporating {languages} templates and an <span class='service'>external API for motivational quotes</span>.",
-        languages: ["EJS"]
-    }
+    // {
+    //     title: 'Portfolio Site',
+    //     link: 'https://derekiniguez.com',
+    //     imgSrc: 'webp/portfolio.png',
+    //     repoLink: 'https://github.com/dereki16/dereki16.github.io',
+    //     iconType: 'github',
+    //     description: "Designed and developed a portfolio site to display my work, optimized for performance and security using <span class='host'>Cloudflare</span>.",
+    //     languages: [""]
+    // },
+    // {
+    //     title: 'US Quiz',
+    //     link: 'https://geography-quiz.derekiniguez1.repl.co/',
+    //     imgSrc: 'webp/usq.webp',
+    //     repoLink: 'https://github.com/dereki16/us-geo-quiz-asgmt',
+    //     iconType: 'github',
+    //     description: 'Built an interactive US quiz application using {languages}. Features real-time grading and keeps a record of user attempts.',
+    //     languages: ["HTML", "CSS", "JavaScript", "jQuery", "AJAX"]
+    // },
+    // {
+    //     title: 'Game Dev Info',
+    //     link: 'https://game-dev-v2.derekiniguez1.repl.co/welcome',
+    //     imgSrc: 'webp/TechLesson.webp',
+    //     repoLink: 'https://github.com/dereki16/gamedev-infov2',
+    //     iconType: 'github',
+    //     description: "Designed an educational website about game development, incorporating {languages} templates and an <span class='service'>external API for motivational quotes</span>.",
+    //     languages: ["EJS"]
+    // }
 ];
 
 function createProjectElements() {
@@ -109,6 +127,30 @@ document.addEventListener('DOMContentLoaded', createProjectElements);
 
 // smaller websites
 const smallerProjects = [
+    {
+        title: 'Portfolio Site',
+        link: 'https://derekiniguez.com',
+        imgSrc: 'webp/portfolio.png',
+        repoLink: 'https://github.com/dereki16/dereki16.github.io',
+        iconType: 'github',
+        description: "Designed and developed a portfolio site to display my work, optimized for performance and security using <span class='host'>Cloudflare</span>."
+    },
+    {
+        title: 'US Quiz',
+        link: 'https://geography-quiz.derekiniguez1.repl.co/',
+        imgSrc: 'webp/usq.webp',
+        repoLink: 'https://github.com/dereki16/us-geo-quiz-asgmt',
+        iconType: 'github',
+        description: 'Built an interactive US quiz application using HTML, CSS, JavaScript, jQuery, and AJAX. Features real-time grading and keeps a record of user attempts.'
+    },
+    {
+        title: 'Game Dev Info',
+        link: 'https://game-dev-v2.derekiniguez1.repl.co/welcome',
+        imgSrc: 'webp/TechLesson.webp',
+        repoLink: 'https://github.com/dereki16/gamedev-infov2',
+        iconType: 'github',
+        description: "Designed an educational website about game development, incorporating HTML, CSS, and JS templates and an <span class='service'>external API for motivational quotes</span>."
+    },
     {
         title: 'Technical Doc',
         link: 'https://tech-doc-rwd.derekiniguez1.repl.co/',

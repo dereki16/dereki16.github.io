@@ -2597,8 +2597,8 @@ ul {
 	margin-bottom: 20px;
 }
 .grid-item-2 {
-  flex: 1 1 calc(10.333% - 0px); /* each item takes up a third of the container width, minus some padding */
-  margin: 5px;
+  flex: 1 1 calc(30% - 0px); /* each item takes up a third of the container width, minus some padding */
+	margin: 5px;
   box-sizing: border-box; /* include padding and border in element's width and height */
 }
 
