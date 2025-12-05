@@ -182,12 +182,12 @@ function addIframeLoadOnClick() {
       const iframe = placeholder.nextElementSibling;
 
       // Hide placeholder
-      placeholder.classList.add('hidden');
-      placeholder.classList.remove('visible');
+      placeholder.classList.add('hidden-game');
+      placeholder.classList.remove('visible-game');
 
       // Show iframe
-      iframe.classList.remove('hidden');
-      iframe.classList.add('visible');
+      iframe.classList.remove('hidden-game');
+      iframe.classList.add('visible-game');
 
       // Load game iframe
       iframe.src = iframe.dataset.src;
@@ -205,7 +205,6 @@ function addIframeLoadOnClick() {
     });
   });
 }
-
 
 createProjectElements();
 addIframeLoadOnClick();
