@@ -1,10 +1,10 @@
 window.addEventListener('load', function(e) {
-    const hash = sessionStorage.getItem('scrollTo');
-
-
-
-
-
+    let hash = sessionStorage.getItem('scrollTo');
+    
+    if (!hash) {
+        hash = window.location.hash.substring(1); // remove the '#' at the start
+    }
+    
     if (hash) {
         const targetElement = document.querySelector('#' + hash);
 
@@ -13,17 +13,16 @@ window.addEventListener('load', function(e) {
             const topOffset = 110;
             const elementPosition = targetElement.offsetTop;
             const scrollToPosition = elementPosition - topOffset;
-
+            
             window.scrollTo({
                 top: scrollToPosition,
                 behavior: 'smooth'
             });
 
-            sessionStorage.removeItem('scrollTo'); 
+            sessionStorage.removeItem('scrollTo');
         }
     }
 });
-
 
 document.querySelectorAll(".nav-link").forEach(link => {
     link.addEventListener("click", function(e) {
@@ -89,7 +88,7 @@ const projects = [
         title: 'Fragmented',
         link: 'https://github.com/dereki16/Fragmented',
         img: 'webp/fragmented.webp',
-        // androidLink: 'https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented?mute=1',
+        androidLink: 'https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented',
         srcType: 'game',
         iframeSrc: 'https://i.simmer.io/@dereki/fragmentedv2',
         controls: [
@@ -115,7 +114,7 @@ const projects = [
         ], 
         overview: '"O-Pong," my first original game, reimagines classic Pong within an ovular arena. Players can rotate paddles, strategically position balls, and teleport for a twist on the iconic challenge.',
         year: '2021'
-
+        
     }
 ];
 
@@ -162,15 +161,12 @@ function createProjectElements() {
 
         let iframeHTML = '';
         if (project.srcType == 'video') {
-            console.log("Adding video for: " + project.iframeSrc);
             iframeHTML += `
             <div class="game-video video-box-padding">
                 <iframe src="${project.iframeSrc}"border="none" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>`;
         }
-        if (project.srcType == 'game') {
-            console.log("Adding game for: " + project.iframeSrc);
-
+        if (project.srcType == 'game') {        
             iframeHTML += `
             <div class="game-video">
                 <div class="game-wrapper">
@@ -179,7 +175,7 @@ function createProjectElements() {
                 </div>
             </div>`;
         }
-
+        
 
         let creditsHTML ='';
         if (project.credits) {
