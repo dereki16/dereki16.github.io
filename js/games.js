@@ -1,10 +1,10 @@
 window.addEventListener('load', function(e) {
-    let hash = sessionStorage.getItem('scrollTo');
-    
-    if (!hash) {
-        hash = window.location.hash.substring(1); // remove the '#' at the start
-    }
-    
+    const hash = sessionStorage.getItem('scrollTo');
+
+
+
+
+
     if (hash) {
         const targetElement = document.querySelector('#' + hash);
 
@@ -13,16 +13,17 @@ window.addEventListener('load', function(e) {
             const topOffset = 110;
             const elementPosition = targetElement.offsetTop;
             const scrollToPosition = elementPosition - topOffset;
-            
+
             window.scrollTo({
                 top: scrollToPosition,
                 behavior: 'smooth'
             });
 
-            sessionStorage.removeItem('scrollTo');
+            sessionStorage.removeItem('scrollTo'); 
         }
     }
 });
+
 
 document.querySelectorAll(".nav-link").forEach(link => {
     link.addEventListener("click", function(e) {
@@ -51,7 +52,7 @@ const projects = [
         title: 'VR Survival',
         link: 'https://github.com/dereki16/Uncontained-VR',
         srcType: 'video',
-        videoSrc: 'vids/uvrvid.mp4',
+        iframeSrc: 'https://www.youtube.com/embed/gKWwObyfFDg',
         overview: 'In this immersive post-apocalyptic world, see if you have what it takes to survive. Uncontained features room unlocking, barricade building, zombie shooting fun.',
         credits: 'Developed in Unity and Oculus/Meta with Andrew Aguas handling audio and the incorporation of free assets.',
         features: [
@@ -70,7 +71,7 @@ const projects = [
         title: 'VATS',
         link: 'https://github.com/dclinkenbeard/VATS', 
         srcType: 'video',
-        videoSrc: 'vids/vats.mp4',
+        iframeSrc: 'https://www.youtube.com/embed/mjyU080Pv1o',
         overview: 'Virtual Aquarium Tank System or VATS was my college capstone project that offers a virtual deep dive into marine life. We were engaged with the Monterey Bay Aquarium for potential collaboration but were disrupted by the COVID pandemic.',
         credits: 'Oversaw by <a href="https://www.linkedin.com/in/dr-drew-c/" aria-label="Visit porfessor C\'s LinkedIn." target="_blank">professor Drew Clinkenbeard</a>, I along with <a href="https://www.linkedin.com/in/isaac-torres-628532182/" aria-label="Visit Isaac\'s LinkedIn." target="_blank">Isaac Torres</a> and <a href="https://www.linkedin.com/in/lewis-truong-a50b40195/" aria-label="Visit Lewis\' LinkedIn." target="_blank">Lewis Truong</a> completed this project.',
         features: [
@@ -88,7 +89,7 @@ const projects = [
         title: 'Fragmented',
         link: 'https://github.com/dereki16/Fragmented',
         img: 'webp/fragmented.webp',
-        androidLink: 'https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented',
+        // androidLink: 'https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented?mute=1',
         srcType: 'game',
         iframeSrc: 'https://i.simmer.io/@dereki/fragmentedv2',
         controls: [
@@ -114,99 +115,142 @@ const projects = [
         ], 
         overview: '"O-Pong," my first original game, reimagines classic Pong within an ovular arena. Players can rotate paddles, strategically position balls, and teleport for a twist on the iconic challenge.',
         year: '2021'
-        
+
     }
 ];
 
 function createProjectElements() {
-  const container = document.querySelector('.containers-container');
+    const projectContainer = document.querySelector('.containers-container');
 
-  projects.forEach(proj => {
-    const card = document.createElement('div');
-    card.className = 'container';
+    projects.forEach(project => {
+        const projectElement = document.createElement('div');
+        projectElement.classList.add('container');
 
-    const gitLink = proj.link 
-      ? `<a href="${proj.link}" target="_blank"><i class="fa fa-github fa-2x icon-3d game-icon"></i></a>`
-      : '';
+        let featuresHTML = '';
+        if (project.features) {
+            project.features.forEach(feature => {
+                featuresHTML += `<li>${feature}</li>`;
+            });
+        }
 
-    let mediaHTML = '';
+        let controlsHTML = '';
+        if (project.controls) {
+            project.controls.forEach(control => {
+                controlsHTML += `<li>${control}</li>`;
+            });
+        }
 
-    if (proj.srcType === 'video') {
-      mediaHTML = `
-        <div class="game-video">
-          <video controls muted playsinline">
-            <source src="${proj.videoSrc}" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>`;
-    } else {
-      mediaHTML = `
-        <div class="game-video">
-          <div class="game-wrapper">
-            <img src="${proj.img}" class="game-placeholder">
-            <iframe data-src="${proj.iframeSrc}" frameborder="0" allowfullscreen style="width:100%;height:500px;display:none;"></iframe>
-          </div>
-        </div>`;
-    }
+        let linkHTML = '';
+        if (project.link) {
+            linkHTML += `
+            <a href="${project.link}" aria-label="Visit the Github repo for${project.title}." target="_blank">
+                <i class="fa fa-github fa-2x icon-3d game-icon"></i>
+            </a>`;
+        }
+        if (project.androidLink) {
+            linkHTML += `
+            <a href="${project.androidLink}" aria-label="Visit the Google Play Store page." target="_blank">
+                <i class="fa fa-android fa-2x icon-3d game-icon android-link"></i>
+            </a>`;
+        }
+        let placeholderHTML = '';
+        if (project.img) {
+            placeholderHTML = `<img src="${project.img}" alt="Poster img for ${project.title} Placeholder" class="game-placeholder"/>`;
+        } else {
+            placeholderHTML = '<div class="game-placeholder"></div>';  
+        }
 
-    card.innerHTML = `
-      <div class="project-nav" id="${proj.id}"></div>
-      <div class="game-vitals">
-        <div class="header">
-          <div class="title">${proj.title}</div>
-          <div class="flex-center-link-6">${gitLink}</div>
-        </div>
-        ${mediaHTML}
-      </div>
+        let iframeHTML = '';
+        if (project.srcType == 'video') {
+            console.log("Adding video for: " + project.iframeSrc);
+            iframeHTML += `
+            <div class="game-video video-box-padding">
+                <iframe src="${project.iframeSrc}"border="none" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>`;
+        }
+        if (project.srcType == 'game') {
+            console.log("Adding game for: " + project.iframeSrc);
 
-      <div class="game-description">
-        <p class="bold">Overview</p>
-        <div class="con-p"><p>${proj.overview}</p></div>
+            iframeHTML += `
+            <div class="game-video">
+                <div class="game-wrapper">
+                    ${placeholderHTML}
+                    <iframe data-src="${project.iframeSrc}" controls muted border="none" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>`;
+        }
 
-        ${proj.credits ? `<p class="bold">Credits</p><div class="con-p"><p>${proj.credits}</p></div>` : ''}
-        ${proj.controls ? `<p class="bold">Controls</p><ul>${proj.controls.map(c => `<li>${c}</li>`).join('')}</ul>` : ''}
-        ${proj.features ? `<p class="bold">Features</p><ul>${proj.features.map(f => `<li>${f}</li>`).join('')}</ul>` : ''}
 
-        <p class="bold">${proj.year}</p>
-      </div>
-    `;
+        let creditsHTML ='';
+        if (project.credits) {
+            creditsHTML += `
+            <p class="bold">Credits</p>
+            <div class="con-p">
+                <p>${project.credits}</p>
+            </div>`;
+        }
+        // container class
+        projectElement.innerHTML += ` 
+            <div class="project-nav" id="${project.id}"</div>
+            <div class="game-vitals">
+                <div class="header">
+                    <div class="title">${project.title}</div>
+                    <div class="flex-center-link-6">
+                        ${linkHTML}
+                    </div>
+                </div>
+                ${iframeHTML}
+            </div>
+            <div class="game-description">
+                <p class="bold">Overview</p>
+                <div class="con-p">
+                    <p>${project.overview}</p>
+                </div>
+                ${creditsHTML}
+                ${controlsHTML ? `<p class="bold">Controls</p><ul>${controlsHTML}</ul>` : ''}
+                ${featuresHTML ? `<p class="bold">Features</p><ul>${featuresHTML}</ul>` : ''}
+                <p class="bold">${project.year}</p>
+            </div>
+        `;
 
-    container.appendChild(card);
-  });
+        projectContainer.appendChild(projectElement);
+    });
 }
 
-function addIframeLoadOnClick() {
-  document.querySelectorAll('.game-placeholder').forEach(placeholder => {
-    placeholder.addEventListener('click', () => {
-      
-      const iframe = placeholder.nextElementSibling;
+function addIframeEventListeners() {
+    document.querySelectorAll('.game-placeholder').forEach(placeholder => {
+        placeholder.addEventListener('click', function() {
+            const iframe = placeholder.nextElementSibling;
 
-      // Hide placeholder
-      placeholder.classList.add('hidden-game');
-      placeholder.classList.remove('visible-game');
+            placeholder.style.display = 'none';
+            iframe.style.display = 'block';
 
-      // Show iframe
-      iframe.classList.remove('hidden-game');
-      iframe.classList.add('visible-game');
+            if (!iframe.src) {
+                iframe.src = iframe.dataset.src;
+                console.log(`Loading iframe with src: ${iframe.src}`);
+            } else if (iframe.src != iframe.dataset.src) {
+                console.log(`Iframe already has src: ${iframe.src}`);
+                iframe.src = iframe.dataset.src;
+            }
 
-      // Load game iframe
-      iframe.src = iframe.dataset.src;
+            document.querySelectorAll('.game-video').forEach(gameVideo => {
+                gameVideo.classList.remove('game-box-padding');
+            });
 
-      // Hide all other games
-      document.querySelectorAll('.game-wrapper iframe').forEach(other => {
-        if (other !== iframe) {
-          other.src = '';
-          other.classList.add('hidden-game');
-          other.classList.remove('visible-game');
-          other.previousElementSibling.classList.remove('hidden-game');
-          other.previousElementSibling.classList.add('visible-game');
-        }
-      });
+            iframe.closest('.game-video').classList.add('game-box-padding');
+
+            document.querySelectorAll('.game-wrapper iframe').forEach(otherIframe => {
+                if (otherIframe !== iframe) {
+                    otherIframe.style.display = 'none';
+                    otherIframe.previousElementSibling.style.display = 'block';
+                    otherIframe.src = ''; 
+                }
+            });
+        });
     });
-  });
 }
 
 createProjectElements();
-addIframeLoadOnClick();
+addIframeEventListeners();
 
 console.log("Please ignore the 3rd party logs. Thanks!");
