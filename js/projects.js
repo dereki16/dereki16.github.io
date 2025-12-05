@@ -226,7 +226,7 @@ const games = [
         ],
         description: 'Immerse yourself into a world overrun by zombies.',
         poster: 'webp/uvr.webp',
-        video: 'https://github.com/dereki16/dereki16.github.io/raw/main/vids/uvr(short).mp4'
+        video: 'https://github.com/dereki16/dereki16.github.io/raw/main/vids/uvrvid.mp4'
     },
     {
         title: 'VATS',

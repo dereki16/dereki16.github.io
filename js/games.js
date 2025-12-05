@@ -50,8 +50,8 @@ const projects = [
         id: 'UNCONTAINED',
         title: 'VR Survival',
         link: 'https://github.com/dereki16/Uncontained-VR',
-        srcType: 'video',
-        iframeSrc: 'https://www.youtube.com/embed/Qwu_KIEt1dM?si=v_HoCvS3kFEjsS7H',
+        srcType: 'image',
+        img: 'webp/uvr.webp',
         overview: 'In this immersive post-apocalyptic world, see if you have what it takes to survive. Uncontained features room unlocking, barricade building, zombie shooting fun.',
         credits: 'Developed in Unity and Oculus/Meta with Andrew Aguas handling audio and the incorporation of free assets.',
         features: [
@@ -69,8 +69,8 @@ const projects = [
         id: 'VATS',
         title: 'VATS',
         link: 'https://github.com/dclinkenbeard/VATS', 
-        srcType: 'video',
-        iframeSrc: 'https://www.youtube.com/embed/mjyU080Pv1o',
+        srcType: 'image',
+        img: 'webp/vats.webp',
         overview: 'Virtual Aquarium Tank System or VATS was my college capstone project that offers a virtual deep dive into marine life. We were engaged with the Monterey Bay Aquarium for potential collaboration but were disrupted by the COVID pandemic.',
         credits: 'Oversaw by <a href="https://www.linkedin.com/in/dr-drew-c/" aria-label="Visit porfessor C\'s LinkedIn." target="_blank">professor Drew Clinkenbeard</a>, I along with <a href="https://www.linkedin.com/in/isaac-torres-628532182/" aria-label="Visit Isaac\'s LinkedIn." target="_blank">Isaac Torres</a> and <a href="https://www.linkedin.com/in/lewis-truong-a50b40195/" aria-label="Visit Lewis\' LinkedIn." target="_blank">Lewis Truong</a> completed this project.',
         features: [
@@ -87,10 +87,9 @@ const projects = [
         id: 'Fragmented',
         title: 'Fragmented',
         link: 'https://github.com/dereki16/Fragmented',
-        img: 'webp/fragmented.webp',
+        img: 'webp/frag2.webp',
         androidLink: 'https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented',
-        srcType: 'game',
-        iframeSrc: 'https://i.simmer.io/@dereki/fragmentedv2',
+        srcType: 'image',
         controls: [
             'Drag with the left mouse button to maneuver.',
             'Pause with the button on the top right.',
@@ -103,8 +102,8 @@ const projects = [
         id: 'O-PONG',
         title: 'O-PONG',
         link: 'https://github.com/dereki16/o-pong',
-        img: 'webp/opong.webp',
-        srcType: 'game',
+        img: 'webp/opong2.webp',
+        srcType: 'image',
         iframeSrc: 'https://i.simmer.io/@dereki/o-pong',
         controls: [
             'P1: WS to move up and down. AD to rotate paddles.',
@@ -114,7 +113,6 @@ const projects = [
         ], 
         overview: '"O-Pong," my first original game, reimagines classic Pong within an ovular arena. Players can rotate paddles, strategically position balls, and teleport for a twist on the iconic challenge.',
         year: '2021'
-        
     }
 ];
 
@@ -142,7 +140,7 @@ function createProjectElements() {
         let linkHTML = '';
         if (project.link) {
             linkHTML += `
-            <a href="${project.link}" aria-label="Visit the Github repo for${project.title}." target="_blank">
+            <a href="${project.link}" aria-label="Visit the Github repo for ${project.title}." target="_blank">
                 <i class="fa fa-github fa-2x icon-3d game-icon"></i>
             </a>`;
         }
@@ -152,32 +150,21 @@ function createProjectElements() {
                 <i class="fa fa-android fa-2x icon-3d game-icon android-link"></i>
             </a>`;
         }
-        let placeholderHTML = '';
-        if (project.img) {
-            placeholderHTML = `<img src="${project.img}" alt="Poster img for ${project.title} Placeholder" class="game-placeholder"/>`;
-        } else {
-            placeholderHTML = '<div class="game-placeholder"></div>';  
-        }
 
-        let iframeHTML = '';
-        if (project.srcType == 'video') {
-            iframeHTML += `
+        let mediaHTML = '';
+        if (project.srcType === 'image') {
+            mediaHTML = `
+            <div class="project-image-container"">
+                <img src="${project.img}" alt="${project.title} screenshot" class="project-image" />
+            </div>`;
+        } else if (project.srcType === 'video' || project.srcType === 'game') {
+            mediaHTML = `
             <div class="game-video video-box-padding">
-                <iframe src="${project.iframeSrc}"border="none" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="${project.iframeSrc}" border="none" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>`;
         }
-        if (project.srcType == 'game') {        
-            iframeHTML += `
-            <div class="game-video">
-                <div class="game-wrapper">
-                    ${placeholderHTML}
-                    <iframe data-src="${project.iframeSrc}" controls muted border="none" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>`;
-        }
-        
 
-        let creditsHTML ='';
+        let creditsHTML = '';
         if (project.credits) {
             creditsHTML += `
             <p class="bold">Credits</p>
@@ -185,9 +172,9 @@ function createProjectElements() {
                 <p>${project.credits}</p>
             </div>`;
         }
-        // container class
-        projectElement.innerHTML += ` 
-            <div class="project-nav" id="${project.id}"</div>
+
+        projectElement.innerHTML = ` 
+          <div class="project-nav" id="${project.id}"></div>
             <div class="game-vitals">
                 <div class="header">
                     <div class="title">${project.title}</div>
@@ -195,7 +182,7 @@ function createProjectElements() {
                         ${linkHTML}
                     </div>
                 </div>
-                ${iframeHTML}
+                ${mediaHTML}
             </div>
             <div class="game-description">
                 <p class="bold">Overview</p>
