@@ -19,6 +19,15 @@ const projects = [
         languages: ["HTML", "CSS", "JS"],
     },
     {
+        title: 'Job App Bud',
+        link: 'https://jobappbud.com/',
+        imgSrc: 'webp/app-buddy.webp',
+        repoLink: 'https://github.com/dereki16/application-buddy',
+        iconType: 'github',
+        description: "Crafted a web app meant to streamline the job application process. Integrated <span class='service'>ChatGPT's API</span> and created a chatbot with the purpose of helping users in their job search.",
+        languages: [""]
+    },
+    {
         title: 'Transient Ink',
         link: 'https://liminalwebs.com/projects/transient-ink.html',
         imgSrc: 'webp/transient.webp',
@@ -35,15 +44,6 @@ const projects = [
         iconType: '',
         description: "Developed a dynamic landing page for a social media app using {languages}. Integrated <span class='service'>MailerLite</span> and <span class='service'>GSAP animations</span>. Hosted and managed through <span class='host'>GitHub and Firebase</span>.",
         languages: ["HTML", "CSS", "JS", "AJAX", "jQuery", "Bootstrap"],
-    },
-    {
-        title: 'App Buddy',
-        link: 'https://application-bud.web.app/',
-        imgSrc: 'webp/app-buddy.webp',
-        repoLink: 'https://github.com/dereki16/application-buddy',
-        iconType: 'github',
-        description: "Crafted a web app meant to streamline the job application process. Integrated <span class='service'>ChatGPT's API</span> and created a chatbot with the purpose of helping users in their job search.",
-        languages: [""]
     },
     {
         title: 'Razor Movies',

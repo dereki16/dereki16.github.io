@@ -45,7 +45,6 @@ body {
   font-size: 1.25em;
   white-space: normal;
   transition: font-size 0.2s, line-height 0.2s;
-
 }  
 
 #Home-link {
@@ -1142,12 +1141,11 @@ width: 100%;
 .game-card {
   background-color: #161616;
   border: 1px solid #6e6e6e;
-
   color: white;
   padding: 10px;
   border-radius: 20px;
   box-shadow: 0px 0px 20px #212121;
-  position: relative; /* Added position */	
+  position: relative; /* Added position */
 }
 .game-card h2 {
 	margin: 0;
@@ -1260,8 +1258,7 @@ text-align: center;
     margin-top: -30px;
   }
 /* Contact page */
-* {box-sizing: border-box;
-}
+* {box-sizing: border-box;}
 
 #sb {
 float: right;
@@ -1501,6 +1498,7 @@ textarea {
     height: 6%;
     }
   }
+
 
   @media only screen and (max-width:1280px) {
     .flex-center {
@@ -1842,9 +1840,8 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
-	
 }
 
 .game-grid-container {
@@ -1852,23 +1849,22 @@ textarea {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  padding-left: 7.5%;
-  padding-right: 7.5%;
+  /* padding-left: 7.5%; */
+  /* padding-right: 7.5%; */
 }
 
 .game-card {
-  flex: 0 1 calc(50% - 20px);
+  flex: 0 1 calc(50% - 10px);
   background-color:#161616;
-    border-radius: 10px;
+  border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   box-sizing: border-box;
   margin-bottom: 20px;
-  max-width: 500px;
-	margin-bottom: 10px;
+  /* max-width: 500px; */
+  margin-bottom: 5px;
   margin-right: 5px;
   margin-left: 5px;
-
 }
 
 
@@ -2814,4 +2810,14 @@ ul {
 }
 .project-image {
 	width: 80%;
+}
+
+  @media only screen and (max-width:1480px) {
+	.game-grid {
+	  display: flex;
+	  flex-wrap: wrap;
+	  justify-content: center;
+	  max-width: 1100px;
+	  margin: 0 auto;
+	}
 }
