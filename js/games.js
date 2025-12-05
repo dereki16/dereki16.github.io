@@ -52,7 +52,7 @@ const projects = [
         title: 'VR Survival',
         link: 'https://github.com/dereki16/Uncontained-VR',
         srcType: 'video',
-        iframeSrc: 'https://www.youtube.com/embed/gKWwObyfFDg',
+        iframeSrc: 'https://www.youtube.com/embed/Qwu_KIEt1dM?si=v_HoCvS3kFEjsS7H',
         overview: 'In this immersive post-apocalyptic world, see if you have what it takes to survive. Uncontained features room unlocking, barricade building, zombie shooting fun.',
         credits: 'Developed in Unity and Oculus/Meta with Andrew Aguas handling audio and the incorporation of free assets.',
         features: [
