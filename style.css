@@ -2796,3 +2796,15 @@ ul {
   }
 }
 
+.hidden-game {
+    display: none !important;
+}
+
+.visible-game {
+    display: block !important;
+}
+
+.game-video video {
+    width: 100% !important;
+    height: auto !important;
+}
