@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Razor Movies — a responsive ASP.NET Core movie tracking app by Derek Iniguez.">
+  <title>Razor Movies — Derek Iniguez</title>
+  <link rel="icon" href="webp/site-icon.webp">
+  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+  <nav class="tabbar">
+    <div class="tabbar-inner">
+      <a href="index.html" class="tabbar-home" aria-label="Home">D</a>
+      <div class="tabbar-tabs" id="tabbarTabs">
+        <a class="tab" href="index.html">← home.js</a>
+        <a class="tab" href="#key-features">key-features</a>
+        <a class="tab" href="#tech-used">technologies</a>
+        <a class="tab" href="#challenges">challenges</a>
+      </div>
+      <a class="tab-resume" href="https://docs.google.com/document/d/1vY541cLzyQ2TkQ35L3Il_cmxH7qhyhgY/view" target="_blank" rel="noreferrer">Resume ↗</a>
+      <button class="tabbar-menu-btn" id="menuBtn" aria-label="Toggle navigation menu">☰</button>
+    </div>
+  </nav>
+
+  <section class="hero" style="padding-bottom: 40px; overflow: visible;">
+    <div class="wrap">
+      <p class="eyebrow">website case study</p>
+      <h1 style="font-size: clamp(2rem, 5vw, 3.2rem);">Razor Movies</h1>
+      <p class="hero-sub">A movie-tracking web app built on ASP.NET Core MVC, using the TMDb API for movie data. No longer live — see below for why.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="feature-card" style="margin-bottom:0;">
+        <div class="feature-media">
+          <iframe src="https://www.youtube.com/embed/jSF9rYtSkeo?si=g8I1H9iZFMFtFh69" title="Razor Movies demo video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%; height:100%;"></iframe>
+        </div>
+        <div class="feature-body">
+          <h3 class="feature-title">Overview</h3>
+          <p class="feature-desc">MyRazorMovies was a web application for movie enthusiasts to track and manage a personal repository of favorite films. Built on ASP.NET Core MVC with C#, it used TheMovieDatabase (TMDb) API to fetch an updated list of trending and recent movies, so users always had a current selection to browse and favorite.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="key-features">
+    <div class="wrap row-list">
+
+      <div class="row-project">
+        <div class="row-media"><img src="webp/rm6.webp" alt="Razor Movies homepage listing" onerror="this.remove()"></div>
+        <div class="row-body">
+          <h3 class="row-title">Dynamic Listings</h3>
+          <p class="row-desc">The homepage features a dynamic display of the most recent and popular movies — titles, posters, release dates, and popularity scores sourced directly from TMDb.</p>
+        </div>
+      </div>
+
+      <div class="row-project">
+        <div class="row-media row-media-multi" style="grid-template-columns: 1fr 1fr;">
+          <img src="webp/rm2.webp" alt="" onerror="this.remove()">
+          <img src="webp/rm3.webp" alt="" onerror="this.remove()">
+          <img src="webp/rm4.webp" alt="" onerror="this.remove()">
+          <img src="webp/rm5.webp" alt="" onerror="this.remove()">
+        </div>
+        <div class="row-body">
+          <h3 class="row-title">CRUD Operations</h3>
+          <p class="row-desc">Full Create, Read, Update, and Delete support for user-curated lists, enabling robust, hands-on data management.</p>
+        </div>
+      </div>
+
+      <div class="row-project">
+        <div class="row-media row-media-multi" style="grid-template-columns: 1fr 1fr;">
+          <img src="webp/rm1.webp" alt="" onerror="this.remove()">
+          <img src="webp/rm8.webp" alt="" onerror="this.remove()">
+        </div>
+        <div class="row-body">
+          <h3 class="row-title">Responsive Design</h3>
+          <p class="row-desc">The site adjusted seamlessly across screen sizes, from desktop down to mobile.</p>
+        </div>
+      </div>
+
+      <div class="row-project">
+        <div class="row-media row-media--contain"><img src="webp/mobile.webp" alt="Razor Movies mobile view" onerror="this.remove()"></div>
+        <div class="row-body">
+          <h3 class="row-title">Mobile View</h3>
+          <p class="row-desc">The full mobile layout, shown at full height rather than cropped alongside the desktop screenshots.</p>
+        </div>
+      </div>
+
+      <div class="row-project">
+        <div class="row-media"><img src="webp/rm7.webp" alt="Razor Movies search feature" onerror="this.remove()"></div>
+        <div class="row-body">
+          <h3 class="row-title">Movie Search</h3>
+          <p class="row-desc">Search a full selection of movies by keyword.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="tech-used">
+    <div class="wrap">
+      <p class="eyebrow">stack</p>
+      <h2 class="section-title">Technologies Used</h2>
+      <div style="display:flex; flex-direction:column; gap:22px; max-width:70ch;">
+        <div>
+          <h3 class="row-title" style="font-size:1.1rem;">ASP.NET Core MVC</h3>
+          <p class="row-desc">The Model-View-Controller pattern, for a clean separation of concerns and a streamlined codebase.</p>
+        </div>
+        <div>
+          <h3 class="row-title" style="font-size:1.1rem;">C#</h3>
+          <p class="row-desc">Server-side logic with a strong object-oriented backbone for the application's functionality.</p>
+        </div>
+        <div>
+          <h3 class="row-title" style="font-size:1.1rem;">Microsoft Azure</h3>
+          <p class="row-desc">Hosted on Azure for secure, scalable cloud computing and app-service features.</p>
+        </div>
+        <div>
+          <h3 class="row-title" style="font-size:1.1rem;">TheMovieDatabase API</h3>
+          <p class="row-desc">Real-time access to an extensive movie database, keeping listings current and popular titles up to date.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="challenges" style="border-bottom: none;">
+    <div class="wrap">
+      <p class="eyebrow">lessons learned</p>
+      <h2 class="section-title">Challenges</h2>
+      <div style="display:flex; flex-direction:column; gap:22px; max-width:70ch;">
+        <div>
+          <h3 class="row-title" style="font-size:1.1rem;">User Data Management</h3>
+          <p class="row-desc">Ensuring robustness in the user's ability to manage their movie lists required careful design of the CRUD interface, refined through rigorous testing and iterative development.</p>
+        </div>
+        <div>
+          <h3 class="row-title" style="font-size:1.1rem;">Cold Starts</h3>
+          <p class="row-desc">Running on the lowest tier of Azure's services meant the app would idle after 20 minutes of inactivity, slowing the next visit's response time. I set up a monitor on UptimeRobot to periodically ping the server and keep it warm, until I found the workaround itself too costly to keep running.</p>
+        </div>
+        <div>
+          <h3 class="row-title" style="font-size:1.1rem;">Why it's offline now</h3>
+          <p class="row-desc">The app is no longer live — maintaining the database was an ongoing cost I decided not to keep paying for a personal project, so I took it down. The demo video and screenshots above are how you can see it today.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div class="footer-social">
+        <a href="mailto:derekini.dev@gmail.com" aria-label="Email me"><i class="fa fa-envelope-o"></i></a>
+        <a href="https://github.com/dereki16" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/derek-iniguez/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+      </div>
+      <p class="footer-meta mono">designed &amp; developed by Derek Iniguez © 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const tabbarTabs = document.getElementById('tabbarTabs');
+    menuBtn.addEventListener('click', () => tabbarTabs.classList.toggle('is-open'));
+  </script>
+</body>
+</html>

@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Derek Iniguez — Unity & C# game projects, including a VR survival title.">
-  <title>Games — Derek Iniguez</title>
+  <meta name="description" content="Derek Iniguez — app projects.">
+  <title>Apps — Derek Iniguez</title>
   <link rel="icon" href="webp/site-icon.webp">
   <link href="style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body class="page-apps">
 
   <nav class="tabbar">
     <div class="tabbar-inner">
       <a href="index.html" class="tabbar-home" aria-label="Home">D</a>
       <div class="tabbar-tabs" id="tabbarTabs">
-        <a class="tab" href="index.html">← home.js</a>
-        <a class="tab" href="#UNCONTAINED">uncontained</a>
-        <a class="tab" href="#VATS">vats</a>
-        <a class="tab" href="#Fragmented">fragmented</a>
-        <a class="tab" href="#O-PONG">o-pong</a>
+        <a class="tab" href="#featured-app">fragmented</a>
+        <a class="tab" href="#iTag">itag</a>
+        <a class="tab" href="#Flixter">flixter</a>
+        <a class="tab" href="#Tweeter">tweeter</a>
+        <a class="tab" href="#Parstagram">parstagram</a>
       </div>
       <a class="tab-resume" href="https://docs.google.com/document/d/1vY541cLzyQ2TkQ35L3Il_cmxH7qhyhgY/view" target="_blank" rel="noreferrer">Resume ↗</a>
       <button class="tabbar-menu-btn" id="menuBtn" aria-label="Toggle navigation menu">☰</button>
@@ -28,14 +28,21 @@
 
   <section class="hero" style="padding-bottom: 60px;">
     <div class="wrap">
-      <p class="eyebrow">games</p>
-      <h1 style="font-size: clamp(2rem, 5vw, 3.2rem);">Unity &amp; C# games</h1>
-      <p class="hero-sub">Four builds, from a full VR survival game to a first-ever remix of Pong.</p>
+      <p class="eyebrow">apps</p>
+      <h1 style="font-size: clamp(2rem, 5vw, 3.2rem);">Apps</h1>
+      <p class="hero-sub">App projects, one place.</p>
     </div>
   </section>
 
   <section style="border-bottom: none;">
-    <div class="wrap-wide row-list" id="games-list"></div>
+    <div class="wrap">
+      <div class="feature-card" id="featured-app" style="scroll-margin-top: 76px;"></div>
+      <!--
+        Add more app entries to the `apps` array in js/apps.js and they'll
+        render here automatically as alternating rows with their videos.
+      -->
+      <div class="row-list" id="apps-rows"></div>
+    </div>
   </section>
 
   <footer>
@@ -49,7 +56,7 @@
     </div>
   </footer>
 
-  <script src="js/games-page.js"></script>
+  <script src="js/apps.js"></script>
   <script>
     document.addEventListener('fullscreenchange', () => {
       document.querySelectorAll('video.is-fullscreen').forEach(v => v.classList.remove('is-fullscreen'));

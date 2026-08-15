@@ -1,276 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hi! I'm a software engineer passionate about expressing creativity through programming websites, video games, and apps. Check out some of my work here.">
-    <title>Derek Iniguez</title>
-    <link rel="preload" href="js/font.js" as="script">
-    <script src="js/font.js"></script>
-    <link rel="icon" href="webp/site-icon.webp">
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdnjs.cloudflare.com https://github.com https://i.simmer.io; media-src 'self' https://github.com https://media.githubusercontent.com; style-src 'self' https://cdnjs.cloudflare.com; img-src 'self' https://i.ytimg.com; form-action https://formsubmit.co;">
-    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
-    <meta name="referrer" content="no-referrer">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta name="permissions" content="geolocation=()">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Derek Iniguez — developer working across web, apps, and games.">
+  <title>Derek Iniguez</title>
+  <link rel="icon" href="webp/site-icon.webp">
+  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="page-home">
 
-  </head>
-
-<body>
-
-   <!-- Navbar -->
-<section class="top-nav sticky">
-  <h2 class="" id="Home-link"><a class=" icon-3d" id="home-a" href="index.html">D</a></h2>
-  <input id="menu-toggle" type="checkbox" />
-<label class='menu-button-container' for="menu-toggle">
-  <div class='menu-button'></div>
-</label>
-<ul class="menu">
-  <li class="nav-item">
-    <a class="nav-link" href="#aboutme" title="See more about me here.">About Me</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#projects" title="See my projects here.">Projects</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#contact" title="Reach out to me here.">Contact</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="projects.html" title="See my game projects here.">Games</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="resume-tab" href="pdf/Derek Iniguez.pdf#zoom=110" target="_blank" rel="noreferrer">Resume</a>
-  </li>
-</ul>
-</section>
-
-<div id="top"></div>
-
-  <section class="item">
-    <section class="subitem">
-
-      <div class="hidden par-content">
-        <h3 class="p">Hey, I'm </h3>
-        <h3 class="lc">Derek Iniguez</h3>
-        <h3 class="lci">Software Engineer </h3>
-        <p class="hidden pi">with a passion for web development, and expertise extending to game and app development as well. </p>
-
+  <!-- ============================================================ -->
+  <!-- Nav — editor tab bar (the signature element)                  -->
+  <!-- ============================================================ -->
+  <nav class="tabbar">
+    <div class="tabbar-inner">
+      <a href="#home" class="tabbar-home" aria-label="Home">D</a>
+      <div class="tabbar-tabs" id="tabbarTabs">
+        <a class="tab is-active" href="#home">home.js</a>
+        <a class="tab" href="#about">about.js</a>
+        <a class="tab" href="#websites">projects.js</a>
+        <a class="tab" href="#games">games.js</a>
+        <a class="tab" href="#apps">apps.js</a>
+        <a class="tab" href="#contact">contact.js</a>
       </div>
-
-      <div class="hidden proj">
-        <h1 class="h1"> Projects </h1>
-        <div id="project-selection">
-          <a class="btn-type gradient-button blue-gradient" href="#websites">Websites</a>
-          <a class="btn-type gradient-button blue-gradient" href="#games">Games</a>
-          <a class="btn-type gradient-button blue-gradient" href="#apps">Apps</a>
-        </div>
-      </div>
-    </section>
-  </section>
-
-  <section class="item" id="about-section">
-    <div id="aboutme"></div>
-    <section class="subitem">
-
-      <h1 class="hidden h1"> About Me </h1>
-      <hr>
-      <div class="hidden about-row">
-        <div class="column left">
-          <h3 class="comment top">// hello world!</h3>
-          <h3 class="comment">// welcome to my domain</h3>
-          <p id="about-desc">I'm Derek, a developer with a passion for creating applications.  <br><br> Whether it's developing websites, apps or games (especially a VR game), it takes hard work to bring an idea to life. <br><br> Where there are challenges, there's opportunity to grow and learn. When confronted, I say challenge accepted.</p>
-        </div>
-        <div class="hidden column-right">
-          <img id="me" src="webp/me2.webp" alt="A picture of me, Derek Iniguez.">
-          <img class="mobile-only" id="mtn" src="webp/mtn.webp" alt="A graphic symbol of the mountains to overcome as a programmer."  width="197" height="100">
-        </div>
-      </div>
-          
-      <div id="tech-par">
-        <p>Here are some of the technologies I've been using:</p>
-        <p class="bold"> HTML, CSS, JS, Microsoft Azure, Bootstrap, Visual Studio, Unity, C#, C++, ASP.NET, Shopify SQL, Firebase, Cloudflare, Swift</p>
-      </div>
-      <div id="tech-stack" class="hidden symbol-container">
-        <img class="symbol" src="webp/html.webp" id="html" alt="Image icon of html.">
-        <img class="symbol" src="webp/css-3.webp" alt="Image icon of css.">
-        <img class="symbol" src="webp/js-file.webp" alt="Image icon of js.">
-        <img class="symbol" src="webp/azure.webp" alt="Image icon of azure.">
-        <img class="symbol" src="webp/bootstrap.webp" alt="Image icon of bootstrap.">
-        <img class="symbol" src="webp/visual-studio.webp" alt="Image icon of Visual Studio.">
-        <img class="symbol" src="webp/unity.webp" alt="Image icon of Unity.">
-        <img class="symbol" src="webp/c-sharp.webp" alt="Image icon of C#.">
-        <img class="symbol" src="webp/c-.webp" alt="Image icon of C++.">
-        <img class="symbol" src="webp/dotnet.webp" id="dotnet" alt="Image icon of ASPNET.">
-        <img class="symbol" src="webp/shopify.webp" id="shopify" alt="Image icon of Shopify.">
-        <img class="symbol" src="webp/sql-server.webp" alt="Image icon of SQL.">
-        <img class="symbol" src="webp/firebase.webp" id="firebase" alt="Image icon of Firebase.">
-        <img class="symbol" src="webp/cloudfareicon.webp" alt="Image icon of Cloudfare.">
-        <img class="symbol" src="webp/swift.webp" alt="Image icon of Swift.">
-      </div>
-      <div class="hidden" id="action-section">
-        <p>Reach out to me below.</p>
-        <a href="#contact" class="btn gradient-button green-gradient green-hover" aria-label="Visit the contact section.">Contact Me</a>
-      </div>
-    </section>
-  </section>
-
-  <section class="item">
-    <div id="projects"></div>
-
-    <section class="subitem">
-    <div id="websites"></div>
-
-      <h1 class="hidden h1"> Websites </h1>
-      <hr>
-      <div class="hidden legend">
-        <div class="legend-item">
-          <span class="color-circle tech"></span> 
-          <p>Tech Stack</p>
-        </div>
-        <div class="legend-item">
-          <span class="color-circle service"></span>
-          <p>Services</p>
-        </div>
-        <div class="legend-item">
-            <span class="color-circle host"></span> 
-            <p>Hosts</p>
-        </div>
+      <a class="tab-resume" href="https://docs.google.com/document/d/1vY541cLzyQ2TkQ35L3Il_cmxH7qhyhgY/view" target="_blank" rel="noreferrer">Resume ↗</a>
+      <button class="tabbar-menu-btn" id="menuBtn" aria-label="Toggle navigation menu">☰</button>
     </div>
-    
-      <div class="hidden">
+  </nav>
 
-        <div class="grid">
-          <div class="grid-container" id="website-container">
-
-          </div>
+  <!-- ============================================================ -->
+  <!-- Hero                                                          -->
+  <!-- ============================================================ -->
+  <section class="hero" id="home">
+    <div class="wrap hero-wrap">
+      <div class="hero-copy">
+        <p class="hero-kicker">const developer = "Derek Iniguez";<span class="caret"></span></p>
+        <h1>I build things for the <span class="accent">web</span>, on <span class="accent2">apps</span>, and inside <span class="accent">games</span>.</h1>
+        <p class="hero-sub">Computer Science grad based in Corona, CA. Currently building web experiences professionally, with roots in game and app development — including a VR title built in Unity.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#websites">See my work</a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
         </div>
       </div>
-    </section>
-    <section class="subitem" id="other-sites">
-      <div class="hidden">
 
-        <h2 class="hidden h1">Other Sites</h2>
-
-        <div class="grid">
-          <div class="smaller-project-container">
-
+      <div class="hero-visual" aria-hidden="true">
+        <svg class="hero-mountain" viewBox="0 0 460 260" xmlns="http://www.w3.org/2000/svg">
+          <polygon id="peak1" class="peak" points="0,260 85,95 175,260"></polygon>
+          <polygon id="peak2" class="peak" points="115,260 225,45 335,260"></polygon>
+          <polygon id="peak3" class="peak" points="255,260 355,110 460,260"></polygon>
+        </svg>
+        <div class="hero-code">
+          <div class="contact-titlebar">
+            <span></span><span></span><span></span>
+            <em id="heroCodeFile">nav.js</em>
           </div>
+          <pre class="hero-code-body"><code id="heroCode"></code><span class="hero-code-caret"></span></pre>
         </div>
       </div>
-    </section>
-  </section>
-
-    <section class="subitem">
-      <div id="games"></div>
-
-      <h1 class="hidden h1"> Games </h1>
-      <hr>
-
-      <div class="hidden">
-        <div class="game-grid">
-            <div class="game-grid-container">
-               
-            </div>
-        </div>
     </div>
   </section>
 
-  <section class="subitem" id="app-section">
-      <div id="apps"></div>
-      <div id="app-itag"></div>
-
-      <h1 class="hidden h1"> Apps </h1>
-      <hr>
-      <div class="app-grid">
-        <div class="hidden app-container">
-
+  <!-- ============================================================ -->
+  <!-- About                                                         -->
+  <!-- ============================================================ -->
+  <section id="about">
+    <div class="wrap">
+      <p class="eyebrow">about</p>
+      <h2 class="section-title">Who's writing this code</h2>
+      <div class="about-grid">
+        <div class="about-photo">
+          <img src="webp/me2.webp" alt="A picture of Derek Iniguez." onerror="this.parentElement.style.display='none'">
         </div>
-      </div>
-    </section>
-  </section>
-    <section class="item">
-      <div id="contact"></div>
-      <section class="subitem">
+        <div>
+          <p class="about-comment">// hello world!<br>// welcome to my domain</p>
+          <p class="about-lede">I'm Derek — a developer who likes bringing ideas to life, whether that's a website, an app, or a VR game.</p>
+          <p class="about-body">Where there are challenges, there's opportunity to grow and learn. When confronted, I say challenge accepted.</p>
+          <div class="pill-groups">
 
-
-        <h1 class="hidden h1"> Contact </h1>
-        <hr>
-        <div class="hidden">
-
-        <div id="container-contact">
-          <form id="contact-form" action="https://formsubmit.co/495e7b647edaea352575956c48090b13" method="POST">
-            <label for="fname">Name*</label>
-            <input class="myTextarea" type="text" id="name" name="firstname" placeholder="Your name..">
-        
-            <label for="email">Email*</label>
-            <input class="myTextarea" type="text" id="email" name="email" placeholder="Your email address.." required>
-            
-            <label for="subject">Subject*</label>
-            <input class="myTextarea" type="text" id="subj" name="subject" placeholder="Say hello!">
-
-            <label for="subject">Message*</label>
-            <textarea class="myTextarea" name="message" placeholder="Write something.."></textarea>
-          
-            <input type="hidden" name="_next" value="https://dereki16.github.io/thankyou.html">
-            <div id="sb">
-              <input class="hidden submit-button green-hover" type="submit" value="Submit">
+            <div class="pill-category">
+              <p class="pill-category-label">Languages</p>
+              <div class="pill-row">
+                <span class="pill"><img src="webp/html.webp" alt="" onerror="this.remove()">HTML</span>
+                <span class="pill"><img src="webp/css-3.webp" alt="" onerror="this.remove()">CSS</span>
+                <span class="pill"><img src="webp/js-file.webp" alt="" onerror="this.remove()">JavaScript</span>
+                <span class="pill"><img src="webp/c-sharp.webp" alt="" onerror="this.remove()">C#</span>
+                <span class="pill-more-tag">+3 more</span>
+                <div class="pill-extra">
+                  <span class="pill"><img src="webp/c-.webp" alt="" onerror="this.remove()">C++</span>
+                  <span class="pill"><img src="webp/swift.webp" alt="" onerror="this.remove()">Swift</span>
+                  <span class="pill">T-SQL</span>
+                </div>
+              </div>
             </div>
-          </form>
+
+            <div class="pill-category">
+              <p class="pill-category-label">Frameworks &amp; Libraries</p>
+              <div class="pill-row">
+                <span class="pill">React</span>
+                <span class="pill"><img src="webp/unity.webp" alt="" onerror="this.remove()">Unity</span>
+                <span class="pill"><img src="webp/dotnet.webp" alt="" onerror="this.remove()">ASP.NET</span>
+                <span class="pill-more-tag">+4 more</span>
+                <div class="pill-extra">
+                  <span class="pill">Bootstrap</span>
+                  <span class="pill">jQuery</span>
+                  <span class="pill">AJAX</span>
+                  <span class="pill">EJS</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pill-category">
+              <p class="pill-category-label">Platforms &amp; Tools</p>
+              <div class="pill-row">
+                <span class="pill"><img src="webp/shopify.webp" alt="" onerror="this.remove()">Shopify</span>
+                <span class="pill"><img src="webp/firebase.webp" alt="" onerror="this.remove()">Firebase</span>
+                <span class="pill"><img src="webp/azure.webp" alt="" onerror="this.remove()">Azure</span>
+                <span class="pill"><img src="webp/cloudfareicon.webp" alt="" onerror="this.remove()">Cloudflare</span>
+                <span class="pill-more-tag">+9 more</span>
+                <div class="pill-extra">
+                  <span class="pill">Node.js</span>
+                  <span class="pill">REST APIs</span>
+                  <span class="pill">Figma</span>
+                  <span class="pill">Visual Studio</span>
+                  <span class="pill">GitHub</span>
+                  <span class="pill">Jira</span>
+                  <span class="pill">Wix</span>
+                  <span class="pill">WordPress</span>
+                  <span class="pill">Granicus govAccess CMS</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <a href="#contact" class="btn btn-primary">Contact me</a>
         </div>
       </div>
-    </section>
-</section>
+    </div>
+  </section>
 
-  <div class="hidden" id="arrow-container">
-    <a id="arrow-button" href="#top" aria-label="Visit the top of the page.">
-      <img id="arrow" src="webp/arrow1.webp" alt="Clickable arrow to go back to top of page.">
-    </a>
-  </div>
-  <br>
+  <!-- ============================================================ -->
+  <!-- Websites                                                      -->
+  <!-- ============================================================ -->
+  <section id="websites">
+    <div class="wrap">
+      <p class="eyebrow">projects</p>
+      <h2 class="section-title">Websites</h2>
 
-  <hr>
-    
-  <div class="sticky"></div>
+      <a class="feature-card" id="featured-website"></a>
 
+      <div class="row-list" id="website-rows"></div>
 
+      <p class="mono" style="color: var(--fg-faint); font-size: 0.82rem; margin: 34px 0 0;">// every site above: hand-built with HTML, CSS, and JS — no framework crutches</p>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- Games                                                         -->
+  <!-- ============================================================ -->
+  <section id="games">
+    <div class="wrap">
+      <p class="eyebrow">games</p>
+      <h2 class="section-title">Games</h2>
+
+      <div class="feature-card" id="featured-game"></div>
+
+      <div class="games-teaser">
+        <div>
+          <h3>More Unity &amp; C# builds</h3>
+          <p>Including a college capstone virtual aquarium and a from-scratch reimagining of Pong — see the full writeups, controls, and playable builds.</p>
+        </div>
+        <a class="btn btn-primary" href="projects.html">View all games ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- Apps                                                          -->
+  <!-- ============================================================ -->
+  <section id="apps">
+    <div class="wrap">
+      <p class="eyebrow">apps</p>
+      <h2 class="section-title">Apps</h2>
+
+      <div class="feature-card" id="featured-app"></div>
+
+      <div class="games-teaser">
+        <div>
+          <h3>More apps</h3>
+          <p>Additional app projects live on their own page.</p>
+        </div>
+        <a class="btn btn-primary" href="apps.html">View all apps ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- Contact                                                       -->
+  <!-- ============================================================ -->
+  <section id="contact">
+    <div class="wrap">
+      <p class="eyebrow">contact</p>
+      <h2 class="section-title">Say hello</h2>
+      <div class="contact-panel">
+        <div class="contact-titlebar">
+          <span></span><span></span><span></span>
+          <em>contact.js</em>
+        </div>
+        <form class="contact-form" action="https://formsubmit.co/495e7b647edaea352575956c48090b13" method="POST">
+          <div class="field">
+            <label for="name">name</label>
+            <input type="text" id="name" name="firstname" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="email">email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+          </div>
+          <div class="field">
+            <label for="subject">subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Say hello!">
+          </div>
+          <div class="field">
+            <label for="message">message</label>
+            <textarea id="message" name="message" placeholder="Write something.."></textarea>
+          </div>
+          <input type="hidden" name="_next" value="https://dereki16.github.io/thankyou.html">
+          <button type="submit" class="btn btn-primary">Send message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- Footer                                                        -->
+  <!-- ============================================================ -->
   <footer>
-    <div class="hidden vertical-writing" id="verticalText">
-      derekini.dev@gmail.com
-    </div>  
-
-
-  <div class="sticky"></div>
-
-
-    <div class="flex-center">
-      <a href="#contact" aria-label="Visit the contact section."><i class="hidden fa fa-envelope-o fa-4x icon-3d" alt="Link to my contact page to send me an email."></i></a>
-      <a href="https://github.com/dereki16" alt="Link to my personal github account." target="_blank" rel="noreferrer" aria-label="Visit my Github."><i class="hidden fa fa-github fa-4x icon-3d"></i></a>
-      <a href="https://www.linkedin.com/in/derek-iniguez/" alt="Link to my LinkedIn account." target="_blank" rel="noreferrer" aria-label="Visit my LinkedIn."><i class="hidden fa fa-linkedin fa-4x icon-3d"></i></a>
-      <!-- <a href="https://www.youtube.com/channel/UC1syY6LwUp01hJX7zBARzxw" alt="Link to my YouTube account." target="_blank" rel="noreferrer" aria-label="Visit my YouTube."><i class="hidden fa fa-youtube fa-4x icon-3d"></i></a> -->
-      <!-- <a href="https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented" alt="Link to my google play store page for my mobile app - Fragmented." target="_blank" rel="noreferrer" aria-label="Visit my Google Play Store page."><i class="hidden fa fa-android fa-4x icon-3d"></i></a> -->
-      <div class="hidden vertical-line social-line"></div>
-      <div class="hidden vertical-line email-line"></div>
-
+    <div class="wrap footer-row">
+      <div class="footer-social">
+        <a href="mailto:derekini.dev@gmail.com" aria-label="Email me"><i class="fa fa-envelope-o"></i></a>
+        <a href="https://github.com/dereki16" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/derek-iniguez/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+      </div>
+      <p class="footer-meta mono">designed & developed by Derek Iniguez © 2026</p>
     </div>
   </footer>
-  <div class="hidden social-footer">
-    <a href="#contact" aria-label="Visit the contact section."><i class="hidden fa fa-envelope-o fa-4x icon-3d" alt="Link to my contact page to send me an email."></i></a>
-    <a href="https://github.com/dereki16" alt="Link to my personal github account." target="_blank" rel="noreferrer" aria-label="Visit my Github."><i class="hidden fa fa-github fa-4x icon-3d"></i></a>
-    <a href="https://www.linkedin.com/in/derek-iniguez/" alt="Link to my LinkedIn account." target="_blank" rel="noreferrer" aria-label="Visit my LinkedIn."><i class="hidden fa fa-linkedin fa-4x icon-3d"></i></a>
-    <!-- <a href="https://www.youtube.com/channel/UC1syY6LwUp01hJX7zBARzxw" alt="Link to my YouTube account." target="_blank" rel="noreferrer" aria-label="Visit my YouTube."><i class="hidden fa fa-youtube fa-4x icon-3d"></i></a> -->
-    <!-- <a href="https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented" alt="Link to my google play store page for my mobile app - Fragmented." target="_blank" rel="noreferrer" aria-label="Visit my Google Play Store page."><i class="hidden fa fa-android fa-4x icon-3d"></i></a> -->
-  </div>
-  
-  <p class="footer-text">designed and developed by Derek Iniguez © 2023</p><br>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="js/main.js"></script>
-  <script src="js/nav.js"></script>
-  <script src="js/contact.js"></script>
-  <script src="js/projects.js" defer></script>
+
+  <script src="js/websites.js"></script>
+  <script src="js/games-home.js"></script>
+  <script src="js/apps.js"></script>
+  <script>
+    // Hero code panel: typewriter through real snippets. Each time a
+    // snippet finishes, nudge the mountain peaks to a new height —
+    // a lightweight stand-in for "the code shapes the mountain."
+    const heroSnippets = [
+      { file: 'nav.js', code: `document.querySelectorAll('.nav-link')\n  .forEach(link => {\n    link.addEventListener('click', closeDropdown);\n});` },
+      { file: 'about.js', code: `const developer = {\n  name: "Derek Iniguez",\n  builds: ["web", "apps", "games"]\n};` },
+      { file: 'contact.js', code: `input.addEventListener('input', () => {\n  this.classList.toggle('has-content',\n    this.value.length > 0);\n});` },
+    ];
+
+    const heroCodeEl = document.getElementById('heroCode');
+    const heroFileEl = document.getElementById('heroCodeFile');
+    const peaks = ['peak1', 'peak2', 'peak3'].map(id => document.getElementById(id));
+    let snippetIndex = 0;
+
+    function nudgeMountain() {
+      peaks.forEach(peak => {
+        const dy = Math.floor(Math.random() * 26) - 13; // -13 to +13
+        peak.style.transform = `translateY(${dy}px)`;
+      });
+    }
+
+    function typeSnippet() {
+      if (!heroCodeEl) return;
+      const snippet = heroSnippets[snippetIndex % heroSnippets.length];
+      heroFileEl.textContent = snippet.file;
+      heroCodeEl.textContent = '';
+      let i = 0;
+      const typeInterval = setInterval(() => {
+        heroCodeEl.textContent = snippet.code.slice(0, i);
+        i++;
+        if (i > snippet.code.length) {
+          clearInterval(typeInterval);
+          nudgeMountain();
+          snippetIndex++;
+          setTimeout(typeSnippet, 2200);
+        }
+      }, 22);
+    }
+
+    if (heroCodeEl) {
+      nudgeMountain();
+      typeSnippet();
+    }
+  </script>
+
+  <script>
+    // Fullscreen shouldn't inherit the grayscale-until-hover filter.
+    document.addEventListener('fullscreenchange', () => {
+      document.querySelectorAll('video.is-fullscreen').forEach(v => v.classList.remove('is-fullscreen'));
+      const el = document.fullscreenElement;
+      if (el && el.tagName === 'VIDEO') el.classList.add('is-fullscreen');
+    });
+
+    // Mobile tab menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const tabbarTabs = document.getElementById('tabbarTabs');
+    menuBtn.addEventListener('click', () => {
+      tabbarTabs.classList.toggle('is-open');
+    });
+    tabbarTabs.querySelectorAll('.tab').forEach(t => {
+      t.addEventListener('click', () => tabbarTabs.classList.remove('is-open'));
+    });
+
+    // Scroll-spy: highlight the active tab based on section in view
+    const sections = document.querySelectorAll('section[id]');
+    const tabs = document.querySelectorAll('.tab');
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          tabs.forEach(t => t.classList.toggle('is-active', t.getAttribute('href') === '#' + id));
+        }
+      });
+    }, { rootMargin: '-40% 0px -50% 0px' });
+    sections.forEach(s => spy.observe(s));
+  </script>
 
 </body>
 </html>
-

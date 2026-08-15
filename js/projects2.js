@@ -1,35 +1,22 @@
 // websites
-// NOTE: no GitHub/repo link on Liminal Webs or Tectonian by design — these are
-// business/client work, kept private. See conversation notes.
 const projects = [
     {
         title: 'Liminal Webs',
         link: 'https://liminalwebs.com/',
         imgSrc: 'webp/liminal-webs.webp',
-        repoLink: '',
-        iconType: '',
-        description: "Founded an online web development and design agency based in California to help support small businesses with affordable prices.",
-        tags: ["HTML", "CSS", "JS", "GSAP", "GitHub", "Firebase", "Cloudflare"],
-    },
-    {
-        // TODO: fill in Tectonian's live link + a screenshot in webp/, then
-        // remove this comment. Placeholder link below points nowhere yet.
-        title: 'Tectonian',
-        link: '',
-        imgSrc: 'webp/tectonian-placeholder.webp',
-        repoLink: '',
-        iconType: '',
-        description: "Founded and built Tectonian, a web app I'm growing as its own product.",
-        tags: [],
+        repoLink: 'https://www.linkedin.com/company/liminal-webs',
+        iconType: 'linkedin',
+        description: "Founded an online web development and design agency based in California to help support small businesses with affordable prices. Used {languages}<span class='service'>GSAP animations</span> and hosted through <span class='host'>Github, Firebase, and Cloudflare</span>",
+        languages: ["HTML", "CSS", "JS", ""],
     },
     {
         title: 'Cosecha Church',
         link: 'https://cosecha-db18b.web.app/',
         imgSrc: 'webp/cosecha-church.webp',
-        repoLink: 'https://github.com/dereki16',
-        iconType: 'github',
-        description: "Volunteered services to help revitalize the online presence of a local Riverside Spanish church.",
-        tags: ["HTML", "CSS", "JS", "GitHub", "Firebase"],
+        repoLink: '',
+        iconType: '',
+        description: "<br><br>Volunteered services to help revitalize the online presence of a local Riverside's Spanish church.  Used {languages} and hosted through <span class='host'>Github and Firebase.</span>",
+        languages: ["HTML", "CSS", "JS"],
     },
     {
         title: 'Job App Bud',
@@ -37,8 +24,8 @@ const projects = [
         imgSrc: 'webp/app-buddy.webp',
         repoLink: 'https://github.com/dereki16/application-buddy',
         iconType: 'github',
-        description: "Crafted a web app meant to streamline the job application process. Integrated ChatGPT's API and built a chatbot to help users in their job search.",
-        tags: ["ChatGPT API"]
+        description: "Crafted a web app meant to streamline the job application process. Integrated <span class='service'>ChatGPT's API</span> and created a chatbot with the purpose of helping users in their job search.",
+        languages: [""]
     },
     {
         title: 'Transient Ink',
@@ -46,17 +33,17 @@ const projects = [
         imgSrc: 'webp/transient.webp',
         repoLink: '',
         iconType: '',
-        description: "Established an online business presence through the Shopify platform, centered around selling temporary tattoos and accessories, with more to come.",
-        tags: ["Shopify"]
+        description: "<br>Established an online business presence through the <span class='host'>Shopify</span> platform centered around selling temporary tattoos and accessories, with more to come.",
+        languages: [""]
     },
     {
-        title: 'Popper',
+        title: 'popper',
         link: 'https://poppers-landing-page.web.app/',
         imgSrc: 'webp/popper.png',
         repoLink: '',
         iconType: '',
-        description: "Developed a dynamic landing page for a social media app. Integrated MailerLite and GSAP animations.",
-        tags: ["HTML", "CSS", "JS", "AJAX", "jQuery", "Bootstrap", "MailerLite", "GSAP", "GitHub", "Firebase"],
+        description: "Developed a dynamic landing page for a social media app using {languages}. Integrated <span class='service'>MailerLite</span> and <span class='service'>GSAP animations</span>. Hosted and managed through <span class='host'>GitHub and Firebase</span>.",
+        languages: ["HTML", "CSS", "JS", "AJAX", "jQuery", "Bootstrap"],
     },
     {
         title: 'Razor Movies',
@@ -64,25 +51,52 @@ const projects = [
         imgSrc: 'webp/RazorMovies.webp',
         repoLink: 'https://github.com/dereki16/Razor-Movies-Project',
         iconType: 'github',
-        description: "Built a responsive movie site supporting CRUD operations, using The Movie Database API for data, and implemented a strategy to counteract cold start delays.",
-        tags: ["ASP.NET", "TMDb API", "Azure"]
+        description: "Built a responsive movie site supporting CRUD operations, using <span class='service'>The Movie Database API</span> for data. Developed using {languages}, hosted on <span class='host'>Azure</span> and implemented a strategy to counteract cold start delays.",
+        languages: ["ASP.NET"]
     },
+    // {
+    //     title: 'Portfolio Site',
+    //     link: 'https://derekiniguez.com',
+    //     imgSrc: 'webp/portfolio.png',
+    //     repoLink: 'https://github.com/dereki16/dereki16.github.io',
+    //     iconType: 'github',
+    //     description: "Designed and developed a portfolio site to display my work, optimized for performance and security using <span class='host'>Cloudflare</span>.",
+    //     languages: [""]
+    // },
+    // {
+    //     title: 'US Quiz',
+    //     link: 'https://geography-quiz.derekiniguez1.repl.co/',
+    //     imgSrc: 'webp/usq.webp',
+    //     repoLink: 'https://github.com/dereki16/us-geo-quiz-asgmt',
+    //     iconType: 'github',
+    //     description: 'Built an interactive US quiz application using {languages}. Features real-time grading and keeps a record of user attempts.',
+    //     languages: ["HTML", "CSS", "JavaScript", "jQuery", "AJAX"]
+    // },
+    // {
+    //     title: 'Game Dev Info',
+    //     link: 'https://game-dev-v2.derekiniguez1.repl.co/welcome',
+    //     imgSrc: 'webp/TechLesson.webp',
+    //     repoLink: 'https://github.com/dereki16/gamedev-infov2',
+    //     iconType: 'github',
+    //     description: "Designed an educational website about game development, incorporating {languages} templates and an <span class='service'>external API for motivational quotes</span>.",
+    //     languages: ["EJS"]
+    // }
 ];
 
 function createProjectElements() {
     const gridContainer = document.querySelector('.grid-container');
 
     projects.forEach(project => {
-        const projectElement = document.createElement(project.link ? 'a' : 'div');
-        if (project.link) {
-            projectElement.href = project.link;
-            projectElement.target = '_blank';
-        }
+        const projectElement = document.createElement('a');
+        projectElement.href = project.link;
+        projectElement.target = '_blank';
         projectElement.classList.add('grid-item');
 
-        const tagsHtml = project.tags.length
-            ? `<div class="tech-pills">${project.tags.map(tag => `<span>${tag}</span>`).join('')}</div>`
-            : '';
+        const techString = project.languages.map(lang => 
+            `<span class="tech">${lang}</span>` 
+        ).join(", ");
+
+        const displayedDescription = project.description.replace("{languages}", techString);
 
         let repoHtml = '';
         if (project.repoLink) {
@@ -98,8 +112,7 @@ function createProjectElements() {
             <h3 class="grid-title"> ${project.title} </h3>
             <img class="website-prev" src="${project.imgSrc}" alt="Image for website." width="300" height="200">
             ${repoHtml}
-            <p class="grid-p">${project.description}</p>
-            ${tagsHtml}
+            <p class="grid-p">${displayedDescription}</p>
         `;
 
         gridContainer.appendChild(projectElement);
@@ -113,21 +126,67 @@ function createProjectElements() {
 document.addEventListener('DOMContentLoaded', createProjectElements);
 
 // smaller websites
-// Previously listed: US Quiz, Game Dev Info, Technical Doc, ISBN Library, and
-// Product Page — all hosted on Replit (*.repl.co), which appear to no longer
-// be live. Removed rather than left as dead links. "Portfolio Site" was also
-// removed since it linked to this same site. If you want any of these back,
-// they'd need rehosting somewhere durable (GitHub Pages/Firebase) first.
-const smallerProjects = [];
+const smallerProjects = [
+    {
+        title: 'Portfolio Site',
+        link: 'https://derekiniguez.com',
+        imgSrc: 'webp/portfolio.png',
+        repoLink: 'https://github.com/dereki16/dereki16.github.io',
+        iconType: 'github',
+        description: "Designed and developed a portfolio site to display my work, optimized for performance and security using <span class='host'>Cloudflare</span>."
+    },
+    {
+        title: 'US Quiz',
+        link: 'https://geography-quiz.derekiniguez1.repl.co/',
+        imgSrc: 'webp/usq.webp',
+        repoLink: 'https://github.com/dereki16/us-geo-quiz-asgmt',
+        iconType: 'github',
+        description: 'Built an interactive US quiz application using HTML, CSS, JavaScript, jQuery, and AJAX. Features real-time grading and keeps a record of user attempts.'
+    },
+    {
+        title: 'Game Dev Info',
+        link: 'https://game-dev-v2.derekiniguez1.repl.co/welcome',
+        imgSrc: 'webp/TechLesson.webp',
+        repoLink: 'https://github.com/dereki16/gamedev-infov2',
+        iconType: 'github',
+        description: "Designed an educational website about game development, incorporating HTML, CSS, and JS templates and an <span class='service'>external API for motivational quotes</span>."
+    },
+    {
+        title: 'Technical Doc',
+        link: 'https://tech-doc-rwd.derekiniguez1.repl.co/',
+        imgSrc: 'webp/TechDoc.webp',
+        repoLink:'https://github.com/dereki16/Technical-Documentation-RWD',
+        iconType: 'github',
+        description: 'Created a technical documentation on HTML & CSS as part of a Responsive Web Design certification.'
+    },
+    {
+        title: 'ISBN Library',
+        link: 'https://isbn-library.derekiniguez1.repl.co/',
+        imgSrc: 'webp/OpenLibrary.webp',
+        repoLink: 'https://github.com/dereki16/isbn-library',
+        iconType: 'github',
+        description: 'Developed a custom library interface using AJAX and jQuery to fetch and present data from the openlibrary.org API.'
+    },
+    {
+        title: 'Product Page',
+        link: 'https://product-landing-page-rwd.derekiniguez1.repl.co/',
+        imgSrc: 'webp/ProductPage.webp',
+        repoLink: 'https://github.com/dereki16/Product-Landing-Page-RWD',
+        iconType: 'github',
+        description: 'Designed a sleek product landing page as a key project for my Responsive Web Design certification.'
+    }
+    // {
+    //     title: 'Quote Finder',
+    //     link: 'https://quote-finder.derekiniguez1.repl.co/',
+    //     imgSrc: 'webp/QuoteFinder.webp',
+    //     repoLink: 'https://github.com/dereki16/quote-finder',
+    //     iconType: 'github',
+    //     description: 'Quote finder using EJS that takes input and finds quotes with input; also includes authors and categories.'
+    // },
+];
 
 function createSmallerProjectElements() {
     const gridContainer = document.querySelector('.smaller-project-container');
-
-    if (smallerProjects.length === 0) {
-        const otherSitesSection = document.getElementById('other-sites');
-        if (otherSitesSection) otherSitesSection.style.display = 'none';
-        return;
-    }
 
     smallerProjects.forEach(smallProject => {
         const projectElement = document.createElement('a');
