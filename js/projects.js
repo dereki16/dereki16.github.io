@@ -16,7 +16,7 @@ const projects = [
         // remove this comment. Placeholder link below points nowhere yet.
         title: 'Tectonian',
         link: '',
-        imgSrc: 'webp/tectonian-placeholder.webp',
+        imgSrc: 'webp/tectonian.webp',
         repoLink: '',
         iconType: '',
         description: "Founded and built Tectonian, a web app I'm growing as its own product.",

@@ -3,8 +3,7 @@
 //
 // Changes this round:
 // - Uncontained's tag split into separate "VR" and "Oculus / Meta" pills
-// - O-PONG's embed removed — not playable yet per your note; swap
-//   `comingSoon: false` and add `iframeSrc` back once it's ready
+// - O-PONG now has a real playable embed (itch.io)
 // - Fragmented now has a real `video` field (vids/Fragmented (short).mp4,
 //   URL-encoded for the src attribute)
 // - Media panels are taller (`row-media--tall`) and the page's container
@@ -68,8 +67,7 @@ const gamesList = [
     id: 'O-PONG',
     title: 'O-PONG',
     link: 'https://github.com/dereki16/o-pong',
-    img: 'webp/opong2.webp',
-    comingSoon: true,
+    video: 'vids/opong.mp4',
     overview: '"O-Pong," my first original game, reimagines classic Pong within an ovular arena. Players can rotate paddles, strategically position balls, and teleport for a twist on the iconic challenge.',
     controls: [
       'P1: WS to move up and down. AD to rotate paddles.',
@@ -78,7 +76,6 @@ const gamesList = [
     ],
     tags: ['Unity', 'C#'],
     year: '2021',
-    note: 'Playable embed coming soon.',
   },
 ];
 
@@ -93,7 +90,9 @@ function renderGamesList() {
     el.style.scrollMarginTop = '76px';
 
     let mediaHtml;
-    if (game.video) {
+    if (game.iframeSrc) {
+      mediaHtml = `<div class="row-media row-media--tall"><iframe src="${game.iframeSrc}" style="width:100%; height:100%; border:0;" allowfullscreen></iframe></div>`;
+    } else if (game.video) {
       mediaHtml = `<div class="row-media row-media--tall"><video src="${game.video}" autoplay muted loop playsinline controls></video></div>`;
     } else if (game.comingSoon) {
       mediaHtml = `

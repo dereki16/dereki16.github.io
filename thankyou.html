@@ -1,103 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hi! I'm a software engineer passionate about expressing creativity through programming websites, video games, and apps. Check out some of my work here.">
-    <title>Derek Iniguez</title>
-    <link rel="preload" href="js/font.js" as="script">
-    <script src="js/font.js"></script>
-    <link rel="icon" href="webp/site-icon.webp">
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdnjs.cloudflare.com https://github.com https://i.simmer.io; media-src 'self' https://github.com https://media.githubusercontent.com; style-src 'self' https://cdnjs.cloudflare.com; img-src 'self' https://i.ytimg.com; form-action https://formsubmit.co;">
-    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
-    <meta name="referrer" content="no-referrer">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <meta name="permissions" content="geolocation=()">
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thanks for reaching out — Derek Iniguez.">
+  <title>Thank You — Derek Iniguez</title>
+  <link rel="icon" href="webp/site-icon.webp">
+  <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
 
-  <div id="top"></div>
+  <nav class="tabbar">
+    <div class="tabbar-inner">
+      <a href="index.html" class="tabbar-home" aria-label="Home">D</a>
+      <div class="tabbar-tabs" id="tabbarTabs">
+        <a class="tab" href="index.html">← home.js</a>
+      </div>
+      <a class="tab-resume" href="https://docs.google.com/document/d/1vY541cLzyQ2TkQ35L3Il_cmxH7qhyhgY/view" target="_blank" rel="noreferrer">Resume ↗</a>
+      <button class="tabbar-menu-btn" id="menuBtn" aria-label="Toggle navigation menu">☰</button>
+    </div>
+  </nav>
 
- <!-- Navbar -->
- <section class="top-nav sticky">
-  <h2 class="hidden" id="Home-link"><a class="hidden icon-3d" id="home-a" href="index.html">D</a></h2>
-  <input id="menu-toggle" type="checkbox" />
-<label class='menu-button-container' for="menu-toggle">
-  <div class='menu-button'></div>
-</label>
-<ul class="menu">
-  <li class="nav-item">
-    <a class="nav-link" href="index.html#aboutme" title="See more about me here.">About Me</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="index.html#projects" title="See my projects here.">Projects</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="index.html#contact" title="Reach out to me here.">Contact</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="projects.html" title="See my game projects here.">Games</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="resume-tab" href="pdf/Derek Iniguez.pdf#zoom=110" target="_blank">Resume</a>
-  </li>
-</ul>
-</section>
+  <section class="hero" style="padding-bottom: 80px; overflow: visible;">
+    <div class="wrap" style="text-align: center;">
+      <p class="eyebrow" style="justify-content: center;">message sent</p>
+      <h1 style="font-size: clamp(2rem, 5vw, 3.2rem);">Thanks for reaching out!</h1>
+      <p class="hero-sub" style="margin-left: auto; margin-right: auto;">I'll get back to you as soon as I can.</p>
 
-  <body>
-    <br><br><br><br>
-    <h2>Thank You!</h2>
-    <hr>
-    <p>For taking the time to send me a message. I'll get back to you as soon as I can! <br> Here's a picture of my dog Coco.</p>
-    <img class="myslides1" width="500px" height="700px" src="webp/coco.webp">
-    <p>Click <a class="projlink" href="projects.html">here</a> to see my games if you haven't.</p>
-    <hr>
-   
+      <div style="max-width: 320px; margin: 40px auto 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line);">
+        <img src="webp/coco.webp" alt="My dog, Coco." style="width: 100%; display: block;" onerror="this.parentElement.style.display='none'">
+      </div>
+      <p class="mono" style="color: var(--fg-faint); font-size: 0.8rem; margin-top: 14px;">// here's my dog Coco while you wait</p>
+
+      <div class="hero-actions" style="justify-content: center; margin-top: 44px;">
+        <a class="btn btn-primary" href="index.html">Back to home</a>
+        <a class="btn btn-ghost" href="projects.html">See my games</a>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    <div class="hidden vertical-writing" id="verticalText">
-      derekini.dev@gmail.com
-    </div>  </footer>
-
-
-  <div class="sticky"></div>
-
-  <footer>
-    <div class="hidden vertical-writing" id="verticalText" onclick="copyToClipboard()">
-      derekini.dev@gmail.com
-    </div>  
-
-
-  <div class="sticky"></div>
-
-
-    <div class="flex-center">
-      <a href="index.html#contact"><i class="hidden fa fa-envelope-o fa-4x icon-3d" alt="Link to my contact page to send me an email."></i></a>
-      <a href="https://github.com/dereki16" alt="Link to my personal github account." target="_blank"><i class="hidden fa fa-github fa-4x icon-3d"></i></a>
-      <a href="https://www.linkedin.com/in/derek-iniguez/" alt="Link to my LinkedIn account." target="_blank"><i class="hidden fa fa-linkedin fa-4x icon-3d"></i></a>
-      <a href="https://www.youtube.com/channel/UC1syY6LwUp01hJX7zBARzxw" alt="Link to my YouTube account." target="_blank"><i class="hidden fa fa-youtube fa-4x icon-3d"></i></a>
-      <a href="https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented" alt="Link to my google play store page for my mobile app - Fragmented." target="_blank"><i class="hidden fa fa-android fa-4x icon-3d"></i></a>
-      <div class="hidden vertical-line social-line"></div>
-      <div class="hidden vertical-line email-line"></div>
-
+    <div class="wrap footer-row">
+      <div class="footer-social">
+        <a href="mailto:derekini.dev@gmail.com" aria-label="Email me"><i class="fa fa-envelope-o"></i></a>
+        <a href="https://github.com/dereki16" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/derek-iniguez/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+      </div>
+      <p class="footer-meta mono">designed &amp; developed by Derek Iniguez © 2026</p>
     </div>
   </footer>
-  <div class="hidden social-footer">
-    <a href="#contact"><i class="fa fa-envelope-o fa-2x icon-3d" alt="Link to my contact page to send me an email."></i></a>
-    <a href="https://github.com/dereki16" alt="Link to my personal github account." target="_blank"><i class="fa fa-github fa-2x icon-3d"></i></a>
-    <a href="https://www.linkedin.com/in/derek-iniguez/" alt="Link to my LinkedIn account." target="_blank"><i class="fa fa-linkedin fa-2x icon-3d"></i></a>
-    <a href="https://www.youtube.com/channel/UC1syY6LwUp01hJX7zBARzxw" alt="Link to my YouTube account." target="_blank"><i class="fa fa-youtube fa-2x icon-3d"></i></a>
-    <a href="https://play.google.com/store/apps/details?id=com.DerekIniguez.Fragmented" alt="Link to my google play store page for my mobile app - Fragmented." target="_blank"><i class="fa fa-android fa-2x icon-3d"></i></a>
-  </div>
-  
-  <p class="footer-text">designed and developed by Derek Iniguez © 2023</p><br>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="js/main.js" async></script>
-  <script src="js/nav.js" async></script>
 
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const tabbarTabs = document.getElementById('tabbarTabs');
+    menuBtn.addEventListener('click', () => tabbarTabs.classList.toggle('is-open'));
+  </script>
 </body>
 </html>
-
-

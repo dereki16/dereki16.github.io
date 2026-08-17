@@ -217,6 +217,7 @@ section {
 /* -------------------------------------------------------------------- */
 
 .hero {
+  position: relative;
   padding-top: 190px;
   padding-bottom: 120px;
   border-bottom: 1px solid var(--line);
@@ -277,6 +278,18 @@ section {
   gap: 14px;
   margin-top: 40px;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 3;
+}
+
+/* Once the mesh grows and reaches further under the copy column (see
+   the width/height ranges in hero-controls.js), a transparent ghost
+   button sitting on top of bright wireframe lines gets hard to read.
+   z-index already keeps it clickable; this keeps it legible too. */
+.hero-actions .btn-ghost {
+  background: rgba(16, 19, 28, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 /* -------------------------------------------------------------------- */
@@ -288,37 +301,104 @@ section {
 
 .hero-visual {
   position: relative;
-  height: 380px;
-  z-index: 1;
+  z-index: 2;
 }
 
-.hero-mountain {
+.hero-canvas {
   position: absolute;
-  bottom: -20px;
-  right: -20px;
+  bottom: 0;
+  right: 0;
   width: 100%;
-  height: 70%;
-  opacity: 0.5;
+  height: 51%;
+  display: block;
+  opacity: 1;
+  /* Purely decorative — never intercept clicks/hover, no matter how
+     large the box gets or how the layers stack. */
+  pointer-events: none;
 }
-
-.peak {
-  fill: var(--accent-2);
-  transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.peak#peak1 { fill: var(--accent-2); opacity: 0.55; }
-.peak#peak2 { fill: var(--accent); opacity: 0.4; }
-.peak#peak3 { fill: var(--accent-2); opacity: 0.3; }
 
 .hero-code {
-  position: absolute;
-  top: 10px;
-  right: 0;
+  margin-left: auto;
   width: min(360px, 90%);
   background: var(--bg-alt);
   border: 1px solid var(--line-bright);
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.7);
+  transition: width 0.25s ease, opacity 0.25s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
+  cursor: grab;
+  touch-action: none;
+}
+
+/* Hover/focus highlight — a lift in feel without touching `transform`,
+   since drag already owns that property via inline style. */
+.hero-code:hover,
+.hero-code:focus-within {
+  border-color: var(--accent-2);
+  box-shadow: 0 34px 70px -28px rgba(0, 0, 0, 0.75), 0 0 30px -8px rgba(74, 158, 255, 0.4);
+}
+
+/* Draggable from the whole body now, not just the titlebar — but the
+   text inside shouldn't look selectable/edit-y since dragging owns it. */
+.hero-code, .hero-code * {
+  user-select: none;
+}
+
+.hero-code.is-dragging,
+.hero-code.is-dragging * {
+  cursor: grabbing;
+}
+
+.hero-code .win-dot {
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+}
+.hero-code .win-dot:hover {
+  transform: scale(1.2);
+  filter: brightness(1.25);
+}
+.hero-code .win-dot:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 2px;
+}
+
+.hero-code.is-minimized .hero-code-body {
+  display: none;
+}
+
+.hero-code.is-maximized {
+  width: min(560px, 94%);
+}
+.hero-code.is-maximized .hero-code-body {
+  min-height: 260px;
+}
+
+.hero-code.is-closed {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-restore-btn {
+  display: block;
+  margin-left: auto;
+  margin-top: 14px;
+  font-size: 0.76rem;
+  color: var(--fg-dim);
+  background: var(--bg-alt);
+  border: 1px solid var(--line-bright);
+  border-radius: 999px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+.hero-restore-btn:hover {
+  border-color: var(--accent-2);
+  color: var(--fg);
+  transform: translateY(-1px);
+}
+.hero-restore-btn[hidden] {
+  display: none;
 }
 
 .hero-code-body {
@@ -344,11 +424,12 @@ section {
 
 @media (max-width: 900px) {
   .hero-wrap { grid-template-columns: 1fr; }
-  .hero-visual { height: 300px; margin-top: 30px; }
+  .hero-visual { margin-top: 30px; }
+  .hero-canvas { width: 100%; height: 45%; }
 }
 @media (max-width: 500px) {
-  .hero-code { position: static; width: 100%; margin-top: 20px; }
-  .hero-mountain { opacity: 0.3; }
+  .hero-code { width: 100%; margin-top: 20px; }
+  .hero-canvas { opacity: 0.4; }
 }
 
 .btn {
@@ -769,20 +850,50 @@ video.is-fullscreen {
   filter: none !important;
 }
 
+/* Switched from CSS Grid to Flexbox here deliberately. The grid version
+   used implicit `auto` row tracks, and per spec, a percentage height on
+   a child of an `auto`-sized grid row resolves to `auto` too — it gets
+   silently ignored. That's the actual root cause of the repeated
+   overlap bug, not a sizing number being wrong. Flexbox with an
+   explicit percentage width + a fixed (non-percentage) height per item
+   sidesteps that entirely — nothing here depends on the parent's own
+   height being resolved first. */
 .row-media-multi {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
-  /* No height set here — it inherits from .row-media--contain on the
-     same element. The old grid + height:100% here was self-referencing
-     that same element's height, which resolved against the wrong
-     containing block and produced inconsistent sizing per row. */
 }
-.row-media-multi video {
-  height: 100%;
-  width: auto;
-  max-width: 100%;
-  object-fit: contain;
+.row-media-multi > img,
+.row-media-multi > video {
+  flex: 0 0 calc(50% - 4px);
+  width: calc(50% - 4px);
+  height: 42vh;
+  max-height: 460px;
+  object-fit: cover;
   border-radius: 8px;
+  display: block;
+}
+
+/* For rows with 4 items (2x2), a smaller per-item height keeps the
+   overall block from being roughly double the height of every other
+   row on the page. */
+.row-media-multi--quad > img,
+.row-media-multi--quad > video {
+  height: 21vh;
+  max-height: 230px;
+}
+
+@media (max-width: 760px) {
+  .row-media-multi > img,
+  .row-media-multi > video {
+    flex-basis: 100%;
+    width: 100%;
+    height: 34vh;
+  }
+  .row-media-multi--quad > img,
+  .row-media-multi--quad > video {
+    height: 24vh;
+  }
 }
 
 /* Taller media treatment — for games/app videos that deserve more room
@@ -790,8 +901,8 @@ video.is-fullscreen {
    --contain avoids cropping portrait phone-app recordings (apps page). */
 .row-media--tall {
   aspect-ratio: unset;
-  height: 78vh;
-  max-height: 820px;
+  height: 46vh;
+  max-height: 520px;
 }
 .row-media--tall img,
 .row-media--tall video { object-fit: cover; }
@@ -807,7 +918,7 @@ video.is-fullscreen {
 
 @media (max-width: 760px) {
   .row-media--tall,
-  .row-media--contain { height: 52vh; max-height: none; }
+  .row-media--contain { height: 38vh; max-height: none; }
 }
 
 /* Wider container for the games list specifically — deliberately wider
@@ -821,6 +932,16 @@ video.is-fullscreen {
 /* Games list rows: video column wider than the text column. */
 #games-list.row-list .row-project {
   grid-template-columns: 1.7fr 1fr;
+}
+
+/* That ID selector above beats the generic mobile single-column rule
+   further down (specificity doesn't care about media queries), which is
+   why the games page wasn't stacking properly on phones. Same
+   specificity, later in source, scoped to mobile — this wins instead. */
+@media (max-width: 760px) {
+  #games-list.row-list .row-project {
+    grid-template-columns: 1fr;
+  }
 }
 
 .row-body {
@@ -859,6 +980,32 @@ video.is-fullscreen {
    margin for breathing room. */
 .row-list .row-project:nth-child(odd) { margin-right: 6%; }
 .row-list .row-project:nth-child(even) { margin-left: 6%; }
+
+/* Collapse-after-N — rows past the cutoff are hidden until expanded. */
+.row-project.row-collapsed {
+  display: none;
+}
+.row-list.is-expanded .row-project.row-collapsed {
+  display: grid;
+}
+
+.row-expand-toggle {
+  display: block;
+  margin: 8px auto 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-2);
+  background: transparent;
+  border: 1px solid var(--line-bright);
+  border-radius: 999px;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.row-expand-toggle:hover {
+  border-color: var(--accent-2);
+  color: var(--fg);
+}
 
 @media (max-width: 760px) {
   .row-project,
@@ -1010,4 +1157,85 @@ footer {
   .about-grid { grid-template-columns: 1fr; }
   .about-photo { max-width: 220px; margin: 0 auto; }
   .games-teaser { flex-direction: column; align-items: flex-start; }
+}
+
+/* -------------------------------------------------------------------- */
+/* Hero terrain control panel — TEMP, for tuning the 3D scene. Remove   */
+/* js/hero-controls.js and its <script> tag once the values are dialed  */
+/* in and baked into hero-terrain.js / .hero-canvas directly.           */
+/* -------------------------------------------------------------------- */
+
+#heroControls {
+  position: fixed;
+  top: 70px;
+  left: 12px;
+  z-index: 300;
+  width: 260px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background: var(--bg-alt);
+  border: 1px solid var(--line-bright);
+  border-radius: var(--radius);
+  padding: 14px 16px 18px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--fg-dim);
+  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.8);
+}
+#heroControls h4 {
+  margin: 14px 0 6px;
+  font-size: 0.68rem;
+  color: var(--accent-2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+#heroControls h4:first-child { margin-top: 0; }
+#heroControls label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin: 7px 0;
+}
+#heroControls input[type="range"] { flex: 1; }
+#heroControls input[type="color"] {
+  width: 34px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid var(--line-bright);
+  border-radius: 4px;
+  background: none;
+}
+#heroControls .val {
+  width: 34px;
+  text-align: right;
+  color: var(--fg);
+  flex-shrink: 0;
+}
+#heroControls button {
+  width: 100%;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  background: var(--bg-raised);
+  color: var(--fg);
+  border: 1px solid var(--line-bright);
+  border-radius: 8px;
+  padding: 7px;
+  cursor: pointer;
+}
+#heroControls button:hover { border-color: var(--accent-2); }
+#heroControls .row2 { display: flex; gap: 6px; }
+
+@media (max-width: 760px) {
+  #heroControls { display: none; }
+}
+
+/* Website block year tag turns accent-green on hover, matching the
+   always-green year pill style used on games/apps pages. */
+.row-project:hover .row-year {
+  color: var(--bg);
+  background: var(--accent);
+  border-color: var(--accent);
+  font-weight: 700;
 }
