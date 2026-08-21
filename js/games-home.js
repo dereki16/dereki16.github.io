@@ -4,12 +4,16 @@
 // data file the games page itself uses for its full list.
 // ============================================================
 
+// Home-page teaser only — the full games page (js/games-page.js,
+// projects.html) has its own separate entry with its own wording, so
+// this doesn't need to match it word-for-word. Shorter/hookier here;
+// more detail there for people who've already clicked through.
 const featuredGame = {
-  title: 'Uncontained',
+  title: 'UNCONTAINED VR',
   link: 'https://github.com/dereki16/Uncontained-VR',
   video: 'https://github.com/dereki16/dereki16.github.io/raw/main/vids/uvrvid.mp4',
-  description: "In this immersive post-apocalyptic world, see if you have what it takes to survive. Uncontained features room unlocking, barricade building, and zombie-shooting fun.",
-  credits: "Developed in Unity and Oculus/Meta, with Andrew Aguas handling audio and the incorporation of free assets.",
+  description: "<span id=\"vr\" class=\"feature-bold\">See if you have what it takes to survive</span> a post-apocalyptic world overrun by zombies. Experience room unlocking, barricade building, zombie-shooting fun.",
+  credits: "Developed in Unity and Oculus/Meta, with Andrew Aguas handling audio.",
   tags: ["Unity", "C#", "VR", "Oculus / Meta"],
   year: '2022',
 };

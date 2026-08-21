@@ -15,14 +15,21 @@
 //   terms. Simpler, and stops the layout fighting itself every round.
 // ============================================================
 
+// descriptionHome vs descriptionFull: index.html and apps.html were
+// rendering the exact same wording since both call renderFeaturedApp()
+// against the same object. Split so each context gets its own voice —
+// shorter/hookier for the homepage teaser, the fuller technical rundown
+// for people who've already clicked through to the dedicated apps page.
 const featuredApp = {
   title: 'Sound Simulation',
   link: 'https://github.com/dereki16/audio_metadata_editor',
   // Screenshot confirmed at webp/ss.webp
   imgSrc: 'webp/ss.webp',
   year: '2025',
-  description: "A desktop audio metadata editor built in Python with QSS styling. Browse a folder of audio files, edit ID3-style tags (title, artist, album, year, genre, composer, disc number), manage cover art, visualize waveforms with adjustable smoothing, and trim/crop audio — plus bulk tools to clean up metadata and filenames across a whole library at once.",
-  tags: ["Python", "QSS"],
+  descriptionHome: "<span id=\"ss\" class=\"feature-bold\">Managing a large audio library sucks.</span> I may not call myself an audiophile, but I do love music and can be particular about some things... like unnecessarily long outros and miscategorized file tags.",
+  descriptionFull: "A desktop audio metadata editor built in Python with QSS styling. Browse a folder of audio files, edit ID3-style tags (title, artist, album, year, genre, composer, disc number), manage cover art, visualize waveforms with adjustable smoothing, and trim/crop audio options — plus bulk clean metadata and filenames across a whole library at once.",
+  credits: "Built as a personal tool for managing and cleaning up my own music library.",
+  tags: ["Python", "Pyside6", "QSS", "Mutagen", "Pydub", "PyQtGraph"],
 };
 
 // TODO: years below are a placeholder guess tied to your CodePath iOS
@@ -72,17 +79,20 @@ function renderFeaturedApp() {
   const el = document.getElementById('featured-app');
   if (!el) return;
   const a = featuredApp;
+  const isFullPage = document.body.classList.contains('page-apps');
+  const description = isFullPage ? a.descriptionFull : a.descriptionHome;
   const mediaHtml = a.video
     ? `<video src="${a.video}" autoplay muted loop playsinline controls></video>`
     : `<img src="${a.imgSrc}" alt="" onerror="this.remove()">`;
   el.innerHTML = `
-    <div class="feature-media feature-media--tall">
+    <div class="feature-media feature-media--tall${a.video ? '' : ' feature-media--contain'}">
       ${mediaHtml}
     </div>
     <div class="feature-body">
       <span class="tag tag-featured">featured app · ${a.year}</span>
       <h3 class="feature-title">${a.title}</h3>
-      <p class="feature-desc">${a.description}</p>
+      <p class="feature-desc">${description}</p>
+      <p class="feature-credits">${a.credits}</p>
       <div class="card-tags">${a.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
       <div class="feature-actions">
         <a class="btn btn-ghost" href="${a.link}" target="_blank" rel="noreferrer">View repo ↗</a>

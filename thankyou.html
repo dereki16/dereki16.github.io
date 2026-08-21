@@ -3,13 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Thanks for reaching out — Derek Iniguez.">
-  <title>Thank You — Derek Iniguez</title>
+  <meta name="description" content="Message sent — thanks for reaching out to Derek Iniguez.">
+  <meta name="robots" content="noindex">
+  <title>Thanks — Derek Iniguez</title>
   <link rel="icon" href="webp/site-icon.webp">
   <link href="style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="js/theme.js"></script>
+  <script src="js/contact.js"></script>
 </head>
-<body>
+<body class="page-thanks">
 
   <nav class="tabbar">
     <div class="tabbar-inner">
@@ -22,21 +25,18 @@
     </div>
   </nav>
 
-  <section class="hero" style="padding-bottom: 80px; overflow: visible;">
-    <div class="wrap" style="text-align: center;">
-      <p class="eyebrow" style="justify-content: center;">message sent</p>
-      <h1 style="font-size: clamp(2rem, 5vw, 3.2rem);">Thanks for reaching out!</h1>
-      <p class="hero-sub" style="margin-left: auto; margin-right: auto;">I'll get back to you as soon as I can.</p>
+  <section class="hero thanks-hero">
+    <div class="wrap thanks-wrap">
+      <p class="eyebrow">message sent</p>
+      <h1 class="thanks-title">Thanks for reaching out<span class="accent">.</span></h1>
+      <p class="hero-sub">Your message is on its way to my inbox — I read every one and usually reply within a couple of days. In the meantime, feel free to look around more of my work.</p>
 
-      <div style="max-width: 320px; margin: 40px auto 0; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line);">
-        <img src="webp/coco.webp" alt="My dog, Coco." style="width: 100%; display: block;" onerror="this.parentElement.style.display='none'">
-      </div>
-      <p class="mono" style="color: var(--fg-faint); font-size: 0.8rem; margin-top: 14px;">// here's my dog Coco while you wait</p>
-
-      <div class="hero-actions" style="justify-content: center; margin-top: 44px;">
+      <div class="hero-actions">
         <a class="btn btn-primary" href="index.html">Back to home</a>
-        <a class="btn btn-ghost" href="projects.html">See my games</a>
+        <a class="btn btn-ghost" href="index.html#websites">See my work</a>
       </div>
+
+      <p class="thanks-redirect mono" id="thanksRedirect"></p>
     </div>
   </section>
 
@@ -55,6 +55,32 @@
     const menuBtn = document.getElementById('menuBtn');
     const tabbarTabs = document.getElementById('tabbarTabs');
     menuBtn.addEventListener('click', () => tabbarTabs.classList.toggle('is-open'));
+
+    // Gentle auto-redirect home, cancellable by just clicking anything
+    // else on the page (any click/keypress/touch stops it).
+    const redirectEl = document.getElementById('thanksRedirect');
+    let secondsLeft = 12;
+    let cancelled = false;
+
+    function tick() {
+      if (cancelled) return;
+      if (secondsLeft <= 0) {
+        window.location.href = 'index.html';
+        return;
+      }
+      redirectEl.textContent = `// heading back home in ${secondsLeft}s…`;
+      secondsLeft -= 1;
+      setTimeout(tick, 1000);
+    }
+    tick();
+
+    ['click', 'keydown', 'touchstart', 'wheel'].forEach(evt => {
+      window.addEventListener(evt, () => {
+        if (cancelled) return;
+        cancelled = true;
+        redirectEl.textContent = '';
+      }, { once: true, passive: true });
+    });
   </script>
 </body>
 </html>

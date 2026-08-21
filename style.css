@@ -224,12 +224,17 @@ section {
   overflow: hidden;
 }
 
+.page-home .hero {
+  height: 90vh;
+}
+
 .hero-wrap {
   position: relative;
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 40px;
   align-items: center;
+  max-width: 1400px;
 }
 
 .hero-copy { position: relative; z-index: 2; }
@@ -308,13 +313,24 @@ section {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 100%;
-  height: 51%;
+  width: 105%;
+  height: 80%;
   display: block;
-  opacity: 1;
+  opacity: 0.85;
   /* Purely decorative — never intercept clicks/hover, no matter how
      large the box gets or how the layers stack. */
   pointer-events: none;
+  /* Two independent fade masks, composited so a pixel only shows
+     where BOTH allow it: path 1 is the diagonal "recedes into the
+     distance" fade; path 2 is a straight vertical (0deg) fade that
+     softens the bottom edge into the next section on its own,
+     dialed in live via the tuning panel and baked in here. */
+  mask-image: linear-gradient(120deg, transparent 0%, black 100%),
+               linear-gradient(0deg, transparent 0%, black 30%);
+  -webkit-mask-image: linear-gradient(120deg, transparent 0%, black 100%),
+                        linear-gradient(0deg, transparent 0%, black 30%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
 }
 
 .hero-code {
@@ -350,20 +366,25 @@ section {
   cursor: grabbing;
 }
 
-.hero-code .win-dot {
+.hero-code .win-dot,
+.contact-panel .win-dot {
   cursor: pointer;
   transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
 }
-.hero-code .win-dot:hover {
+.hero-code .win-dot:hover,
+.contact-panel .win-dot:hover {
   transform: scale(1.2);
   filter: brightness(1.25);
 }
-.hero-code .win-dot:focus-visible {
+.hero-code .win-dot:focus-visible,
+.contact-panel .win-dot:focus-visible {
   outline: 2px solid var(--accent-2);
   outline-offset: 2px;
 }
 
-.hero-code.is-minimized .hero-code-body {
+.hero-code.is-minimized .hero-code-body,
+.hero-code.is-minimized .hero-code-footer,
+.hero-code.is-minimized .hero-code-ui {
   display: none;
 }
 
@@ -377,6 +398,107 @@ section {
 .hero-code.is-closed {
   opacity: 0;
   pointer-events: none;
+}
+
+.hero-code-ui {
+  padding: 16px 20px 18px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--fg-dim);
+  max-height: 340px;
+  overflow-y: auto;
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-bright) transparent;
+}
+.hero-code-ui::-webkit-scrollbar {
+  width: 8px;
+}
+.hero-code-ui::-webkit-scrollbar-track {
+  background: transparent;
+}
+.hero-code-ui::-webkit-scrollbar-thumb {
+  background: var(--line-bright);
+  border-radius: 999px;
+  border: 2px solid var(--bg-alt);
+  background-clip: padding-box;
+}
+.hero-code-ui::-webkit-scrollbar-thumb:hover {
+  background: var(--fg-faint);
+  background-clip: padding-box;
+}
+.hero-code.is-maximized .hero-code-ui {
+  max-height: 460px;
+}
+.hero-code-ui[hidden] {
+  display: none;
+}
+.hero-code-ui h5 {
+  margin: 14px 0 6px;
+  font-size: 0.66rem;
+  color: var(--accent-2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.hero-code-ui h5:first-child { margin-top: 0; }
+.hero-code-ui label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin: 7px 0;
+  cursor: default;
+}
+.hero-code-ui input[type="range"] { flex: 1; }
+.hero-code-ui input[type="color"] {
+  width: 32px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid var(--line-bright);
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+}
+.hero-code-ui input[type="checkbox"] {
+  cursor: pointer;
+}
+.hero-code-ui .val {
+  width: 34px;
+  text-align: right;
+  color: var(--fg);
+  flex-shrink: 0;
+}
+.hero-code-ui button {
+  width: 100%;
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  background: var(--bg-raised);
+  color: var(--fg);
+  border: 1px solid var(--line-bright);
+  border-radius: 8px;
+  padding: 7px;
+  cursor: pointer;
+}
+.hero-code-ui button:hover { border-color: var(--accent-2); }
+
+.hero-code-ui-divider {
+  border-top: 1px dashed var(--line-bright);
+  margin: 16px 0 2px;
+}
+.hero-code-ui select {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 3px 6px;
+  cursor: pointer;
+}
+.hero-code-ui select:focus {
+  outline: none;
+  border-color: var(--accent-2);
 }
 
 .hero-restore-btn {
@@ -422,10 +544,142 @@ section {
   animation: blink 1s steps(1) infinite;
 }
 
+/* "$ enable_ui" footer + the live control panel it reveals ------------ */
+
+.hero-code-footer {
+  border-top: 1px solid var(--line);
+  padding: 10px 20px;
+}
+
+.hero-code-footer-btn {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--accent-2);
+  background: none;
+  border: none;
+  padding: 2px 0;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+}
+.hero-code-footer-btn:hover {
+  color: var(--fg);
+  text-decoration: underline;
+}
+
+.hero-code-ui {
+  padding: 16px 20px 18px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--fg-dim);
+  max-height: 340px;
+  overflow-y: auto;
+}
+.hero-code.is-maximized .hero-code-ui {
+  max-height: 460px;
+}
+.hero-code-ui[hidden] {
+  display: none;
+}
+.hero-code-ui h5 {
+  margin: 14px 0 6px;
+  font-size: 0.66rem;
+  color: var(--accent-2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.hero-code-ui h5:first-child { margin-top: 0; }
+.hero-code-ui label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin: 7px 0;
+  cursor: default;
+}
+.hero-code-ui input[type="range"] { flex: 1; }
+.hero-code-ui input[type="color"] {
+  width: 32px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid var(--line-bright);
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+}
+.hero-code-ui input[type="checkbox"] {
+  cursor: pointer;
+}
+.hero-code-ui .val {
+  width: 34px;
+  text-align: right;
+  color: var(--fg);
+  flex-shrink: 0;
+}
+.hero-code-ui button {
+  width: 100%;
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  background: var(--bg-raised);
+  color: var(--fg);
+  border: 1px solid var(--line-bright);
+  border-radius: 8px;
+  padding: 7px;
+  cursor: pointer;
+}
+.hero-code-ui button:hover { border-color: var(--accent-2); }
+
+.hero-ui-dropdown {
+  margin-top: 14px;
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+.hero-ui-dropdown-toggle {
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--accent-2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.hero-ui-dropdown-body[hidden] { display: none; }
+.hero-ui-dropdown-body { margin-top: 8px; }
+.hero-ui-dropdown-note {
+  color: var(--fg-faint);
+  font-size: 0.66rem;
+  margin: 0 0 8px;
+  line-height: 1.4;
+}
+.theme-preset-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.theme-preset-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--line-bright);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.15s ease;
+}
+.theme-preset-swatch:hover { transform: scale(1.12); }
+.theme-preset-swatch:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 2px;
+}
+
 @media (max-width: 900px) {
   .hero-wrap { grid-template-columns: 1fr; }
   .hero-visual { margin-top: 30px; }
-  .hero-canvas { width: 100%; height: 45%; }
+  .hero-canvas { width: 100%; height: 45%; mask-image: none; -webkit-mask-image: none; }
 }
 @media (max-width: 500px) {
   .hero-code { width: 100%; margin-top: 20px; }
@@ -574,9 +828,11 @@ section {
   font-family: var(--font-mono);
   font-size: 0.68rem;
   color: var(--fg-faint);
+  background: transparent;
   border: 1px dashed var(--line-bright);
   border-radius: 999px;
   padding: 6px 13px;
+  cursor: pointer;
   transition: opacity 0.2s ease;
 }
 
@@ -593,7 +849,8 @@ section {
 }
 
 .pill-category:hover .pill-extra,
-.pill-category:focus-within .pill-extra {
+.pill-category:focus-within .pill-extra,
+.pill-category.is-expanded .pill-extra {
   max-height: 300px;
   opacity: 1;
   margin-top: 9px;
@@ -601,6 +858,7 @@ section {
 
 .pill-category:hover .pill-more-tag {
   opacity: 0;
+  pointer-events: none;
 }
 
 /* -------------------------------------------------------------------- */
@@ -702,6 +960,17 @@ section {
   padding: 4px 10px;
 }
 
+/* Deliberately NOT styled like .tag/.card-tags — no border, no pill,
+   no background. This is a quiet "yes, standard web fundamentals too"
+   confirmation line under a project's actual distinguishing tags, not
+   another chip inviting people to compare/filter by it. */
+.stack-note {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--fg-faint);
+  margin: 2px 0 0;
+}
+
 /* -------------------------------------------------------------------- */
 /* Featured card (Tectonian / featured game / featured app)             */
 /* -------------------------------------------------------------------- */
@@ -735,6 +1004,15 @@ a.feature-card:hover {
   max-height: 760px;
 }
 
+/* Screenshots (not videos) that don't crop nicely at a fixed aspect
+   ratio — full app UI, lots of detail — letterbox instead of getting
+   cropped by the default object-fit: cover. Aspect-independent, so no
+   extra handling is needed for mobile. */
+.feature-media--contain img {
+  object-fit: contain;
+  background: var(--bg);
+}
+
 /* Homepage teasers (featured game + featured Fragmented) stay shorter so
    more fits on screen at once — the full versions on their own detail
    pages (games/apps) keep the taller height above. */
@@ -756,12 +1034,25 @@ a.feature-card:hover {
   font-weight: 800;
 }
 
+.feature-bold {
+  font-weight: bold;
+}
+#tec {
+  color: #4a9eff;
+}
+#vr {
+  color: #ff5482;
+}
+#ss {
+  color: #75eeac;
+}
+
 .feature-desc {
   color: var(--fg-dim);
   font-size: 1rem;
   line-height: 1.6;
   margin: 0;
-  max-width: 68ch;
+  max-width: 75ch;
 }
 
 .feature-credits {
@@ -1058,6 +1349,40 @@ video.is-fullscreen {
   border-radius: var(--radius);
   overflow: hidden;
   max-width: 640px;
+  transition: opacity 0.2s ease;
+}
+
+/* Minimize: collapse down to just the titlebar. */
+.contact-panel.is-minimized .contact-form {
+  display: none;
+}
+
+/* Fullscreen: lift the whole panel into a centered overlay rather than
+   just widening it in place — a more literal "make fullscreen" than
+   the hero code window's own maximize (which just grows in place). */
+.contact-panel.is-maximized {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+}
+.contact-panel.is-maximized .contact-form {
+  flex: 1;
+  max-width: 560px;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+/* Close: hide entirely — js/contact.js shows #contactRestoreBtn in its place. */
+.contact-panel.is-closed {
+  display: none;
 }
 
 .contact-titlebar {
@@ -1111,12 +1436,90 @@ video.is-fullscreen {
 }
 .field textarea { min-height: 120px; resize: vertical; }
 
+.form-status {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  margin: 0;
+  min-height: 1.2em;
+}
+.form-status.is-error { color: #ff8080; }
+.form-status.is-success { color: var(--accent-2); }
+
+/* On-page alert (window.showToast in index.html) — fixed, small, and
+   out of the way, instead of the browser's native alert()/confirm(). */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translate(-50%, 12px);
+  z-index: 300;
+  background: var(--bg-alt);
+  border: 1px solid var(--line-bright);
+  color: var(--fg);
+  font-size: 0.8rem;
+  padding: 11px 18px;
+  border-radius: 999px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  max-width: min(90vw, 420px);
+  text-align: center;
+}
+.toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
 /* -------------------------------------------------------------------- */
 /* Footer                                                                */
 /* -------------------------------------------------------------------- */
 
 footer {
   padding: 56px 0 60px;
+}
+
+/* -------------------------------------------------------------------- */
+/* Thank-you page                                                       */
+/* -------------------------------------------------------------------- */
+
+.thanks-hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  border-bottom: none;
+  padding-top: 140px;
+}
+
+.thanks-wrap {
+  max-width: 640px;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thanks-title {
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  font-weight: 800;
+  margin: 6px 0 4px;
+}
+
+.thanks-wrap .hero-sub {
+  max-width: 52ch;
+}
+
+.thanks-wrap .hero-actions {
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.thanks-redirect {
+  color: var(--fg-faint);
+  font-size: 0.78rem;
+  margin-top: 26px;
+  min-height: 1.2em;
 }
 
 .footer-row {
@@ -1159,78 +1562,6 @@ footer {
   .games-teaser { flex-direction: column; align-items: flex-start; }
 }
 
-/* -------------------------------------------------------------------- */
-/* Hero terrain control panel — TEMP, for tuning the 3D scene. Remove   */
-/* js/hero-controls.js and its <script> tag once the values are dialed  */
-/* in and baked into hero-terrain.js / .hero-canvas directly.           */
-/* -------------------------------------------------------------------- */
-
-#heroControls {
-  position: fixed;
-  top: 70px;
-  left: 12px;
-  z-index: 300;
-  width: 260px;
-  max-height: 80vh;
-  overflow-y: auto;
-  background: var(--bg-alt);
-  border: 1px solid var(--line-bright);
-  border-radius: var(--radius);
-  padding: 14px 16px 18px;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  color: var(--fg-dim);
-  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.8);
-}
-#heroControls h4 {
-  margin: 14px 0 6px;
-  font-size: 0.68rem;
-  color: var(--accent-2);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-#heroControls h4:first-child { margin-top: 0; }
-#heroControls label {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-  margin: 7px 0;
-}
-#heroControls input[type="range"] { flex: 1; }
-#heroControls input[type="color"] {
-  width: 34px;
-  height: 20px;
-  padding: 0;
-  border: 1px solid var(--line-bright);
-  border-radius: 4px;
-  background: none;
-}
-#heroControls .val {
-  width: 34px;
-  text-align: right;
-  color: var(--fg);
-  flex-shrink: 0;
-}
-#heroControls button {
-  width: 100%;
-  margin-top: 6px;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  background: var(--bg-raised);
-  color: var(--fg);
-  border: 1px solid var(--line-bright);
-  border-radius: 8px;
-  padding: 7px;
-  cursor: pointer;
-}
-#heroControls button:hover { border-color: var(--accent-2); }
-#heroControls .row2 { display: flex; gap: 6px; }
-
-@media (max-width: 760px) {
-  #heroControls { display: none; }
-}
-
 /* Website block year tag turns accent-green on hover, matching the
    always-green year pill style used on games/apps pages. */
 .row-project:hover .row-year {
@@ -1238,4 +1569,8 @@ footer {
   background: var(--accent);
   border-color: var(--accent);
   font-weight: 700;
+}
+
+#featured-website .feature-media {
+  max-height: 350px;
 }

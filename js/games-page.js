@@ -16,7 +16,7 @@ const gamesList = [
     title: 'Uncontained',
     link: 'https://github.com/dereki16/Uncontained-VR',
     video: 'https://github.com/dereki16/dereki16.github.io/raw/main/vids/uvrvid.mp4',
-    overview: 'In this immersive post-apocalyptic world, see if you have what it takes to survive. Uncontained features room unlocking, barricade building, zombie shooting fun.',
+    overview: 'Built solo in Unity for Oculus/Meta, Uncontained drops you into a post-apocalyptic building overrun by zombies. Unlock rooms as you clear them, barricade doorways to buy time, and fight through waves with whatever you can scavenge along the way.',
     credits: 'Developed in Unity and Oculus/Meta, with Andrew Aguas handling audio and the incorporation of free assets.',
     features: [
       'Efficient object pooling for dynamic game elements.',
@@ -54,11 +54,6 @@ const gamesList = [
     link: 'https://github.com/dereki16/Fragmented',
     video: 'vids/Fragmented%20(short).mp4',
     overview: 'Navigate space in "Fragmented," an endless runner set in a vivid minefield of cosmic debris — envision a Picasso-inspired cosmos synced to pulsing trap beats.',
-    controls: [
-      'Drag with the left mouse button to maneuver.',
-      'Pause with the button on the top right.',
-      'To mute music, navigate to Options or click outside the game window.',
-    ],
     tags: ['Unity', 'C#', 'Mobile'],
     year: '2021',
     note: 'Previously published to Google Play; later removed due to inactivity.',
@@ -69,11 +64,6 @@ const gamesList = [
     link: 'https://github.com/dereki16/o-pong',
     video: 'vids/opong.mp4',
     overview: '"O-Pong," my first original game, reimagines classic Pong within an ovular arena. Players can rotate paddles, strategically position balls, and teleport for a twist on the iconic challenge.',
-    controls: [
-      'P1: WS to move up and down. AD to rotate paddles.',
-      'P2: Arrow keys to do the same.',
-      'Spacebar to pause.',
-    ],
     tags: ['Unity', 'C#'],
     year: '2021',
   },

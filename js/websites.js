@@ -3,15 +3,32 @@
 // Split out from projects.js per request.
 // ============================================================
 
+// A quiet confirmation line, not another set of filterable chips — every
+// site below is standard HTML/CSS/JS under the hood regardless of what
+// framework or platform sits on top, and it's worth just stating that
+// rather than making people infer it. Rendered smaller/muted and with
+// no pill shape so it doesn't read as "another tag to compare against."
+const COMMON_STACK = ['HTML', 'CSS', 'JavaScript'];
+
 // Tectonian gets its own featured, full-width row (see index.html /
 // renderFeatured below). Copy below is pulled from tectonian.com's real
 // content — feel free to adjust tone/voice, but the facts are accurate.
+//
+// descriptionHome vs descriptionFull: same split as apps.js's
+// featuredApp — a shorter, hookier version for the homepage teaser,
+// a more detailed one for wherever the "full" context is. There's no
+// dedicated websites.html yet, so descriptionFull currently just sits
+// ready for one — renderFeaturedWebsite() below already checks for a
+// page-websites body class, so dropping that page in later needs zero
+// changes here.
 const featuredWebsite = {
   title: 'Tectonian',
   link: 'https://tectonian.com',
   imgSrc: 'webp/tectonian.webp',
   year: '2026',
-  description: "Tectonian is a visual mind-mapping app I founded and built for ADHD, autistic, and neurodivergent thinkers — a product, not client work, and something I'm growing on its own. It turns overwhelming ideas into structured, unlockable paths with physics-based node layouts: lock branches behind checklists so you're only ever facing what's actually doable right now, use Focus Mode to hide the noise and concentrate on one branch, or let Random Task Focus pick your next move when decision fatigue sets in. Everything's end-to-end encrypted — zero-knowledge, so even Tectonian itself can't read your data.",
+  descriptionHome: "<span id=\"tec\" class=\"feature-bold\">When everything feels important, where do you start?</span> I built Tectonian to turn overwhelming ideas into a visual workspace that responds to you — helping reduce visual noise, lower the friction of task initiation, cut down decision fatigue, and keep your attention on what matters <i>right now</i>.",
+  descriptionFull: "Tectonian is a visual mind-mapping app I founded and built for ADHD, autistic, and neurodivergent thinkers — a product, not client work, and something I'm growing on its own. It turns overwhelming ideas into structured, unlockable paths with physics-based node layouts: lock branches behind checklists so you're only ever facing what's actually doable right now, use Focus Mode to hide the noise and concentrate on one branch, or let Random Task Focus pick your next move when decision fatigue sets in. Everything's end-to-end encrypted — zero-knowledge, so even Tectonian itself can't read your data.",
+  credits: "A product I founded under Liminal Webs LLC.",
   tags: [],
 };
 
@@ -29,7 +46,7 @@ const websites = [
     repoLink: '',
     iconType: '',
     year: '2024',
-    description: "Founded an online web development and design agency based in California to help support small businesses with affordable prices.",
+    description: "Founded an online web development and design agency based in California to help support small businesses.",
     tags: ["GSAP", "Firebase", "Cloudflare"],
   },
   {
@@ -39,8 +56,8 @@ const websites = [
     repoLink: 'https://github.com/dereki16/Razor-Movies-Project',
     iconType: 'github',
     year: '2023',
-    description: "Built a responsive movie site supporting CRUD operations, using The Movie Database API for data. Later taken offline due to ongoing database hosting costs.",
-    tags: ["ASP.NET", "TMDb API", "Azure"],
+    description: "Built a responsive movie site around The Movie Database API supporting CRUD operations.",
+    tags: ["ASP.NET", "Azure", "TMDb API"],
   },
   {
     title: 'Cosecha Church',
@@ -59,7 +76,7 @@ const websites = [
     repoLink: 'https://github.com/dereki16/application-buddy',
     iconType: 'github',
     year: '2024',
-    description: "Crafted a web app meant to streamline the job application process. Integrated ChatGPT's API and built a chatbot to help users in their job search.",
+    description: "Streamlined the job application process. Integrated ChatGPT's API and built a chatbot to help users in their job search.",
     tags: ["ChatGPT API", "Bootstrap"],
   },
   {
@@ -69,7 +86,7 @@ const websites = [
     repoLink: '',
     iconType: '',
     year: '2023',
-    description: "Established an online business presence through the Shopify platform, centered around selling temporary tattoos and accessories, with more to come.",
+    description: "Established an online business through Shopify, centered around selling art, temporary tattoos, and accessories.",
     tags: ["Shopify", "Liquid"],
   },
   {
@@ -88,6 +105,8 @@ function renderFeaturedWebsite() {
   const el = document.getElementById('featured-website');
   if (!el) return;
   const p = featuredWebsite;
+  const isFullPage = document.body.classList.contains('page-websites');
+  const description = isFullPage ? (p.descriptionFull || p.descriptionHome) : p.descriptionHome;
   el.href = p.link;
   el.target = '_blank';
   el.rel = 'noreferrer';
@@ -96,11 +115,13 @@ function renderFeaturedWebsite() {
     <div class="feature-body">
       <span class="tag tag-featured">featured project · ${p.year}</span>
       <h3 class="feature-title">${p.title}</h3>
-      <p class="feature-desc">${p.description}</p>
+      <p class="feature-desc">${description}</p>
+      <p class="feature-credits">${p.credits}</p>
       <span class="feature-link">Visit tectonian.com ↗</span>
     </div>
   `;
 }
+// taken out    <p class="stack-note">${COMMON_STACK.join(' • ')}</p>
 
 // Tectonian (the featured card above) counts as one of the "3" — so
 // only 2 more show here by default: Liminal Webs + Razor Movies.
@@ -138,6 +159,7 @@ function renderWebsites() {
         </div>
         <p class="row-desc">${site.description}</p>
         ${tagsHtml}
+        <p class="stack-note">${COMMON_STACK.join(' • ')}</p>
       </div>
     `;
     container.appendChild(el);

@@ -53,7 +53,7 @@ const projects = [
         srcType: 'image',
         img: 'webp/uvr.webp',
         overview: 'In this immersive post-apocalyptic world, see if you have what it takes to survive. Uncontained features room unlocking, barricade building, zombie shooting fun.',
-        credits: 'Developed in Unity and Oculus/Meta with Andrew Aguas handling audio and the incorporation of free assets.',
+        credits: 'Developed in Unity and Oculus/Meta with Andrew Aguas handling audio. Incorporated free assets.',
         features: [
             'Efficient object pooling for dynamic game elements.',
             'Zombie navigation & pathfinding for immersive engagement.',
