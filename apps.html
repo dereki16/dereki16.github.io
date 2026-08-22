@@ -31,13 +31,13 @@
     <div class="wrap">
       <p class="eyebrow">apps</p>
       <h1 style="font-size: clamp(2rem, 5vw, 3.2rem);">Apps</h1>
-      <p class="hero-sub">App projects, one place.</p>
+      <p class="hero-sub">App projects, all in one place.</p>
     </div>
   </section>
 
   <section style="border-bottom: none;">
     <div class="wrap">
-      <div class="feature-card" id="featured-app" style="scroll-margin-top: 76px;"></div>
+      <div class="feature-card" id="featured-app" style="scroll-margin-top: 58px;"></div>
       <!--
         Add more app entries to the `apps` array in js/apps.js and they'll
         render here automatically as alternating rows with their videos.
@@ -49,13 +49,15 @@
   <footer>
     <div class="wrap footer-row">
       <div class="footer-social">
-        <a href="mailto:derekini.dev@gmail.com" aria-label="Email me"><i class="fa fa-envelope-o"></i></a>
+        <a href="mailto:derekini.dev@gmail.com" id="footerEmailLink" aria-label="Copy my email address"><i class="fa fa-envelope-o"></i></a>
         <a href="https://github.com/dereki16" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa fa-github"></i></a>
         <a href="https://www.linkedin.com/in/derek-iniguez/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
       </div>
       <p class="footer-meta mono">designed &amp; developed by Derek Iniguez © 2026</p>
     </div>
   </footer>
+
+  <div id="toast" class="toast mono" role="status" aria-live="polite"></div>
 
   <script src="js/apps.js"></script>
   <script src="js/contact.js"></script>

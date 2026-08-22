@@ -75,7 +75,7 @@
         </div>
         <div>
           <p class="about-comment">// hello world<br>// welcome to my domain</p>
-          <p class="about-lede">I'm Derek. A developer who likes bringing ideas to life, whether that's a website, an app, or a VR game.</p>
+          <p class="about-lede">I'm Derek. A developer who likes bringing ideas to life, whether that's a website, an app, or video game.</p>
           <p class="about-body">Where there are challenges, there's opportunity to grow and learn. One step at a time.</p>
           <div class="pill-groups">
 
@@ -203,7 +203,7 @@
   <section id="contact">
     <div class="wrap">
       <p class="eyebrow">contact</p>
-      <h2 class="section-title">Say hello</h2>
+      <h2 class="section-title" id="contactTitle">Say hello</h2>
       <div class="contact-panel" id="contactPanel">
         <div class="contact-titlebar">
           <span class="win-dot" id="contactCloseBtn" role="button" tabindex="0" aria-label="Close contact panel"></span>
@@ -265,21 +265,6 @@
   <script src="js/contact.js"></script>
 
   <script>
-    // Small on-page alert, reused anywhere a quick confirmation is
-    // useful (currently: copying the email address below) instead of
-    // the browser's own alert()/native toast, which looks jarring
-    // against the site's own design.
-    window.showToast = function (message, ms) {
-      const el = document.getElementById('toast');
-      if (!el) return;
-      el.textContent = message;
-      el.classList.remove('is-visible'); // restart the animation if one's already showing
-      void el.offsetWidth; // force reflow so the class removal actually registers
-      el.classList.add('is-visible');
-      clearTimeout(window.showToast._timer);
-      window.showToast._timer = setTimeout(() => el.classList.remove('is-visible'), ms || 2200);
-    };
-
     // Fullscreen shouldn't inherit the grayscale-until-hover filter.
     document.addEventListener('fullscreenchange', () => {
       document.querySelectorAll('video.is-fullscreen').forEach(v => v.classList.remove('is-fullscreen'));
@@ -311,38 +296,6 @@
         moreBtn.textContent = isOpen ? 'Show less' : moreLabel;
       });
     });
-
-    // Footer email — copy to clipboard instead of trying to hand off
-    // to a mail client (which often isn't configured on someone's
-    // work laptop/browser anyway), with an on-page confirmation.
-    const footerEmailLink = document.getElementById('footerEmailLink');
-    if (footerEmailLink) {
-      const email = 'derekini.dev@gmail.com';
-      footerEmailLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        const done = () => window.showToast('Email copied to clipboard — ' + email);
-        const fail = () => window.showToast('Copy failed — my email is ' + email);
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(email).then(done, fail);
-        } else {
-          // Fallback for older browsers / non-HTTPS contexts where the
-          // Clipboard API isn't available.
-          try {
-            const tmp = document.createElement('textarea');
-            tmp.value = email;
-            tmp.style.position = 'fixed';
-            tmp.style.opacity = '0';
-            document.body.appendChild(tmp);
-            tmp.select();
-            document.execCommand('copy');
-            document.body.removeChild(tmp);
-            done();
-          } catch (err) {
-            fail();
-          }
-        }
-      });
-    }
 
     // Scroll-spy: highlight the active tab based on section in view
     const sections = document.querySelectorAll('section[id]');

@@ -9,15 +9,18 @@
 
 :root {
   --bg: #10131c;
+  --bg-rgb: 16, 19, 28;
   --bg-alt: #171b27;
   --bg-raised: #1d2230;
   --fg: #edeff5;
   --fg-dim: #9aa1b4;
   --fg-faint: #656d80;
   --accent: #75eeac;
+  --accent-rgb: 117, 238, 172;
   --accent-hover: #9bf4c4;
   --accent-soft: rgba(117, 238, 172, 0.14);
   --accent-2: #4a9eff;
+  --accent-2-rgb: 74, 158, 255;
   --accent-2-soft: rgba(74, 158, 255, 0.14);
   --line: rgba(255, 255, 255, 0.09);
   --line-bright: rgba(255, 255, 255, 0.18);
@@ -40,6 +43,9 @@ html {
 
 body {
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: var(--bg);
   background-image:
     radial-gradient(ellipse 900px 500px at 15% -10%, rgba(143, 168, 255, 0.10), transparent 60%),
@@ -91,7 +97,7 @@ h1, h2, h3 { font-family: var(--font-body); margin: 0; }
 section {
   padding: 110px 0;
   border-bottom: 1px solid var(--line);
-  scroll-margin-top: 76px;
+  scroll-margin-top: 58px; /* tabbar's real rendered height (56px + 1px border), plus a hair of buffer */
 }
 
 /* -------------------------------------------------------------------- */
@@ -102,7 +108,7 @@ section {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(16, 19, 28, 0.82);
+  background: rgba(var(--bg-rgb), 0.82);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
@@ -833,32 +839,45 @@ section {
   border-radius: 999px;
   padding: 6px 13px;
   cursor: pointer;
+  touch-action: manipulation;
   transition: opacity 0.2s ease;
 }
 
+/* display:contents (not width:100% + its own flex box) makes the
+   revealed pills join .pill-row's own flex-wrap flow directly — they
+   continue right after the last visible pill (or the +more button
+   itself, if there's room) instead of being forced onto a whole new
+   line of their own. */
 .pill-extra {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-  width: 100%;
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  margin-top: 0;
-  transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.35s ease;
+  display: none;
 }
-
 .pill-category:hover .pill-extra,
 .pill-category:focus-within .pill-extra,
 .pill-category.is-expanded .pill-extra {
-  max-height: 300px;
-  opacity: 1;
-  margin-top: 9px;
+  display: contents;
+}
+/* display:contents removes the wrapper's own box entirely, so there's
+   no element left to animate a height/opacity transition on — give
+   each individual revealed pill a small fade/rise-in instead. */
+.pill-extra .pill {
+  animation: pillReveal 0.22s ease both;
+}
+@keyframes pillReveal {
+  from { opacity: 0; transform: translateY(-3px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.pill-category:hover .pill-more-tag {
-  opacity: 0;
-  pointer-events: none;
+/* Scoped to (hover: hover) deliberately — on a touchscreen, tapping the
+   button also satisfies .pill-category:hover (there's no real pointer to
+   "unhover"), so this rule was setting pointer-events:none on the very
+   button being tapped, racing the click event and eating the tap on
+   some mobile browsers. Desktop-only hover devices don't have that
+   problem, so the rule only applies there. */
+@media (hover: hover) {
+  .pill-category:hover .pill-more-tag {
+    opacity: 0;
+    pointer-events: none;
+  }
 }
 
 /* -------------------------------------------------------------------- */
@@ -1055,6 +1074,52 @@ a.feature-card:hover {
   max-width: 75ch;
 }
 
+/* Section label within a feature card's expanded body (currently:
+   Sound Simulation's "Overview" / "Technical Highlights" on the full
+   apps page) — same small-caps mono treatment as .eyebrow/
+   .pill-category-label, so structured content reads as an extension
+   of the site's own voice rather than a generic doc layout. */
+.feature-subhead {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-2);
+  margin: 2px 0 0;
+}
+
+.feature-highlights {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 75ch;
+}
+.feature-highlights li {
+  position: relative;
+  padding-left: 20px;
+  color: var(--fg-dim);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+.feature-highlights li strong {
+  color: var(--fg);
+}
+/* Same "> " marker already used for .field label — ties this back to
+   the terminal/code-editor visual language instead of a plain bullet. */
+.feature-highlights li::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
 .feature-credits {
   color: var(--fg-faint);
   font-size: 0.85rem;
@@ -1215,14 +1280,14 @@ video.is-fullscreen {
 /* Wider container for the games list specifically — deliberately wider
    than the tabbar above it, per request, so the videos get more room. */
 .wrap-wide {
-  max-width: 1600px;
+  max-width: 1650px;
   margin: 0 auto;
   padding: 0 var(--side-inset);
 }
 
 /* Games list rows: video column wider than the text column. */
 #games-list.row-list .row-project {
-  grid-template-columns: 1.7fr 1fr;
+  grid-template-columns: 1.7fr 1.3fr;
 }
 
 /* That ID selector above beats the generic mobile single-column rule
@@ -1271,6 +1336,12 @@ video.is-fullscreen {
    margin for breathing room. */
 .row-list .row-project:nth-child(odd) { margin-right: 6%; }
 .row-list .row-project:nth-child(even) { margin-left: 6%; }
+
+.row-list .row-project:nth-child(1),
+.row-list .row-project:nth-child(2) {
+  margin-left: 0;
+  margin-right: 0;
+} 
 
 /* Collapse-after-N — rows past the cutoff are hidden until expanded. */
 .row-project.row-collapsed {
@@ -1436,6 +1507,26 @@ video.is-fullscreen {
 }
 .field textarea { min-height: 120px; resize: vertical; }
 
+/* Placeholder text has no color unless set explicitly — it was falling
+   back to the browser's fixed default gray regardless of theme. */
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--fg-faint);
+  opacity: 1; /* Firefox dims placeholder opacity by default, further muting an already-faint color */
+}
+
+/* Browser autofill (e.g. a saved email) forces its own background/text
+   color that ignores author CSS entirely on most engines — this is
+   the standard workaround so an autofilled field still matches the
+   current theme instead of showing stale black-on-yellow. */
+.field input:-webkit-autofill,
+.field input:-webkit-autofill:hover,
+.field input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--fg);
+  -webkit-box-shadow: 0 0 0px 1000px var(--bg) inset;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
 .form-status {
   font-family: var(--font-mono);
   font-size: 0.82rem;
@@ -1476,6 +1567,7 @@ video.is-fullscreen {
 /* -------------------------------------------------------------------- */
 
 footer {
+  margin-top: auto;
   padding: 56px 0 60px;
 }
 

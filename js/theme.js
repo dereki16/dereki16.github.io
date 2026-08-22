@@ -45,22 +45,22 @@
       accent: '#ffb454', accent2: '#c792ea',
     },
     paper: { // light mode
-      bg: '#f4f2ec', bgAlt: '#e9e5da', bgRaised: '#ffffff',
+      bg: '#e5f2ff', bgAlt: '#d3e6f7', bgRaised: '#ffffff',
       fg: '#1b1c22', fgDim: '#54586a', fgFaint: '#8a8fa3',
       line: 'rgba(0,0,0,0.10)', lineBright: 'rgba(0,0,0,0.20)',
       accent: '#146c43', accent2: '#1d4ed8',
     },
-    sakura: { // cherry-blossom dark — soft pink against near-black plum
-      bg: '#1a1216', bgAlt: '#231920', bgRaised: '#2c1f27',
-      fg: '#fbebf1', fgDim: '#d9aebd', fgFaint: '#8f6673',
-      line: 'rgba(255,255,255,0.10)', lineBright: 'rgba(255,255,255,0.20)',
-      accent: '#ff9ec4', accent2: '#ffd18a',
+    sakura: { // cherry-blossom dark — vivid pink over warm maroon/wine, closer to the "Rose" reference screenshot than the old near-black version
+      bg: '#2a1620', bgAlt: '#331c28', bgRaised: '#3d2230',
+      fg: '#fbebf1', fgDim: '#e3aec8', fgFaint: '#a97690',
+      line: 'rgba(255,255,255,0.12)', lineBright: 'rgba(255,255,255,0.22)',
+      accent: '#ff4f9c', accent2: '#ffb8d9',
     },
-    aurora: { // northern-lights dark — teal/green over deep night sky
-      bg: '#0b1420', bgAlt: '#101d2c', bgRaised: '#152539',
-      fg: '#eaf6f6', fgDim: '#9fc4c9', fgFaint: '#5f8890',
+    aurora: { // northern-lights dark — vivid green over a deep forest-black, not the blue-black Midnight already uses, so the two actually read as different themes at a glance
+      bg: '#081810', bgAlt: '#0d2318', bgRaised: '#12301f',
+      fg: '#eafaf0', fgDim: '#9fd9bb', fgFaint: '#5f9478',
       line: 'rgba(255,255,255,0.09)', lineBright: 'rgba(255,255,255,0.18)',
-      accent: '#39ffc0', accent2: '#8f7bff',
+      accent: '#00e69a', accent2: '#5ee1ff',
     },
     plum: { // deep wine/purple dark
       bg: '#180f1a', bgAlt: '#221527', bgRaised: '#2b1b32',

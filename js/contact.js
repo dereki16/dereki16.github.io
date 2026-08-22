@@ -92,6 +92,17 @@ document.querySelectorAll('.myTextarea').forEach(input => {
   const minBtn = document.getElementById('contactMinBtn');
   const maxBtn = document.getElementById('contactMaxBtn');
   const restoreBtn = document.getElementById('contactRestoreBtn');
+  const titleEl = document.getElementById('contactTitle');
+  const defaultTitle = titleEl ? titleEl.textContent : 'Say hello';
+
+  // A little tongue-in-cheek, not a full bit — closing the one section
+  // meant for reaching out gets a wink, not an essay.
+  const closedTitles = [
+    '...or not',
+    'What did you think was gonna happen? ..Nothing?',
+    'Cool, guess we\'re not talking then',
+    'I don\'t believe in misleading designs.',
+  ];
 
   // role="button" spans don't get a native Enter/Space activation the
   // way a real <button> would — wire that up so keyboard users can
@@ -111,12 +122,14 @@ document.querySelectorAll('.myTextarea').forEach(input => {
     panel.classList.add('is-closed');
     panel.classList.remove('is-maximized');
     if (restoreBtn) restoreBtn.hidden = false;
+    if (titleEl) titleEl.textContent = closedTitles[Math.floor(Math.random() * closedTitles.length)];
   });
 
   if (restoreBtn) {
     restoreBtn.addEventListener('click', () => {
       panel.classList.remove('is-closed');
       restoreBtn.hidden = true;
+      if (titleEl) titleEl.textContent = defaultTitle;
     });
   }
 
@@ -134,6 +147,62 @@ document.querySelectorAll('.myTextarea').forEach(input => {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && panel.classList.contains('is-maximized')) {
       panel.classList.remove('is-maximized');
+    }
+  });
+})();
+
+// ============================================================
+// Site-wide: on-page toast + footer email copy-to-clipboard.
+//
+// Lives here (not in a page's own inline script) specifically so it
+// runs on every page — apps.html, projects.html, razor-movies.html,
+// thankyou.html, index.html — all of which already load contact.js,
+// rather than needing the same block pasted into each page's markup.
+// ============================================================
+(function () {
+  // Small on-page alert, reused anywhere a quick confirmation is
+  // useful (currently: copying the email address below) instead of
+  // the browser's own alert()/native toast, which looks jarring
+  // against the site's own design.
+  window.showToast = function (message, ms) {
+    const el = document.getElementById('toast');
+    if (!el) return;
+    el.textContent = message;
+    el.classList.remove('is-visible'); // restart the animation if one's already showing
+    void el.offsetWidth; // force reflow so the class removal actually registers
+    el.classList.add('is-visible');
+    clearTimeout(window.showToast._timer);
+    window.showToast._timer = setTimeout(() => el.classList.remove('is-visible'), ms || 2200);
+  };
+
+  // Footer email — copy to clipboard instead of trying to hand off to
+  // a mail client (which often isn't configured on someone's work
+  // laptop/browser anyway), with an on-page confirmation.
+  const footerEmailLink = document.getElementById('footerEmailLink');
+  if (!footerEmailLink) return;
+  const email = 'derekini.dev@gmail.com';
+  footerEmailLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    const done = () => window.showToast('Email copied to clipboard — ' + email);
+    const fail = () => window.showToast('Copy failed — my email is ' + email);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).then(done, fail);
+    } else {
+      // Fallback for older browsers / non-HTTPS contexts where the
+      // Clipboard API isn't available.
+      try {
+        const tmp = document.createElement('textarea');
+        tmp.value = email;
+        tmp.style.position = 'fixed';
+        tmp.style.opacity = '0';
+        document.body.appendChild(tmp);
+        tmp.select();
+        document.execCommand('copy');
+        document.body.removeChild(tmp);
+        done();
+      } catch (err) {
+        fail();
+      }
     }
   });
 })();
