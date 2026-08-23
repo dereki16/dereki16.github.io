@@ -8,6 +8,15 @@
 //   URL-encoded for the src attribute)
 // - Media panels are taller (`row-media--tall`) and the page's container
 //   is wider than the tabbar (see .wrap-wide in projects.html)
+// - Title + year tag render as a full-width header ABOVE the media, on
+//   one line, but only for the two bigger entries (Uncontained, VATS —
+//   see `bigCard: true` below). Fragmented and O-PONG keep title+tag
+//   inline at the top of the text column instead (see .row-title-row).
+// - VATS's header is back to left-aligned, same as Uncontained (tried
+//   right-aligning it to guide the eye toward VATS's media, which sits
+//   on the right due to the alternating-row flip — reverted per
+//   feedback). The `.row-header--right` CSS modifier is still there
+//   in style.css if this is worth revisiting later.
 // ============================================================
 
 const gamesList = [
@@ -36,13 +45,14 @@ const gamesList = [
     ],
     tags: ['VR', 'Oculus / Meta', 'Unity', 'C#'],
     year: '2022',
+    bigCard: true,
   },
   {
     id: 'VATS',
-    title: 'VATS',
+    title: 'Virtual Aquarium Tank System (VATS)',
     link: 'https://github.com/dclinkenbeard/VATS',
     video: 'https://github.com/dereki16/dereki16.github.io/raw/main/vids/vats(short).mp4',
-    overview: "Virtual Aquarium Tank System, or VATS, was my college capstone project — a virtual deep dive into marine life. Collaboration with the Monterey Bay Aquarium disrupted by the COVID pandemic.",
+    overview: "VATS was my college capstone project — a virtual deep dive into marine life. Collaboration with the Monterey Bay Aquarium disrupted by the COVID pandemic.",
     credits: 'Responsible for: FEV, research, data management and its UI. Overseen by professor Drew Clinkenbeard, completed alongside Isaac Torres and Lewis Truong.',
     features: [
       'Fish Evaluation Vector (FEV) system for evaluating marine life.',
@@ -60,6 +70,7 @@ const gamesList = [
     ],
     tags: ['Capstone', 'JSON', 'Unity', 'C#'],
     year: '2020',
+    bigCard: true,
   },
   {
     id: 'Fragmented',
@@ -135,11 +146,23 @@ function renderGamesList() {
       linksHtml += ` <a class="btn btn-ghost" href="${game.androidLink}" target="_blank" rel="noreferrer">Google Play ↗</a>`;
     }
 
+    const titleTagHtml = `<h3 class="row-title">${game.title}</h3><span class="tag tag-featured">${game.year}</span>`;
+
+    // Uncontained/VATS (bigCard) get the title+tag hoisted above the
+    // media as a full-width header; Fragmented/O-PONG keep it inline at
+    // the top of the text column, same as before.
+    const headerHtml = game.bigCard
+      ? `<div class="row-header${game.headerAlign === 'right' ? ' row-header--right' : ''}">${titleTagHtml}</div>`
+      : '';
+    const inlineTitleTagHtml = game.bigCard
+      ? ''
+      : `<div class="row-title-row">${titleTagHtml}</div>`;
+
     el.innerHTML = `
+      ${headerHtml}
       ${mediaHtml}
       <div class="row-body">
-        <span class="tag tag-featured">${game.year}</span>
-        <h3 class="row-title">${game.title}</h3>
+        ${inlineTitleTagHtml}
         ${overviewHtml}
         ${creditsHtml}
         ${noteHtml}

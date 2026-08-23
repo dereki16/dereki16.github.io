@@ -520,7 +520,7 @@
       color('Accent', t.accent, v => window.siteTheme.setAccent(v));
       color('Accent 2', t.accent2, v => window.siteTheme.setAccent2(v));
 
-      button('reset appearance', () => {
+      button('reset_appearance()', () => {
         window.siteTheme.reset();
         container.innerHTML = '';
         buildUiPanel(container); // rebuild so inputs reflect the reset values

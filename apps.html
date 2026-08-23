@@ -64,8 +64,19 @@
   <script>
     document.addEventListener('fullscreenchange', () => {
       document.querySelectorAll('video.is-fullscreen').forEach(v => v.classList.remove('is-fullscreen'));
+      document.querySelectorAll('.fs-ancestor').forEach(node => node.classList.remove('fs-ancestor'));
       const el = document.fullscreenElement;
-      if (el && el.tagName === 'VIDEO') el.classList.add('is-fullscreen');
+      if (el && el.tagName === 'VIDEO') {
+        el.classList.add('is-fullscreen');
+        // overflow:hidden on the rounded-corner card/media wrapper is a
+        // known cause of videos failing (or glitching) going fullscreen
+        // in some browsers — lifted only while fullscreen is active,
+        // restored automatically on exit.
+        const mediaWrap = el.closest('.row-media, .feature-media');
+        const cardWrap = el.closest('.row-project, .feature-card');
+        if (mediaWrap) mediaWrap.classList.add('fs-ancestor');
+        if (cardWrap) cardWrap.classList.add('fs-ancestor');
+      }
     });
 
     const menuBtn = document.getElementById('menuBtn');

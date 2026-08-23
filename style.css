@@ -713,7 +713,7 @@ section {
 }
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px -12px rgba(117, 238, 172, 0.55);
+  box-shadow: 0 10px 30px -12px var(--accent);
 }
 
 .btn-ghost {
@@ -840,7 +840,11 @@ section {
   padding: 6px 13px;
   cursor: pointer;
   touch-action: manipulation;
-  transition: opacity 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 200px;
+  transition: opacity 0.2s ease, max-width 0.2s ease, padding 0.2s ease,
+    margin 0.2s ease, border-width 0.2s ease;
 }
 
 /* display:contents (not width:100% + its own flex box) makes the
@@ -877,6 +881,10 @@ section {
   .pill-category:hover .pill-more-tag {
     opacity: 0;
     pointer-events: none;
+    max-width: 0;
+    padding: 0;
+    margin: 0;
+    border-width: 0;
   }
 }
 
@@ -1032,12 +1040,169 @@ a.feature-card:hover {
   background: var(--bg);
 }
 
+/* Auto-height variant — for the SS feature card. Instead of a fixed
+   height box that letterboxes a "contain" image (wasted vertical
+   space), the box just becomes exactly as tall as the image renders
+   at the given width, capped so an unusually tall screenshot can't
+   blow out the page. */
+.feature-media.feature-media--auto {
+  aspect-ratio: unset;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+}
+.feature-media.feature-media--auto img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 760px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* Title + year tag on one line, sitting above the card itself rather
+   than inside its body — currently used for the SS feature card. */
+.feature-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.feature-header .feature-title { margin: 0; }
+
+/* Wide breakout — an exception for the SS card on the full apps page.
+   Centers on the viewport rather than the (narrower) .wrap column, so
+   the card can be wider than the rest of the page's content without
+   widening the page itself. Capped so it never exceeds the viewport
+   (minus the usual side inset) on smaller/medium screens. */
+.feature-card--wide,
+.feature-header--wide {
+  max-width: min(1480px, calc(100vw - 2 * var(--side-inset)));
+  width: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 760px) {
+  .feature-card--wide,
+  .feature-header--wide {
+    max-width: none;
+    width: auto;
+    position: static;
+    left: auto;
+    transform: none;
+  }
+}
+
+/* Non-obtrusive "view larger" affordance — a small button that only
+   appears on hover, so it never competes with the image itself and
+   never fires unless the person deliberately clicks it. Hidden on
+   touch/mobile via (hover: none), since there's no hover state to
+   reveal it and pinch-zoom already covers the same need there. */
+.zoomable-media {
+  position: relative;
+}
+.media-zoom-btn {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--line-bright);
+  background: rgba(var(--bg-rgb), 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: var(--fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.15s ease, transform 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.zoomable-media:hover .media-zoom-btn,
+.media-zoom-btn:focus-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.media-zoom-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+@media (max-width: 760px), (hover: none) {
+  .media-zoom-btn { display: none; }
+}
+
+/* Lightbox — a plain, user-initiated "click to enlarge" view. This is
+   intentionally separate from (and unaffected by) the browser's own
+   pinch/ctrl-scroll zoom, so the two never stack or fight each other. */
+.img-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--bg-rgb), 0.92);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  padding: 40px;
+}
+.img-lightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.img-lightbox img {
+  max-width: min(92vw, 1600px);
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 1px solid var(--line-bright);
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6);
+}
+.img-lightbox-close {
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--line-bright);
+  background: var(--bg-alt);
+  color: var(--fg);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.img-lightbox-close:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+body.lightbox-open { overflow: hidden; }
+
 /* Homepage teasers (featured game + featured Fragmented) stay shorter so
    more fits on screen at once — the full versions on their own detail
-   pages (games/apps) keep the taller height above. */
+   pages (games/apps) keep the taller height above. Doesn't apply to
+   --auto media (currently: SS's image) — that one sizes itself to the
+   image on every page, home included. */
 .page-home .feature-media--tall {
   height: 40vh;
   max-height: 440px;
+}
+.page-home .feature-media.feature-media--auto {
+  height: auto;
+  max-height: none;
 }
 
 .feature-body {
@@ -1141,9 +1306,19 @@ a.feature-card:hover {
   flex-wrap: wrap;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 760px) {
   .feature-media { aspect-ratio: 16 / 10; }
   .feature-body { padding: 26px 24px 30px; }
+}
+
+/* The wide SS card (apps page) has a lot more horizontal room than the
+   default 75ch cap on .feature-desc/.feature-highlights assumes —
+   without this, the text looks oddly narrow under the now-wide image.
+   100ch rather than "none": still capped for readability, just a wider
+   cap that actually uses the extra space. */
+.feature-card--wide .feature-desc,
+.feature-card--wide .feature-highlights {
+  max-width: 100ch;
 }
 
 /* -------------------------------------------------------------------- */
@@ -1155,7 +1330,7 @@ a.feature-card:hover {
 .row-project {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 44px;
+  gap: 10px 44px;
   align-items: center;
   padding: 48px 0;
   border-bottom: 1px solid var(--line);
@@ -1174,20 +1349,34 @@ a.feature-card:hover {
   border: 1px solid var(--line);
   aspect-ratio: 16 / 10;
   background: var(--bg-alt);
+  /* Grayscale lives on the wrapper, not the <video>/<img> itself — a
+     `filter` applied directly to a video element is a known cause of
+     the native fullscreen button silently doing nothing in some
+     browsers (Chrome/Safari both have open bugs on this). Filtering
+     the wrapper gets the same grayscale-until-hover look without ever
+     touching the video element's own CSS. */
+  filter: grayscale(100%);
+  transition: filter 0.35s ease;
 }
 .row-media img,
 .row-media video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(100%);
-  transition: filter 0.35s ease;
 }
-a.row-project:hover .row-media img,
-a.row-project:hover .row-media video,
-.row-project:hover .row-media img,
-.row-project:hover .row-media video {
+a.row-project:hover .row-media,
+.row-project:hover .row-media {
   filter: grayscale(0%);
+}
+
+/* Belt-and-suspenders: some browsers also refuse (or glitch) a video's
+   fullscreen request when a rounded-corner, overflow:hidden ancestor
+   clips it. The inline fullscreenchange listener in each page (see
+   index.html / apps.html / projects.html) adds .fs-ancestor to the
+   video's wrapper and card while it's fullscreen, and removes it
+   again on exit. */
+.fs-ancestor {
+  overflow: visible !important;
 }
 
 /* Fullscreen video should never be grayscaled, hover state or not. The
@@ -1300,6 +1489,28 @@ video.is-fullscreen {
   }
 }
 
+/* Title + year tag on one line, spanning above both the media and text
+   columns — frees up room in .row-body for the desc/highlights below.
+   Only used for the two bigger games (Uncontained, VATS — see the
+   `bigCard` flag in games-page.js); Fragmented and O-PONG keep their
+   title+tag inline in the text column via .row-title-row instead. */
+.row-header {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 4px;
+}
+.row-header .row-title { margin: 0; }
+
+/* VATS-only: pushes title+tag to the right so it sits above VATS's
+   media (which itself is on the right, via the alternating-row rtl
+   flip below) — a small visual cue pulling the eye rightward from
+   Uncontained into VATS instead of both headers lining up flush left. */
+.row-header--right {
+  justify-content: flex-end;
+}
+
 .row-body {
   display: flex;
   flex-direction: column;
@@ -1314,7 +1525,7 @@ video.is-fullscreen {
 }
 
 .row-title {
-  font-size: 1.35rem;
+  font-size: 2rem;
   font-weight: 700;
 }
 

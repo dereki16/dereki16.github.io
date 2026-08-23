@@ -27,7 +27,7 @@ function renderFeaturedGame() {
       <video src="${g.video}" autoplay muted loop playsinline controls></video>
     </div>
     <div class="feature-body">
-      <span class="tag tag-featured">featured build</span>
+      <span class="tag tag-featured">featured build · 2022</span>
       <h3 class="feature-title">${g.title}</h3>
       <p class="feature-desc">${g.description}</p>
       <p class="feature-credits">${g.credits}</p>
